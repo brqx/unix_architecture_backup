@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2016
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.0"          #  Version del Script actual
+FECHA_SCRIPT="Octubre 2016"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="exec"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- goget - gogit - goinst
+#-------------------------------------------------------------------
+
+#Acceso al sistema como root
+#-------------------------------------------------------------------
+
+alias goget='/usr/local/go/bin/go get '
+alias gogit='/usr/local/go/bin/go '
+alias goinst='/usr/local/go/bin/go install '
+
+
+
+
+

@@ -1,0 +1,51 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2013
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.1"          #  Version del Script actual
+FECHA_SCRIPT="Abril 2013"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_CARACTER_04="comunes"
+CONCEPT_MOLDE_04="ejecuciones"
+CONCEPT_ARQUETIPO_04="language"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_CARACTER_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_04=${SD_MAIN}s07_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO_04}/
+#-==================================================================
+#+ Alias Comunes de las plataformas - Nivel 04
+#-==================================================================
+
+#- Gestion de lenguajes
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}x11_php.x
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}x12_java.x
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}x13_perl.x
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}x14_python.x
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}x15_jython.x
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N4 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N4}" != "" ] ; then
+echo "${LEVEL_NIVEL_04}/${LEVEL_NIVEL}----${CONCEPT_LEVEL_04}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

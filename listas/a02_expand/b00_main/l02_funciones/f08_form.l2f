@@ -1,0 +1,147 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2013
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.2"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2013"
+STATUS_SCRIPT="all checked"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04    # Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04 # Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_MOLDE_04="funciones"
+CONCEPT_ARQUETIPO_04="form"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+#+ Funciones Comunes de INFORMACION / FORMS 
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_04=${SD_MAIN}s02_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO_04}/
+
+##- Esto hay que sacarlo si se pasa un parametro unicamente
+
+#- Tenemos tres divisiones : trace - error - info
+
+#- Traceo INFO : pmt - pmp - pmi - pmpi
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}info/f01_e_pmt_error_trace.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}info/f02_e_pmi_error_trace_info.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}info/f03_e_pmp_error_pmt.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}info/f05_e_pmpi_info_objetos.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}info/f04_e_pmp2_error_pmt.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}info/f12_e_pms_error_llamada_superior.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}info/f13_ef_pms_error_llamada_superior_solo_con_informacion_final.f
+#-------------------------------------------------------------------
+
+#- Informacion
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}info/f21_e_pmi2_informacion.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}info/f22_e_pmi3_informacion.f
+#-------------------------------------------------------------------
+
+#- Casos especiales informacion
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}info/f31_e2_pmt_einfo.f
+#-------------------------------------------------------------------
+
+#- Listados
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}list/f31_l_pmi2_informacion.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}list/f32_l_pmi3_informacion.f
+#-------------------------------------------------------------------
+
+#- Impresion de formularios
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f01_p01p_01_parametro.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f02_p02p_02_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f03_p03p_03_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f04_p04p_04_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f05_p05p_05_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f06_p06p_06_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f07_p07p_07_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f08_p08p_08_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f09_p09p_09_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f10_p10p_10_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f11_p11p_11_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f12_p12p_12_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f13_p13p_13_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f14_p14p_14_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f15_p15p_15_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f16_p16p_16_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f17_p17p_17_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f18_p18p_18_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f19_p19p_19_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f20_p20p_20_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f21_p21p_21_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f22_p22p_22_parametros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f23_p23p_23_parametros.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f50_p_p_select_printer.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}print/f51_p_s_sup_printer.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+## Habilitaremos esta funcionalidad mas adelante
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N4 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N4}" != "" ] ; then
+echo "${LEVEL_NIVEL_04}/${LEVEL_NIVEL}----${CONCEPT_LEVEL_04}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================
+

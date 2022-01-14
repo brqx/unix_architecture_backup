@@ -1,0 +1,84 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.1"          #  Version del Script actual
+FECHA_SCRIPT="Marzo 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_MOLDE_04="funciones"
+CONCEPT_ARQUETIPO_04="special"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+#+ Funciones Comunes Especiales
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_04=${SD_MAIN}s02_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO_04}/
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}ana/f01_bs_anagrama.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}ana/f02_gen_grep_string.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}ana/f03_cleanpath_elimina_doble_barra.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}ana/f04_fullpath_devolver_ruta_completa.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}ana/f05_creapath_compone_path.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}ana/f06_homepath_devolver_ruta_home_completa.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}ana/f07_partepath_dcha_parte_path_indicado.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}ana/f08_partepath_izda_parte_path_indicado.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}cod/f10_ecode_codifica_linea.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}cod/f11_dcode_decodifica_linea.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}cod/f20_pecode_print_codifica_linea.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}cod/f21_pdcode_print_decodifica_linea.f
+#-------------------------------------------------------------------
+
+#- Codificacion y decodificacion de ficheros
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}cod/f30_codcat_codifica_fichero.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}cod/f31_deccat_decodifica_fichero.f
+#-------------------------------------------------------------------
+
+#- Codificacion y decodificacion de listados
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}cod/f40_codls_codifica_listado.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}cod/f41_codir_codifica_listado_carpetas.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}cod/f42_sucodir_sudo_codifica_listado_carpetas.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N4 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N4}" != "" ] ; then
+echo "${LEVEL_NIVEL_04}/${LEVEL_NIVEL}----${CONCEPT_LEVEL_04}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

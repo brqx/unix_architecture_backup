@@ -1,0 +1,90 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2013
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.1"          #  Version del Script actual
+FECHA_SCRIPT="Marzo 2013"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03		# Variable control profundidad alcanzada
+LEVEL_NIVEL_03=03	# Variable control script
+CONCEPT_FORMATO_03="lista"
+CONCEPT_MOLDE_03="funciones"
+CONCEPT_ARQUETIPO_03="proceso"
+CONCEPT_PRODUCTO_03="http"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_03="${CONCEPT_FORMATO_03} ${CONCEPT_MOLDE_03}  ${CONCEPT_ARQUETIPO_03}"
+CONCEPT_LEVEL_03="${CONCEPT_LEVEL_03} ${CONCEPT_PRODUCTO_03} "
+#-==================================================================
+#+ Funciones Especificas producto 05 : IBM WEBSPHERE - SA - Nivel 03
+#-==================================================================
+
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+#- RUTAS DE ACCESO GEN - PRODUCTO - N3
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+
+#-------------------------------------------------------------------
+LSCRIPT_PARTICULAR_PATH_03=${SD_HTTP}s02_${CONCEPT_MOLDE_03}/
+LSCRIPT_PARTICULAR_PATH_03=${LSCRIPT_PARTICULAR_PATH_03}${CONCEPT_ARQUETIPO_03}/
+#-------------------------------------------------------------------
+
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+#- LANZAMIENTO DE PRODUCTOS - N3
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}start/g/n1/sudo/h21_httpsudo_start_apache.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}start/g/n1/sudo/h22_httpsudo_stop_apache.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}start/g/n1/sudo/h23_httpsudo_restart_apache.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}start/g/n1/su/h31_http_su_start_apache.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}start/g/n1/su/h32_http_su_stop_apache.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}start/g/n1/su/h33_http_su_restart_apache.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}start/g//n1/su_pass/h41_http_su_pass_start_apache.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}start/g//n1/su_pass/h42_http_su_pass_stop_apache.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}start/g//n1/su_pass/h43_http_su_pass_restart_apache.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}start/g/n2/sudo/h11_httpsudo_apache_local_start.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}start/g/n2/sudo/h12_httpsudo_apache_local_stop.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}start/g/n2/sudo/h13_httpsudo_apache_local_restart.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}start/g/n2/su/h01_http_apache_local_start.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}start/g/n2/su/h02_http_apache_local_stop.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}start/g/n2/su/h03_http_apache_local_restart.f
+#-------------------------------------------------------------------
+
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N3 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N3}" != "" ] ; then
+echo "${LEVEL_NIVEL_03}/${LEVEL_NIVEL}---${CONCEPT_LEVEL_03}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

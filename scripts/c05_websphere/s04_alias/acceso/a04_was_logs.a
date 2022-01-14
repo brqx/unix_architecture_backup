@@ -1,0 +1,54 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.0"          #  Version del Script actual
+FECHA_SCRIPT="Junio 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO=""
+CONCEPT_PRODUCTO="websphere"
+CONCEPT_LEVEL="Script ${CONCEPT_MOLDE} ${CONCEPT_ARQUETIPO}"
+CONCEPT_LEVEL="${CONCEPT_LEVEL} ${CONCEPT_PRODUCTO} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- logwas - logcore - logfron - logapps - logarq
+#-------------------------------------------------------------------
+#- Variables Requeridas
+#-------------------------------------------------------------------
+#-- LOGS_CELL - LOGS_CORE - LOGS_FRONT
+#-------------------------------------------------------------------
+#-- WPS_LOGS_APLICACIONES - WPS_LOGS_MAVEN
+#-------------------------------------------------------------------
+
+#-- Alias de acceso a logs de productos
+#-====================================-
+
+#-------------------------------------------------------------------
+#- WebSphere Application Server - Process Server
+#-------------------------------------------------------------------
+
+#- Ir al home de Websphere SOA - Process Server - Nodo
+alias logwas='cd ${LOGS_SERVER}'
+
+#- Ir al home de Websphere CORE - WAS
+alias logcore='cd ${LOGS_CORE}'
+
+#- Ir al home de Websphere FRONTAL - WAS
+alias logfron='cd ${LOGS_FRONT}'
+
+#- Ir a los logs de aplicaciones desplegadas tradicionalmente
+alias logapps='cd ${WPS_LOGS_APLICACIONES}'
+
+#- Ir a los logs de aplicaciones desplegadas tradicionalmente
+alias logarq='cd ${WPS_LOGS_APLICACIONES}'
+
+#- Ir a los logs de aplicaciones desplegadas via maven - integracion continua
+alias logmav='cd ${WPS_LOGS_MAVEN}'
+
+#- Alias clear logs
+
+alias deleteserverlogs='rm -f /logs/*/*/*/*/*/*/*'

@@ -1,0 +1,69 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.1"          #  Version del Script actual
+FECHA_SCRIPT="Julio 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03		# Variable control profundidad alcanzada
+LEVEL_NIVEL_03=03	# Variable control script
+CONCEPT_MOLDE_03="funciones"
+CONCEPT_ARQUETIPO_03="proceso"
+CONCEPT_PRODUCTO_03="java"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_03="${CONCEPT_FORMATO_03} ${CONCEPT_MOLDE_03} ${CONCEPT_ARQUETIPO_03}"
+CONCEPT_LEVEL_03="${CONCEPT_LEVEL_03} ${CONCEPT_PRODUCTO_03} "
+#-==================================================================
+#+ Funciones Especificas producto 07 : JAVA - Proceso - Nivel 03
+#-==================================================================
+
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+#- RUTAS DE ACCESO GEN - PRODUCTO - N3
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+
+#-------------------------------------------------------------------
+LSCRIPT_PARTICULAR_PATH_03=${SD_JAVA}j02_${CONCEPT_MOLDE_03}/${CONCEPT_ARQUETIPO_03}/ 
+#-------------------------------------------------------------------
+
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+#- LANZAMIENTO DE PRODUCTOS - N3
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+
+#-Listado - hay que ajustar listado ligero y listado con codjar
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}clases/find/f01_fcla_find_jar_class.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}clases/find/f11_f4j_find_log4j_properties.f
+#-------------------------------------------------------------------
+
+#-Busqueda
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}clases/list/f02_lcla_list_jar_class.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}clases/list/f03_lg4j_list_log4j_properties.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}clases/list/f21_lallcla_list_all_java_classes.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}clases/list/f31_ldupcla_list_all_duplicated_java_classes.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}clases/list/f32_ldupclasize_list_all_duplicated_size_java_classes.f
+#-------------------------------------------------------------------
+
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N3 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N3}" != "" ] ; then
+echo "${LEVEL_NIVEL_03}/${LEVEL_NIVEL}---${CONCEPT_LEVEL_03}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

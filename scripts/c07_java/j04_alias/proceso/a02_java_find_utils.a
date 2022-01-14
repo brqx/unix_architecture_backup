@@ -1,0 +1,37 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.4"          #  Version del Script actual
+FECHA_SCRIPT="Noviembre 2010"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="proceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- fcla - lcla
+#-------------------------------------------------------------------
+#- Alias/Funciones/Variables Requeridas
+#-------------------------------------------------------------------
+#-- java_list_class - java_find_class
+#-------------------------------------------------------------------
+
+# Alias de Ejecuciones - Brqx Java
+#-====================================-
+
+#-- Listado de clases de un Jar
+alias lcla='java_list_class'
+
+#-- Busqueda de clase en una ruta donde hay contenedores JAR
+alias fcla='java_find_class'
+
+#-- Listado de properties y/o ficheros de un Jar
+alias lg4j='java_list_log4j'
+
+#-- Busqueda de properties y/o ficheros de un Jar
+alias f4j='java_find_log4j'
+

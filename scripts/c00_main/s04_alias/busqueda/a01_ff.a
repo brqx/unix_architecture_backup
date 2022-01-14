@@ -1,0 +1,35 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2013
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.1"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2013"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="busqueda"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- ff  - fl - ffd
+#-------------------------------------------------------------------
+#-- fbrqx - Fbrqx
+#-------------------------------------------------------------------
+
+#Find agil para las funciones
+#-------------------------------------------------------------------
+alias ff='find . -type f'
+alias fl='find . -type l'
+alias ffd='find . -type d'
+
+#Find agil para los enlaces
+#-------------------------------------------------------------------
+alias lfind='fl'
+
+#Find agil arquitectura
+
+alias fbrqx='find . -type f -name "brqx*"'
+alias Fbrqx='find ${PWD} -type f -name "brqx*"'
+

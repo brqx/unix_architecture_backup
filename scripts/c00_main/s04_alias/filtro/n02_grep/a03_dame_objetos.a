@@ -1,0 +1,43 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="5.1" #  Version del Script actual
+FECHA_SCRIPT="Febrero 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04    # Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04 # Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_PRODUCTO_04="main"
+CONCEPT_MOLDE_04="alias"
+CONCEPT_ARQUETIPO_04="general"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- 
+#+ Funciones / Variables definidas:
+#-------------------------------------------------------------------
+#-- damealias - damefunciones - dameminialias 
+#-------------------------------------------------------------------
+#-- damescripts - damexportaciones - damevariables 
+#-------------------------------------------------------------------
+#+ Alias / Funciones / Variables Requeridas
+#-------------------------------------------------------------------
+#-- damel
+#-------------------------------------------------------------------
+#+ Ejemplo : 
+#-------------------------------------------------------------------
+# damefunciones   -- Las funciones de los archivos
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- 
+
+alias damevariables='damel la'
+alias damefunciones='damel lf && damel l2f'
+alias damealias='damel la'
+alias dameminialias='damel lma'
+alias damexportaciones='damel le'
+alias damescripts='damel lx'
+
+
+
+

@@ -1,0 +1,55 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.3"          #  Version del Script actual
+FECHA_SCRIPT="Octubre 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03		# Variable control profundidad alcanzada
+LEVEL_NIVEL_03=03	# Variable control script
+CONCEPT_FORMATO_03="script"
+CONCEPT_MOLDE_03="funciones"
+CONCEPT_PRODUCTO_03="server"
+CONCEPT_ARQUETIPO_03="fichero"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_03="${CONCEPT_FORMATO_03} ${CONCEPT_MOLDE_03} ${CONCEPT_ARQUETIPO_03}"
+CONCEPT_LEVEL_03="${CONCEPT_LEVEL_03} ${CONCEPT_PRODUCTO_03} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_SERVER}s02_${CONCEPT_MOLDE_03}/${CONCEPT_ARQUETIPO_03}/
+
+
+#-- TZP scp with targz
+
+TZ_REMOTE=${LSCRIPT_PARTICULAR_PATH_03}f04_tz/
+
+#-------------------------------------------------------------------
+. ${TZ_REMOTE}g/f37_cpz_path_to_server_home.f
+#-------------------------------------------------------------------
+. ${TZ_REMOTE}g/f38_cpz_live_to_server.f
+#-------------------------------------------------------------------
+. ${TZ_REMOTE}g/f39_cpz_path_to_server.f
+#-------------------------------------------------------------------
+. ${TZ_REMOTE}g/f41_cpf_path_to_server_file.f
+#-------------------------------------------------------------------
+
+#-- TZP all servers
+
+#-------------------------------------------------------------------
+. ${TZ_REMOTE}s/f40_gzscp_file_to_all_servers.f
+#-------------------------------------------------------------------
+. ${TZ_REMOTE}s/f41_gzscp_path_to_all_servers.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "${LEVEL_NIVEL_03} / ${LEVEL_NIVEL}	- Ejecutadas ${CONCEPT_LEVEL_03}"
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

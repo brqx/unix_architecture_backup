@@ -1,0 +1,91 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.1"          #  Version del Script actual
+FECHA_SCRIPT="Junio 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03		# Variable control profundidad alcanzada
+LEVEL_NIVEL_03=03	# Variable control script
+CONCEPT_MOLDE_03="funciones"
+CONCEPT_ARQUETIPO_03="load"
+CONCEPT_PRODUCTO_03="oracle"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_03="${CONCEPT_FORMATO_03} ${CONCEPT_MOLDE_03}"
+CONCEPT_LEVEL_03="${CONCEPT_LEVEL_03} ${CONCEPT_PRODUCTO_03} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_ORACLE}s02_${CONCEPT_MOLDE_03}/
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/gen/user/o02_orapar_oracle_parser.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/gen/user/o04_xsql_run_script.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/gen/user/o03_dbsql_run_sql_command.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/gen/su_pass/o13_dbsql_run_su_pass_sql_command.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/gen/su_user/o23_dbsql_run_su_sql_command.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/start/user/o01_dbrun_start_database.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/start/user/o03_dbrun_restart_database.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/start/user/o02_dbstop_stop_database.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/start/su_user/o23_dbrun_su_restart_database.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/start/su_user/o22_dbstop_su_stop_database.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/start/su_user/o21_dbrun_su_start_database.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/start/su_pass/o12_dbstop_su_pass_stop_database.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/start/su_pass/o13_dbrun_su_pass_restart_database.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/start/su_pass/o11_dbrun_su_pass_start_database.f
+#-------------------------------------------------------------------
+
+
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/load/f02_sql_remote_loader.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/load/f12_procesa_java.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/load/f11_carga_logs_cosym.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/load/f01_sql_loader.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/load/f13_proceso_total.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N3 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N3}" != "" ] ; then
+echo "${LEVEL_NIVEL_03}/${LEVEL_NIVEL}---${CONCEPT_LEVEL_03}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

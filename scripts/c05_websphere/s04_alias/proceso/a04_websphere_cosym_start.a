@@ -1,0 +1,53 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.3"          #  Version del Script actual
+FECHA_SCRIPT="Julio 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="proceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- rufron113 - rufron114 - rucore200 - rucore201
+#-------------------------------------------------------------------
+#-- rusoa202  - rusoa203
+#-------------------------------------------------------------------
+#- Funciones Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+# Variables - Alias - Librerias
+#-====================================-
+
+#- Alias de reinicio agil de servidores V6
+alias rufron113="wrun_su_remote_cluster frontal6a"
+alias rufron114="wrun_su_remote_cluster frontal6b"
+
+alias rucore200="wrunsudo_remote_cluster core7a"  
+alias rucore201="wrunsudo_remote_cluster core7b"  
+
+alias rusoa202="wrunsudo_remote_standalone  soa7a"
+alias rusoa203="wrunsudo_remote_soa_cluster soa7b"  
+
+alias ruwsrr207="wrunsudo_remote_cluster wsrr"
+alias rusoa304="wrun_su_remote_standalone soa6"  
+
+#-Formato corto
+
+alias ru113="rufron113"
+alias ru114="rufron114"
+
+alias ru200="rucore200"
+alias ru201="rucore201"
+
+alias ru202="rusoa202"
+alias ru203="rusoa203"
+
+alias ru207="ruwsrr207"
+alias ru304="rusoa304"

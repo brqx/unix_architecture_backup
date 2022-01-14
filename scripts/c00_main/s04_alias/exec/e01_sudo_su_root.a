@@ -1,0 +1,28 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2010
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.0"          #  Version del Script actual
+FECHA_SCRIPT="Octubre 2010"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="exec"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- suroot  susu
+#-------------------------------------------------------------------
+
+#Acceso al sistema como root
+#-------------------------------------------------------------------
+
+alias suroot='sudo su -'
+alias susu='suroot'
+
+
+
+
+

@@ -1,0 +1,44 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.0"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- linea_guiones - linea_iguales - linea_subrayado - linea_underscore
+#-------------------------------------------------------------------
+#-- dlinea_iguales - dlinea_guiones
+#-------------------------------------------------------------------
+#-- dlinea_alterna_iguales
+#-------------------------------------------------------------------
+#+ Funciones / Variables Requeridas
+#-------------------------------------------------------------------
+#-- linea_caracter - linea_normal
+#-==================================================================
+
+#- Alias de lineas - pintado de lineas horizontales en pantalla
+
+alias linea_guiones='linea_normal'
+alias linea_iguales='linea_caracter ='
+alias linea_subrayado='linea_caracter _'
+
+#- Lineas dobles
+alias dlinea_iguales='linea_caracter ==-'
+alias dlinea_guiones='linea_caracter =--'
+
+#- Lineas alternas dobles
+
+alias dlinea_alterna_iguales='linea_caracter ==--'
+
+#- Alias de alias
+alias linea_underscore='linea_subrayado'
+
+#-==================================================================

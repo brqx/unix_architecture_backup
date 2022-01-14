@@ -1,0 +1,24 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Info Directorio Entornos Unix - Brqx Site - I+D
+# Brqx Org - Rct - 2010
+#-------------------------------------------------------------------
+VERSION_SCRIPT="5.0" #  Version del Script actual
+FECHA_SCRIPT="Diciembre 2010"
+NIVEL_SCRIPT=0 
+#------------------------------------------------------------------- 
+clear
+#-------------------------------------------------------------------
+echo "-============================================================-"
+echo "Informacion directorio :`basename $PWD` "
+echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+echo "${FECHA_SCRIPT} - Ver : ${VERSION_SCRIPT} - Nivel ${NIVEL_SCRIPT}  "
+echo "-============================================================-"
+echo "1.-a00_core     : Listas brqx                - nivel 0"
+echo "2.-a01_product  : Listas productos           - nivel 1"
+echo "3.-a02_expand   : Listas expansion productos - nivel 2"
+echo "-============================================================-"
+ 
+
+#-------------------------------------------------------------------
+

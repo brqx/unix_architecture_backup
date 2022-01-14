@@ -1,0 +1,75 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2016
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.1"          #  Version del Script actual
+FECHA_SCRIPT="Marzo 2016"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03		# Variable control profundidad alcanzada
+LEVEL_NIVEL_03=03	# Variable control script
+CONCEPT_FORMATO_03="script"
+CONCEPT_MOLDE_03="minialias"
+CONCEPT_PRODUCTO_03="server"
+CONCEPT_ARQUETIPO_03="fichero"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_03="${CONCEPT_FORMATO_03} ${CONCEPT_MOLDE_03} ${CONCEPT_ARQUETIPO_03}"
+CONCEPT_LEVEL_03="${CONCEPT_LEVEL_03} ${CONCEPT_PRODUCTO_03} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_SERVER}s05_${CONCEPT_MOLDE_03}/${CONCEPT_ARQUETIPO_03}/
+
+#- Establecemos criterios de generalidad en mini aliases
+
+#=-- scp 
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/f01_scp/ma01_scp.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/f01_scp/ma10_scp_auto_simple.ma
+#-------------------------------------------------------------------
+
+#=-- sync
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/f02_sync/ma11_sync_auto_simple.ma
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/f02_sync/ma12_servers_custom_sync.ma
+#-------------------------------------------------------------------
+
+#=-- tz
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/f03_tz/ma12_tz_auto_simple.ma
+#-------------------------------------------------------------------
+
+#=-- bk
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/f04_bk/ma13_bk_auto_simple.ma
+#-------------------------------------------------------------------
+
+#=-- start
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/f05_start/ma14_start.ma
+#-------------------------------------------------------------------
+
+#-- Especificos
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/f02_sync/ma11_cfs_auto_mapfre.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/f02_sync/ma21_sync_cosym.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/f02_sync/ma22_sync_cosym_from.ma
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "$LEVEL_NIVEL	-	Ejecutadas $CONCEPT_LEVEL"
+#-------------------------------------------------------------------

@@ -1,0 +1,30 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2016
+#-------------------------------------------------------------------
+VERSION_SCRIPT="2.4" #  Version del Script actual
+FECHA_SCRIPT="Octubre 2016"
+STATUS_SCRIPT="all checked"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04    # Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04 # Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_PRODUCTO_04="main"
+CONCEPT_MOLDE_04="alias"
+CONCEPT_ARQUETIPO_04="fichero"
+CONCEPT_VARIANTE_04=""
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- scpp - scpr
+#-------------------------------------------------------------------
+#- Variables/Funciones/Alias Requeridas
+#-------------------------------------------------------------------
+
+alias scpp='scp -P 60022 '
+alias scpr='scpp root@'
+

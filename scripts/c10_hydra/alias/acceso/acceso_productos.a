@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Especificas Entornos Unix - Sigaten - I+D
+# BRQX NG - Rct - 2007
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 2.0"          #  Version del Script actual
+FECHA_SCRIPT="Septiembre 2007"
+#-==================================================================
+
+#-- Alias de acceso a productos
+
+alias gosimmq='cd ${SIMULADORES_MQ_HDS}'
+alias gosimsoap='cd ${SIMULADORES_SOAP_HOME}'
+alias gobpm='cd ${BPM_HOME}'
+alias gotom='cd ${TOMCAT_HOME}'
+alias gobpmtmp='cd ${BPM_INSTALACION_TMP}'
+alias gobpmtran='cd ${BPM_INSTALACION_TRANLOG}'
+
+

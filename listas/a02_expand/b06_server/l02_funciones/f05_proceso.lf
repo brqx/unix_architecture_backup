@@ -1,0 +1,147 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.1"          #  Version del Script actual
+FECHA_SCRIPT="Junio 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03		# Variable control profundidad alcanzada
+LEVEL_NIVEL_03=03	# Variable control script
+CONCEPT_FORMATO_03="script"
+CONCEPT_MOLDE_03="funciones"
+CONCEPT_PRODUCTO_03="server"
+CONCEPT_ARQUETIPO_03="proceso"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_03="${CONCEPT_FORMATO_03} ${CONCEPT_MOLDE_03} ${CONCEPT_ARQUETIPO_03}"
+CONCEPT_LEVEL_03="${CONCEPT_LEVEL_03} ${CONCEPT_PRODUCTO_03} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_SERVER}s02_${CONCEPT_MOLDE_03}/${CONCEPT_ARQUETIPO_03}/
+
+#-- Gestion CVS
+
+#- Modulos
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}cvs/modulos/f01_cvs_list.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}cvs/modulos/f02_cvs_checkout_modulo.f
+#-------------------------------------------------------------------
+
+#- Ramas
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}cvs/ramas/f03_cvs_checkout_rama.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}cvs/ramas/f04_cvs_list_branches_cvrlist.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}cvs/ramas/f05_cvs_list_folder.f
+#-------------------------------------------------------------------
+
+#- Combinaciones
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}cvs/zcombi/f10_cvs_checkout_rama_folder.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}cvs/zcombi/f11_cvs_list_rama_folder.f
+#-------------------------------------------------------------------
+
+#-- Gestion MAVEN
+
+#--- Funciones Auxiliares
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel1/auxi/f021_mvn_get_from_nexus.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel1/auxi/f022_mvn_make_url_for_nexus.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel1/auxi/f025_mvn_process_library.f
+#-------------------------------------------------------------------
+
+#--- Nivel 1
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel1/f20_mvn_get_library_snapshot.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel1/f21_mvn_get_library_release.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel1/f22_mvn_upd_library_snapshot.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel1/f23_mvn_upd_library_release.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel1/f30_mvn_get_app_snapshot.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel1/f31_mvn_get_app_release.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel1/f32_mvn_upd_app_snapshot.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel1/f33_mvn_upd_app_release.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel1/f40_mvnc_compilacion_maven.f
+#-------------------------------------------------------------------
+
+
+#--- Nivel 2
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel2/libs/f40_mvn_gfull_libraries_snapshot.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel2/libs/f41_mvn_gfull_libraries_release.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel2/libs/f42_mvn_ufull_libraries_snapshot.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel2/libs/f43_mvn_ufull_libraries_release.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel2/libs/f61_mvn_gfrontal_libraries_snapshot.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel2/libs/f62_mvn_gsoa_libraries_snapshot.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel2/libs/f63_mvn_gcore_libraries_snapshot.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel2/libs/f71_mvn_ufrontal_libraries_snapshot.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel2/libs/f72_mvn_usoa_libraries_snapshot.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel2/libs/f73_mvn_ucore_libraries_snapshot.f
+#-------------------------------------------------------------------
+
+
+
+
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel2/apps/f50_mvn_gfull_apps_snapshot.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel2/apps/f51_mvn_gfull_apps_release.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel2/apps/f52_mvn_ufull_apps_snapshot.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel2/apps/f53_mvn_ufull_apps_release.f
+#-------------------------------------------------------------------
+
+
+#--- Nivel 3
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel3/f60_mvn_arq_update.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}mvn/nivel3/f61_mvn_local_snap_update.f
+#-------------------------------------------------------------------
+
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+if [ "${N2}" != "" ] ; then
+echo "${LEVEL_NIVEL_02}/${LEVEL_NIVEL}--${CONCEPT_LEVEL_02}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================
+

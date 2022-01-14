@@ -1,0 +1,35 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Info Directorio Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="5.2" #  Version del Script actual
+FECHA_SCRIPT="Febrero 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_PRODUCTO_04="main"
+CONCEPT_MOLDE_04=""
+CONCEPT_ARQUETIPO_04=""
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#------------------------------------------------------------------- 
+clear
+#-------------------------------------------------------------------
+echo "-============================================================-"
+echo "Informacion directorio :`basename $PWD` ( ${CONCEPT_LEVEL_04} )  "
+echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+echo "${FECHA_SCRIPT} - Ver : ${VERSION_SCRIPT} - Nivel ${NIVEL_SCRIPT}  "
+echo "-============================================================-"
+echo "01.-error     (e)   : Mensajes de error     			 "
+echo "02.-info      (i)   : Informacion de los objetos y funciones       "
+echo "03.-list      (l)   : Listados                                   	 "
+echo "04.-print     (p)   : Impresion de formularios de informacion	 "
+echo "05.-trace     (t)   : Seguimientos y traceos                       "
+
+echo "-============================================================-"
+
+#-------------------------------------------------------------------
+

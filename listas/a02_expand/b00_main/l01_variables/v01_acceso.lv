@@ -1,0 +1,62 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.2"          #  Version del Script actual
+FECHA_SCRIPT="Abril 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="lista"
+CONCEPT_PRODUCTO_03="main"
+CONCEPT_MOLDE_04="variables"
+CONCEPT_ARQUETIPO_03="general"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_CARACTER_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-------------------------------------------------------------------
+#-- Invocaciones WEB
+#-------------------------------------------------------------------
+# - DwLista Unix : v04_dwlista_unix (caracter,molde,arquetipo)
+#-==================================================================
+#+ Variables Principales de las plataformas:
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_MAIN}s01_${CONCEPT_MOLDE_03}/g/
+#-==================================================================
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}v01_accesos.v
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}v02_matrix.v
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}v03_libs.v
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}v04_info.v
+#-------------------------------------------------------------------
+
+#-Definicion de matrices
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_MAIN}s01_${CONCEPT_MOLDE_03}/s/fotos/
+#-==================================================================
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}v05_typeset.v
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N3 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N4}" != "" ] ; then
+echo "${LEVEL_NIVEL_04}/${LEVEL_NIVEL}---${CONCEPT_LEVEL_04}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================
+

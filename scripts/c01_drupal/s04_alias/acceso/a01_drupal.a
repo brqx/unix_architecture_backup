@@ -1,0 +1,76 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 1.1"          #  Version del Script actual
+FECHA_SCRIPT="Febrero 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_CARACTER="especifico"
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} ${CONCEPT_CARACTER}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- gopro - golnk - gopack - gopers - goproy
+#-------------------------------------------------------------------
+#-- godru - gl5 - gl6 - go5 - go6 - go7 - go8
+#-------------------------------------------------------------------
+#- Variables Requeridas
+#-------------------------------------------------------------------
+#-- BRQX_PROD - BRQX_LNK - BRQX_PACK - BRQX_PERS - BRQX_PROY
+#-------------------------------------------------------------------
+
+# Alias de acceso - Brqx Drupal
+#-====================================-
+
+#-- Alias de acceso a entornos
+
+alias gobase='cd ${BRQX_BASE}'
+alias golnk='cd ${BRQX_LNK}'
+alias gopack='cd ${BRQX_PACK}drupal/v50/modules'
+alias goplive='cd ${BRQX_PLIVE}drupal/v80/modules'
+alias goper='cd ${BRQX_PERS}drupal/v80'
+alias gopers='cd /brqx/pers/drupal/v50/files'
+alias goproy='cd ${BRQX_PROY}'
+
+alias gopers7='cd /brqx/pers/drupal/v70/files'
+#-- Alias de acceso a productos
+
+alias godru='cd ${BRQX_PROD}drupal/v70/'
+
+#-- Alias de acceso a los productos - bases
+
+alias go5='cd ${BRQX_PROD}drupal/v50/modules/abc'
+alias go6='cd ${BRQX_PROD}drupal/v60/modules/abc'
+alias go7='cd ${BRQX_PROD}drupal/v70/modules/abc'
+alias go8='cd ${BRQX_PROD}drupal/v80/modules/abc'
+alias go9='cd ${BRQX_PROD}drupal/v90/modules/abc'
+
+#-- Alias de acceso a los productos - bases
+
+alias got5='cd ${BRQX_PROD}drupal/v50/themes/abc'
+alias got6='cd ${BRQX_PROD}drupal/v60/themes/abc'
+alias got7='cd ${BRQX_PROD}drupal/v70/themes/abc'
+alias got8='cd ${BRQX_PROD}drupal/v80/themes/abc'
+alias got9='cd ${BRQX_PROD}drupal/v90/themes/abc'
+
+#-- Alias de acceso a los enlaces - links
+
+alias gl5='cd ${BRQX_LNK}drupal/v50/modules/abc'
+alias gl6='cd ${BRQX_LNK}drupal/v60/modules/abc'
+alias gl7='cd ${BRQX_LNK}drupal/v70/modules/abc'
+alias gl8='cd ${BRQX_LNK}drupal/v80/modules/abc'
+alias gl9='cd ${BRQX_LNK}drupal/v90/modules/abc'
+
+#-- Alias de acceso a los paquetes - funcionalidades
+
+alias gp5='cd ${BRQX_PACK}drupal/v50/modules/abc'
+alias gp6='cd ${BRQX_PACK}drupal/v60/modules/abc'
+alias gp7='cd ${BRQX_PACK}drupal/v70/modules/abc'
+alias gp8='cd ${BRQX_PACK}drupal/v80/modules/abc'
+alias gp9='cd ${BRQX_PACK}drupal/v90/modules/abc'
+
+

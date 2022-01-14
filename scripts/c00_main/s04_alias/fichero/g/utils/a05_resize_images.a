@@ -1,0 +1,55 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2016
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.1"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2016"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="fichero"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- testziz - checkspace_clean - checklogs - lista_carpetas
+#-------------------------------------------------------------------
+#- Variables / Funciones Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+# Alias de listados de espacio ocupado
+#-=================================================================-
+
+#-Hay que intentar informar de los alias
+
+alias lista_carpetas='find $PWD -maxdepth 1 -mindepth 1  -type d'
+
+
+alias resize0150='for i in $(find . -type f ); do echo $i ;  convert -resize "150"  $i $i ; done'
+alias resize0320='for i in $(find . -type f ); do echo $i ;  convert -resize "320"  $i $i ; done'
+alias resize0640='for i in $(find . -type f ); do echo $i ;  convert -resize "640"  $i $i ; done'
+alias resize1024='for i in $(find . -type f ); do echo $i ;  convert -resize "1024" $i $i ; done'
+alias resize2048='for i in $(find . -type f ); do echo $i ;  convert -resize "2048" $i $i ; done'
+alias resize2560='for i in $(find . -type f ); do echo $i ;  convert -resize "2560" $i $i ; done'
+alias resize3072='for i in $(find . -type f ); do echo $i ;  convert -resize "3072" $i $i ; done'
+alias resize3264='for i in $(find . -type f ); do echo $i ;  convert -resize "3264" $i $i ; done'
+alias resize4608='for i in $(find . -type f ); do echo $i ;  convert -resize "4608" $i $i ; done'
+
+alias resizy0150='for i in $(find . -type f ); do echo $i ;  convert -resize "x150"  $i $i ; done'
+alias resizy0240='for i in $(find . -type f ); do echo $i ;  convert -resize "x240"  $i $i ; done'
+alias resizy0480='for i in $(find . -type f ); do echo $i ;  convert -resize "x480"  $i $i ; done'
+alias resizy0768='for i in $(find . -type f ); do echo $i ;  convert -resize "x768"  $i $i ; done'
+alias resizy1536='for i in $(find . -type f ); do echo $i ;  convert -resize "x1536" $i $i ; done'
+alias resizy1920='for i in $(find . -type f ); do echo $i ;  convert -resize "x1920" $i $i ; done'
+alias resizy3072='for i in $(find . -type f ); do echo $i ;  convert -resize "x3072" $i $i ; done'
+alias resizy3264='for i in $(find . -type f ); do echo $i ;  convert -resize "x3264" $i $i ; done'
+alias resizy4608='for i in $(find . -type f ); do echo $i ;  convert -resize "x4608" $i $i ; done'
+
+
+alias autoorient='for i in $(find $PWD -type f) ; do echo $i;  convert ${i}  -auto-orient ${i}  ; done'
+
+
+#-------------------------------------------------------------------

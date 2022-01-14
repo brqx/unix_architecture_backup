@@ -1,0 +1,48 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2019
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.3"          #  Version del Script actual
+FECHA_SCRIPT="Octubre 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Mini - Alias definidos:
+#-------------------------------------------------------------------
+#-- cf - cl - rf - cz - tz - mp
+#-------------------------------------------------------------------
+#- Variables Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+# Mini - Alias de manejo de estructuras
+#-====================================-
+
+#- Copia Recursiva sin confirmacion
+alias cf='cp -Rf '
+
+#- Copia Recursiva sin confirmacion respetando enlaces - No funciona
+#alias cl='cp -Lr '
+
+alias cpl='rsync -avz '
+
+alias cl='cpl'
+
+#- Borrado Recursivo sin confirmacion
+alias rf='rm -Rf '
+
+#- Compresion automatica de ficheros tar.gz
+alias cz='tar zcpvf '
+
+#- Descompresion automatica de ficheros tar.gz
+alias tz='tar zxvf '
+
+#- Creaccion de rutas
+alias mp='mkdir -p '
+
+

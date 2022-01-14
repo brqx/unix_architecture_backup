@@ -1,0 +1,59 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.3"          #  Version del Script actual
+FECHA_SCRIPT="Noviembre 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=05		# Variable control profundidad alcanzada
+LEVEL_NIVEL_05=05	# Variable control script
+CONCEPT_FORMATO_05="lista"
+CONCEPT_MOLDE_05="funciones"
+CONCEPT_PRODUCTO_05="mysql"
+CONCEPT_ARQUETIPO_05="user"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_05="${CONCEPT_FORMATO_05} ${CONCEPT_MOLDE_05} ${CONCEPT_ARQUETIPO_05}"
+CONCEPT_LEVEL_05="${CONCEPT_LEVEL_05} ${CONCEPT_PRODUCTO_05} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_05=${SD_MYSQL}s02_${CONCEPT_MOLDE_05}/${CONCEPT_ARQUETIPO_05}/g/local/
+
+#-- GENERAL
+
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+#- BBDD LOCAL - SIMPLE
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/f01_db_createuser.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/f02_db_grantuser.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/f03_db_dropuser.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/f04_db_cambiaclave.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/f05_db_listausers.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/f06_db_showgrants.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/f07_db_quitaclave.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/f13_db_deleteusertab.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "${LEVEL_NIVEL_03} / ${LEVEL_NIVEL}	- Ejecutadas ${CONCEPT_LEVEL_03}"
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

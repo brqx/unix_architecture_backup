@@ -1,0 +1,41 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.3"          #  Version del Script actual
+FECHA_SCRIPT="Febrero 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- suo - mx - m2 - drutmp
+#-------------------------------------------------------------------
+#- Funciones Requeridas
+#-------------------------------------------------------------------
+#-- surl_out
+#-------------------------------------------------------------------
+
+# Alias de Ejecuciones - Brqx Drupal
+#-====================================-
+
+#-- Alias de acceso a productos
+
+alias suo='surl_out'
+
+#- Drupal TMP Link Create - Crea todos los directorios tmp necesarios
+
+alias drutmp='find . -type l | grep tmp | xargs ls -l | cut -d " " -f11- | xargs mkdir -p'
+
+#-- Autocambio de salto linea y usuario - para oficina
+
+alias mx="find . -type f | xargs dos2unix  && chown -R ibm:users * && clear && . /home/ibm/r.x"
+
+alias m2="find . -type f | xargs dos2unix  && chown -R ibm:users * && clear && . /home/ibm/r2.x"
+
+#-- Alias para auto generar estructura para depuracion en Drupal 5
+alias drudebug='for i in /brqx/lnk/drupal/v50/core/*; do basename $i; lnf /brqx/base/drupal/v50/core/v50YY/$(basename $i) ; done'

@@ -1,0 +1,75 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2013
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.3"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2013"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_03=04	# Variable control script
+CONCEPT_FORMATO_04="lista"
+CONCEPT_MOLDE_04="funciones"
+CONCEPT_PRODUCTO_04="server"
+CONCEPT_ARQUETIPO_04="fichero"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_04=${SD_SERVER}s02_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO_04}/
+
+#-- Remote commands - General
+
+RLINKS_REMOTE=${LSCRIPT_PARTICULAR_PATH_04}f08_local_sh/s01_rlinks/
+
+
+#-- Remote commands - Specific N2
+
+#- Arq
+
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/arq/f61_cp_path_arqlocal_core.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/arq/f63_cp_path_arqlocal_soa.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/arq/f65_cp_path_arqlocal_frontal.f
+#-------------------------------------------------------------------
+
+#- Mav
+
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/mav/f71_cp_path_mavlocal_core.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/mav/f73_cp_path_mavlocal_soa.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/mav/f75_cp_path_mavlocal_frontal.f
+#-------------------------------------------------------------------
+
+#-- Remote commands - Specific N3
+
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n3/f93_version_local_update.f
+#-------------------------------------------------------------------
+
+#-- Remote commands - Specific N4
+
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n4/f01_release_local_update.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n4/f02_snap_local_update.f
+#-------------------------------------------------------------------
+
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "${LEVEL_NIVEL_03} / ${LEVEL_NIVEL}	- Ejecutadas ${CONCEPT_LEVEL_03}"
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

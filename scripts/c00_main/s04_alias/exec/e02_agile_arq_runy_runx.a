@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2016
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.0"          #  Version del Script actual
+FECHA_SCRIPT="Octubre 2016"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="exec"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- runx - runy
+#-- deb
+#-------------------------------------------------------------------
+
+#Acceso al sistema como root
+#-------------------------------------------------------------------
+
+alias runx='. /brqx/r.x'
+alias runy='. /root/scripts/arq/y.x'
+
+alias deb='cat brqx_debug.ddt  | tr ">" "\n"'
+alias deg='cat brqx_debug.gar  | tr ">" "\n"'
+alias tim='cat brqx_page.load  | tr ">" "\n"'
+

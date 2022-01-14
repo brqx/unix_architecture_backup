@@ -1,0 +1,28 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2015
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.1"          #  Version del Script actual
+FECHA_SCRIPT="Noviembre 2015"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="listado"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- lld - lls - llc
+#-------------------------------------------------------------------
+
+#Listado sencillo de directorios nivel 1 preparado para usarse
+
+alias lld='find . -maxdepth 1 -mindepth 1  -type d | cut -d "/" -f2'
+alias lls='lld | sort'
+alias llc='lls | tr "\n" " " '
+
+alias lll='find . -maxdepth 1 -mindepth 1  -type l | cut -d "/" -f2'
+
+alias llf='find . -maxdepth 1 -mindepth 1  -type f | cut -d "/" -f2'
+

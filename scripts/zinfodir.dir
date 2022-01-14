@@ -1,0 +1,28 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Info Directorio Entornos Unix - Brqx Site - I+D
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="9.1" #  Version del Script actual
+FECHA_SCRIPT="Abril 2012"
+NIVEL_SCRIPT=1 
+#------------------------------------------------------------------- 
+clear
+#-------------------------------------------------------------------
+echo "-============================================================-"
+echo "Informacion directorio : $(basename $PWD) "
+echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+echo "${FECHA_SCRIPT} - Ver : ${VERSION_SCRIPT} - Nivel ${NIVEL_SCRIPT}  "
+echo "-============================================================-"
+echo "1.-c00_main          : Scripts generales de proceso con Unix"
+echo "2.-c01_drupal        : Scripts del producto Drupal"
+echo "3.-c02_cpanel        : Scripts del producto Cpanel"
+echo "4.-c03_oracle        : Scripts del producto Oracle"
+echo "5.-c04_mysql         : Scripts del producto Mysql"
+echo "6.-c05_websphere     : Scripts del producto Ibm Websphere"
+echo "7.-c06_server        : Scripts del producto Server"
+echo "8.-c07_hydra         : Scripts pendientes de asignar"
+
+echo "-============================================================-"
+ 
+#-------------------------------------------------------------------

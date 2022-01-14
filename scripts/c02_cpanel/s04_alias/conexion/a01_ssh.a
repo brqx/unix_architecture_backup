@@ -1,0 +1,35 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2009
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 1.0"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2010"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_CARACTER="especifico"
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} ${CONCEPT_CARACTER}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- con22 - con61 - con23
+#-------------------------------------------------------------------
+#-- xcp - xxcp
+#-------------------------------------------------------------------
+#- Variables Requeridas
+#-------------------------------------------------------------------
+
+# Alias de acceso - Brqx Cpanel
+#-====================================-
+
+#-- Alias de acceso genericos - Ya no se usa
+
+alias con22='con_ssh'
+
+alias con50='con_ssh root 204.61.222.50 65533'
+
+alias xcp='scp -P 65533 '
+alias xxcp='scp -P 65533 root@abrqx.com:'
+

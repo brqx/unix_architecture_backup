@@ -1,0 +1,47 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2016
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.2"          #  Version del Script actual
+FECHA_SCRIPT="Octubre 2016"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_CARACTER_04="comunes"
+CONCEPT_MOLDE_04="alias"
+CONCEPT_ARQUETIPO_04="exec"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_CARACTER_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_04=${SD_MAIN}s04_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO_04}
+
+#-==================================================================
+#+ Alias Comunes de las plataformas - Nivel 04
+#-==================================================================
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/e01_sudo_su_root.a
+#-------------------------------------------------------------------
+
+. ${LSCRIPT_PARTICULAR_PATH_04}/e02_agile_arq_runy_runx.a
+
+. ${LSCRIPT_PARTICULAR_PATH_04}/e03_golang_aliases.a
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N4 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N4}" != "" ] ; then
+echo "${LEVEL_NIVEL_04}/${LEVEL_NIVEL}----${CONCEPT_LEVEL_04}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================
+

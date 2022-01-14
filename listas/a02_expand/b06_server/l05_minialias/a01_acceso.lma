@@ -1,0 +1,50 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2016
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.0"          #  Version del Script actual
+FECHA_SCRIPT="Febrero 2016"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03		# Variable control profundidad alcanzada
+LEVEL_NIVEL_03=03	# Variable control script
+CONCEPT_FORMATO_03="script"
+CONCEPT_MOLDE_03="minialias"
+CONCEPT_PRODUCTO_03="server"
+CONCEPT_ARQUETIPO_03="acceso"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_03="${CONCEPT_FORMATO_03} ${CONCEPT_MOLDE_03} ${CONCEPT_ARQUETIPO_03}"
+CONCEPT_LEVEL_03="${CONCEPT_LEVEL_03} ${CONCEPT_PRODUCTO_03} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_SERVER}s05_${CONCEPT_MOLDE_03}/${CONCEPT_ARQUETIPO_03}/
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}a01_ssh.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}a21_ssh_uppercase.ma 
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}a02_ssh_from.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}a03_sn_ssh_connect.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}a04_sfn_ssh_pwd_connect.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}a05_shn_ssh_home_connect.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}a06_son_ssh_old_path_connect.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}a10_ssh_sure.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}a11_zync.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}a12_clean_ssh.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}a31_ssh_delete_force.ma 
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "$LEVEL_NIVEL	-	Ejecutadas $CONCEPT_LEVEL"
+#-------------------------------------------------------------------

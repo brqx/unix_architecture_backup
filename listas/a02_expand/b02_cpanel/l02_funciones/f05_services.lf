@@ -1,0 +1,73 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_LSCRIPT_03="V 5.12"          #  Version del Script actual
+FECHA_LSCRIPT_03="Noviembre 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03
+LEVEL_NIVEL_03=03
+CONCEPT_MOLDE_03="funciones"
+CONCEPT_ARQUETIPO_03="servicios"
+CONCEPT_LEVEL_03="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} ${CONCEPT_CARACTER}"
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_CPANEL}s02_${CONCEPT_MOLDE_03}/${CONCEPT_ARQUETIPO_03}/
+
+
+#-Funciones generales N3
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n3/f31_check_server_services_teston_and_send.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n3/f32_check_server_services_testoff_and_send.f
+#-------------------------------------------------------------------
+
+
+#-Funciones generales N2
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n2/f01_full_start_services.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n2/f02_full_stop_services.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n2/f03_full_restart_services.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n2/f11_full_ckrun_services.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n2/f12_full_ckstop_services.f
+#-------------------------------------------------------------------
+
+
+#-Funciones generales N1
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n1/f01_start_service.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n1/f02_stop_service.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n1/f03_restart_service.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n1/f04_check_service.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "${LEVEL_NIVEL_03} / ${LEVEL_NIVEL}	- Ejecutadas ${CONCEPT_LEVEL_03}"
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+VERSION_LSCRIPT_03=
+FECHA_LSCRIPT_03=
+#-------------------------------------------------------------------
+LEVEL_NIVEL_03=
+CONCEPT_FORMATO_03=
+CONCEPT_MOLDE_03=
+CONCEPT_ARQUETIPO_03=
+CONCEPT_LEVEL_03=
+#-------------------------------------------------------------------

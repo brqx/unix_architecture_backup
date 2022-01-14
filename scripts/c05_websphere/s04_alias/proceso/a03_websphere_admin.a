@@ -1,0 +1,31 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.3"          #  Version del Script actual
+FECHA_SCRIPT="Julio 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="proceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- wsr
+#-------------------------------------------------------------------
+#- Funciones Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+# Variables - Alias - Librerias
+#-====================================-
+
+#- Alias administracion Websphere - aplicacion wsadmin
+
+#- Mini alias wsr
+alias wsjacl="wsadmin_run_jacl"
+
+alias wspyth="wsadmin_run_pyth"

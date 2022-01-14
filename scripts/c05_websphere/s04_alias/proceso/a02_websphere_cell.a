@@ -1,0 +1,78 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2010
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.3"          #  Version del Script actual
+FECHA_SCRIPT="Noviembre 2010"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="proceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- vv - vcell - 
+#-------------------------------------------------------------------
+#- Funciones Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+# Variables - Alias - Librerias
+#-====================================-
+
+#- Variables
+
+alias vv="ver_variables"
+
+alias vvcell="vv"
+
+alias vvnodo="vv ${WEBSPHERE_NODO}"
+
+alias vvserver="vv ${WEBSPHERE_SERVER}"
+
+#- Librerias
+
+alias vl="ver_librerias"
+
+alias vlcell="vl"
+
+alias vlnodo="vl ${WEBSPHERE_NODO}"
+
+alias vlserver="vl ${WEBSPHERE_SERVER}"
+
+
+#- JDBC Providers
+
+alias vjdbcpro="ver_oracle_jdbc_providers"
+
+alias vjdbpcell="vjdbcpro"
+
+alias vjdbpnodo="vjdbcpro ${WEBSPHERE_NODO}"
+
+alias vjdbpserver="vjdbcpro ${WEBSPHERE_SERVER}"
+
+
+#- JDBC Datasources
+
+alias vj="ver_jdbc"
+
+alias vjcell="vj"
+
+alias vjnodo="vj ${WEBSPHERE_NODO}"
+
+alias vjserver="vj ${WEBSPHERE_SERVER}"
+
+
+
+#- JDBC Alias - solo existe a nivel de celda : security.xml
+
+alias va="ver_alias"
+
+alias vacell="va"
+
+alias vanodo="va"
+
+alias vaserver="va"

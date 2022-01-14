@@ -1,0 +1,70 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.0"          #  Version del Script actual
+FECHA_SCRIPT="Octubre 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03
+CONCEPT_MOLDE_03="alias"
+CONCEPT_ARQUETIPO_03="fichero"
+CONCEPT_LEVEL_03="Lista ${CONCEPT_MOLDE_03} ${CONCEPT_ARQUETIPO_03}"
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_SERVER}s04_${CONCEPT_MOLDE_03}/
+
+#- Incorporamos nuevos niveles y el caracter para las funciones
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}fichero/g/sscp/a10_scp_auto_sync.a
+#-------------------------------------------------------------------
+
+#- Sincronismo 2012
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}fichero/s/a00_sync/a01_servers_cosym_sync_custom_to_local.a
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}fichero/s/a00_sync/a02_servers_cosym_sync_local_to_custom.a
+#-------------------------------------------------------------------
+
+
+##f01_general/sync
+
+
+#-- cfs == Relativas al path actual - Sync
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}fichero/s/s01_ssync/a01_cfs_auto_mapfre.a
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}fichero/s/s01_ssync/a02_cfs_auto_brqx.a
+#-------------------------------------------------------------------
+
+#-- cfh == Manteniendo el home / opt
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}fichero/s/s02_shome/a11_cfh_auto_mapfre.a
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}fichero/s/s02_shome/a12_cfh_auto_brqx.a
+#-------------------------------------------------------------------
+
+#-- cfy == Indicando un path
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}fichero/s/s03_ypath/a21_cfy_auto_mapfre.a
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}fichero/s/s03_ypath/a22_cfy_auto_brqx.a
+#-------------------------------------------------------------------
+
+
+#-- Backup y super usuario - pendiente de configuracion
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}fichero/g/back/a01_bk_opt_server.a
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "$LEVEL_NIVEL	-	Ejecutadas $CONCEPT_LEVEL"
+#-------------------------------------------------------------------

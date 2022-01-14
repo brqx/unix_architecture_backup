@@ -1,0 +1,35 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.0"          #  Version del Script actual
+FECHA_SCRIPT="Octubre 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="permiso"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- cww - cwi - cwr - cwo
+#-------------------------------------------------------------------
+
+# Alias de acceso - Rutas Profiling
+#-====================================-
+
+#- Ruta Scripts
+alias cww='chown -R wwwrun:users *'
+
+#-- Igual estas rutas dependen del entorno
+#- Alias IBM - Mapfre
+alias cwi='chown -R ibm:users *'
+
+#- Alias Brqx - ricabel - Mapfre
+alias cwr='chown -R ricabel:users *'
+
+#-- Igual estas rutas dependen del entorno
+#- Alias IBM - Oracle
+alias cwo='chown -R oracle:oinstall *'
+

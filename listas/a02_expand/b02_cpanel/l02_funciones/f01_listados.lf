@@ -1,0 +1,50 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_LSCRIPT_03="V 5.12"          #  Version del Script actual
+FECHA_LSCRIPT_03="Noviembre 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03
+LEVEL_NIVEL_03=03
+CONCEPT_MOLDE_03="funciones"
+CONCEPT_ARQUETIPO_03="listados"
+CONCEPT_LEVEL_03="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} ${CONCEPT_CARACTER}"
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_CPANEL}s02_${CONCEPT_MOLDE_03}/${CONCEPT_ARQUETIPO_03}/
+
+
+#-Funciones globales arquitectura
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}globales/f02_brqx_listado_enfoques.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}globales/f12_brqx_listado_anagramas.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}globales/f13_brqx_listado_proyectos.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}globales/f14_brqx_listado_dominios.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}globales/f15_brqx_listado_servidores.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}globales/f16_brqx_listado_registradores.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}globales/f17_brqx_listado_renovaciones.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "${LEVEL_NIVEL_03} / ${LEVEL_NIVEL}	- Ejecutadas ${CONCEPT_LEVEL_03}"
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

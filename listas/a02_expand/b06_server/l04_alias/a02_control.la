@@ -1,0 +1,26 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.0"          #  Version del Script actual
+FECHA_SCRIPT="Junio 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03
+CONCEPT_CARACTER_03="especifico"
+CONCEPT_MOLDE_03="alias"
+CONCEPT_ARQUETIPO_03="control"
+CONCEPT_LEVEL_03="Lista ${CONCEPT_MOLDE_03} ${CONCEPT_ARQUETIPO_03} ${CONCEPT_CARACTER_03}"
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_SERVER}s04_${CONCEPT_MOLDE_03}/
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}control/s/a01_control_servidores.a
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "$LEVEL_NIVEL	-	Ejecutadas $CONCEPT_LEVEL"
+#-------------------------------------------------------------------

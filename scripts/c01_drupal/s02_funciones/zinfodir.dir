@@ -1,0 +1,35 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Info Directorio Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="5.1" #  Version del Script actual
+FECHA_SCRIPT="Febrero 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_PRODUCTO_04="drupal"
+CONCEPT_MOLDE_04=""
+CONCEPT_ARQUETIPO_04=""
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#------------------------------------------------------------------- 
+clear
+#-------------------------------------------------------------------
+echo "-============================================================-"
+echo "Informacion directorio : $(basename $PWD ) ( ${CONCEPT_LEVEL_04} )  "
+echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+echo "${FECHA_SCRIPT} - Ver : ${VERSION_SCRIPT} - Nivel ${NIVEL_SCRIPT}  "
+echo "-============================================================-"
+echo "1.-acceso                (a)   : Acceso a rutas de portales   "
+echo "2.-backup                (b)   : Funciones de copia de seguridad"
+echo "3.-drupal                (d)   : Funciones agilidad drupal - drush "
+echo "4.-drusol                (s)   : Soluciones para Drupal       "
+echo "5.-parser                (p)   : Auto Parseo de parametros    "
+echo "-============================================================-"
+
+
+#-------------------------------------------------------------------
+

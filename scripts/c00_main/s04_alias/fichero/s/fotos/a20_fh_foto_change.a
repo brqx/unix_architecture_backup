@@ -1,0 +1,61 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.2"          #  Version del Script actual
+FECHA_SCRIPT="Febrero 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- cf - cl - rf - tz - mp
+#-------------------------------------------------------------------
+#- Funciones / Alias / Variables Requeridas
+#-------------------------------------------------------------------
+#-- fh
+#-------------------------------------------------------------------
+
+# Funciones de navegacion rapida por filesystem de fotos
+#-=================================================================-
+#- Resoluciones permitidas: 
+#  3264x2448 - 2048x1536 - 1024x0764 - 0640x0480 - 0320x0240 - 0150x0090
+#
+
+#- Cambio ruta 3264x2448
+alias fh3='fh 3264x2448'
+
+#- Cambio ruta 2048x1536
+alias fh2='fh 2048x1536'
+
+#- Cambio ruta 1024x0768
+alias fh1='fh 1024x0768'
+
+#- Cambio ruta 0640x0480
+alias fh6='fh 0640x0480'
+
+#- Cambio ruta 0320x0240
+alias fh4='fh 0320x0240'
+
+#- Cambio ruta 0150x0090
+alias fh5='fh 0150x0090'
+
+#- Rename 3264x2048
+
+alias ren2048='for i in $(find . -type f ); do echo $i ;  rename "s/3264x2448/2048x1536/g" $i ; done'
+alias ren1024='for i in $(find . -type f ); do echo $i ;  rename "s/2048x1536/1024x0768/g" $i ; done'
+alias ren0640='for i in $(find . -type f ); do echo $i ;  rename "s/1024x0768/0640x0480/g" $i ; done'
+alias ren0320='for i in $(find . -type f ); do echo $i ;  rename "s/0640x0480/0320x0240/g" $i ; done'
+
+#- Convert 3264x2048
+
+alias con3264='for i in $(find . -type f ); do echo $i ;  convert -resize "3264" $i $i ; done'
+alias con2048='for i in $(find . -type f ); do echo $i ;  convert -resize "2048" $i $i ; done'
+alias con1024='for i in $(find . -type f ); do echo $i ;  convert -resize "1024" $i $i ; done'
+alias con0640='for i in $(find . -type f ); do echo $i ;  convert -resize "640" $i $i ; done'
+alias con0320='for i in $(find . -type f ); do echo $i ;  convert -resize "320" $i $i ; done'
+

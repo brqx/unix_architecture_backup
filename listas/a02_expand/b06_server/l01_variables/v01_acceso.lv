@@ -1,0 +1,78 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2010
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.1"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="lista"
+CONCEPT_MOLDE_04="variables"
+CONCEPT_PRODUCTO_04="server"
+CONCEPT_ARQUETIPO_04="general"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-------------------------------------------------------------------
+#-- Invocaciones WEB
+#-------------------------------------------------------------------
+# - DwLista Unix : v04_dwlista_unix (caracter,molde,arquetipo)
+#-==================================================================
+#+ Variables Comunes de las plataformas:
+
+LSCRIPT_PARTICULAR_PATH_04=${SD_SERVER}s01_${CONCEPT_MOLDE_04}/
+
+#--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==
+#--	Variables de Accesos	-	Posicion 01
+#--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==
+
+#- Ambito general
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}g/v01_rutas_servidor.v
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}g/v02_recursos_servidor.v
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}g/v03_librerias_servidor.v
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}g/v04_backup_servidor.v
+#-------------------------------------------------------------------
+
+
+#- Ambito especifico
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}s/v01_versiones.v
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}s/v02_repositorios_cvs.v
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}s/v03_apache.v
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}s/v04_rutas_arquitectura.v
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}s/v05_urls_arquitectura.v
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}s/v06_proxy_sistema.v
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}s/v07_usuarios_sistema.v
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}s/v08_repositorios_ldap.v
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N3 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N4}" != "" ] ; then
+echo "${LEVEL_NIVEL_04}/${LEVEL_NIVEL}---${CONCEPT_LEVEL_04}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================
+

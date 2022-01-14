@@ -1,0 +1,74 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2010
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.1"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2010"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_MOLDE_04="funciones"
+CONCEPT_ARQUETIPO_04="utils"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+#+ Funciones Comunes de ACCESO 
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_N4=${SD_MAIN}s02_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO_04}/
+
+#-- Cadenas
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}cadenas/f01_cambio_inicial.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}cadenas/f02_rnd_genera_random.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}cadenas/f03_genwin_genera_ruta_windows.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}cadenas/f04_uniforma_salida.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}cadenas/f05_establece_maxima_longitud.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}cadenas/f06_ajusta_cadena_guiones.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}cadenas/f10_fix_bar_path_ajuste_barra_ruta.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}cadenas/f15_establece_longitud_titulo_y_columnas.f
+#-------------------------------------------------------------------
+
+#-- Fechas
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}fechas/f01_obtener_fecha_get_current_date.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}fechas/f02_convertir_timestamp_to_fecha_stamp2date.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}fechas/f03_convertir_fecha_to_timestamp_date2stamp.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}fechas/f04_resta_fechas_diffstamps.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}fechas/f05_obtener_get_current_timestamp.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N4 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N4}" != "" ] ; then
+echo "${LEVEL_NIVEL_04}/${LEVEL_NIVEL}----${CONCEPT_LEVEL_04}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

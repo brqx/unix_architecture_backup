@@ -1,0 +1,48 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.2"          #  Version del Script actual
+FECHA_SCRIPT="Mayo 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="fichero"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- checkSpace - checkGigas - checkMegas
+#-------------------------------------------------------------------
+#- Variables / Funciones Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+# Alias de listados de espacio ocupado
+#-====================================-
+
+#-La idea es tener una alternativa por si la funcion codir no funciona en la version
+# de linux correspondiente
+
+#-Nuevo alias checkspace que admite carpetas con espacios
+alias CheckSpace='for i in *; do echo "$(du -h $i | tail -1 ) - carpeta $i"; done'
+
+alias checkSpace='for i in $(find .  -maxdepth 1 -type d | grep "/" | cut -d "/" -f2 | sort ); do echo $( du -sh $i | tail -1 | tr -s  " " | cut -d " " -f1 ) ; done| tr " " "\t"'
+
+
+alias checkSure='for i in $(find .  -maxdepth 1 -type d | grep -v -E "(sata|proc|brqx|dev)" | grep "/" | cut -d "/" -f2 ); do echo $( du -sh $i | tail -1 | tr -s  " " | cut -d " " -f1 ) ; done| tr " " "\t"'
+#-------------------------------------------------------------------
+
+#-Se ha actualizado el alias checkspace - cambia tabuladores - dobla espacios y filtra
+
+alias checkMegas='checkSpace | grep "M  "'
+alias checkGigas='checkSpace | grep "G  "'
+
+#-Alias de espacio ocupado
+alias dame_Megas='checkMegas'
+alias dame_Gigas='checkGigas'
+alias dame_Espacio='checkSpace'
+
+alias c='checkSpace'

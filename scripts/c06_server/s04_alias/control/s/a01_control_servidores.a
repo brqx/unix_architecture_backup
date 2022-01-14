@@ -1,0 +1,40 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2009
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 1.0"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2010"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_CARACTER="especifico"
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} ${CONCEPT_CARACTER}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- check_consolas
+#-------------------------------------------------------------------
+#- Variables Requeridas
+#-------------------------------------------------------------------
+
+# Alias de acceso - Server
+#-====================================-
+
+#-- Chequeo de las consolas de los servidores
+alias check_consolas='check_sites_no_proxy ${RS_CONN}zsites_consolas.dat'
+
+#-- Chequeo de los frontales de los servidores
+alias check_frontales='check_sites_no_proxy'
+
+#-- Chequeo de los apaches
+alias check_apaches='check_servidores_apache_no_proxy'
+
+#-- Alias de chequeo por defecto
+alias check_entorno='check_entorno_no_proxy'
+
+
+#-- Acceso a recursos fotograficos
+alias gzf='cd ${RECFOTOS}'
+

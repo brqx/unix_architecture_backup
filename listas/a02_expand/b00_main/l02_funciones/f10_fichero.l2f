@@ -1,0 +1,420 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2013
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.3"          #  Version del Script actual
+FECHA_SCRIPT="Febrero 2013"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_MOLDE_04="funciones"
+CONCEPT_ARQUETIPO_04="fichero"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04}  ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+#+ Funciones Comunes de ACCESO 
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_N4=${SD_MAIN}s02_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO_04}/
+
+#-- Zona General
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g01_count/f01_wcd_cuenta_carpetas_ruta.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g01_count/f02_wcs_cuenta_ficheros_ruta.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g01_count/f03_wcs_fotos.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g01_count/f04_wcl_cuenta_links_ruta.f
+#-------------------------------------------------------------------
+
+#-- Funciones de limpieza - vaciado
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g02_cleaning/n1/f11_vf_vacia_fichero_log.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g02_cleaning/n1/f12_qs_quita_spacios.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g02_cleaning/n1/f13_gfday_elimina_filtro.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g02_cleaning/n1/f14_weekdel_elimina_filtro_semana.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g02_cleaning/n1/f15_gfweekdel_elimina_filtro_y_semana.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g02_cleaning/n1/f31_svf_sudo_vacia_fichero_log.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g02_cleaning/n1/f33_sugfday_sudo_elimina_filtro.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g02_cleaning/n2/f21_vcf_vacia_cadena_ficheros_log.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g02_cleaning/n2/f41_svcf_sudo_vacia_cadena_ficheros_log.f
+#-------------------------------------------------------------------
+
+
+#-- Funciones de presentacion - filtrado
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g03_present/f11_tailx_corte_n_lineas.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g03_present/f12_tailf_corte_n_lineas_vivo.f
+#-------------------------------------------------------------------
+
+#-- Funciones de presentacion - sort
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g04_sort/n1/f01_sf_sort_field_n.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g04_sort/n2/f11_sf1_sort_1field.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g04_sort/n2/f12_sf2_sort_2field.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g04_sort/n2/f13_sf3_sort_3field.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g04_sort/n2/f14_sf4_sort_4field.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g04_sort/n2/f15_sf5_sort_5field.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g04_sort/n2/f16_sf6_sort_6field.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g04_sort/n2/f17_sf7_sort_7field.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g05_rename/f01_ref_rename_files.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g05_rename/f02_ren_rename_multiple_files.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g07_replace/f01_repf_replace_files.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g07_replace/f02_rep_replace_multiple_files.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g07_replace/f03_repr_replace_recursive.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g06_convert/f01_cv_convert_utf8.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}g/g06_convert/f02_cv_convert_utf16.f
+#-------------------------------------------------------------------
+
+
+
+#-- Zona de fotos
+#-------------------------------------------------------------------
+
+LPATH_GN=${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n1/a01_gn/
+
+LPATH_GNAUX=${LPATH_GN}auxiliar/
+LPATH_GNCAD=${LPATH_GN}cadena/
+LPATH_GNCEL=${LPATH_GN}celda/
+LPATH_GNMAT=${LPATH_GN}matriz/
+LPATH_GNFIC=${LPATH_GN}fichero/
+
+#--- Nivel 1 
+
+#- - - - Auxiliares de proceso
+
+#-------------------------------------------------------------------
+. ${LPATH_GNAUX}f10_procesa_linea_codigos.f
+#-------------------------------------------------------------------
+. ${LPATH_GNAUX}f11_procesa_codigo_fotos.f
+#-------------------------------------------------------------------
+. ${LPATH_GNAUX}f12_fh_cambia_path_resolucion.f
+#-------------------------------------------------------------------
+. ${LPATH_GNAUX}f20_procesa_codigo_fotos_pais.f
+#-------------------------------------------------------------------
+. ${LPATH_GNAUX}f21_procesa_codigo_fotos_temporada.f
+#-------------------------------------------------------------------
+. ${LPATH_GNAUX}f30_procesa_codigo_fotos_last.f
+#-------------------------------------------------------------------
+
+
+
+#- - - - Auxiliares de colecciones
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n1/a01_gn/auxiliar/f41_procesa_cadena_servilletas.f
+#-------------------------------------------------------------------
+
+
+#-- Tenemos cadenas - matrices - ficheros/listados
+
+#- - - - - - - - - - - - C A D E N A S - - - - - - - - - - - - - - -
+
+#-------------------------------------------------------------------
+. ${LPATH_GNCAD}fotos/full/f21_genera_cadena_fotos.f
+#-------------------------------------------------------------------
+. ${LPATH_GNCAD}fotos/last/f22_genera_cadena_fotos_last.f
+#-------------------------------------------------------------------
+. ${LPATH_GNCAD}fotos/pais/f23_genera_cadena_fotos_pais.f
+#-------------------------------------------------------------------
+. ${LPATH_GNCAD}fotos/year/f52_genera_cadena_fotos_temporada.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+. ${LPATH_GNCAD}lugar/f47_gencluga_genera_cadena_lugares.f
+#-------------------------------------------------------------------
+. ${LPATH_GNCAD}ciudad/f46_gencciudad_genera_cadena_ciudades.f
+#-------------------------------------------------------------------
+. ${LPATH_GNCAD}pais/f45_gencpais_genera_cadena_paises.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LPATH_GNCAD}recuerdo/f43_gencrecuerdos_genera_cadena_recuerdos.f
+#-------------------------------------------------------------------
+. ${LPATH_GNCAD}recuerdo/f44_genc5recuerdos_genera_cadena_cinco_recuerdos.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+###. ${LPATH_GNCAD}evento/f23_geneven_genera_evento.f
+#-------------------------------------------------------------------
+
+#- - - - - - - - - - - - - C E L D A S - - - - - - - - - - - - - - -
+
+#-------------------------------------------------------------------
+. ${LPATH_GNCEL}localidad/full/f45_genera_celda_localidades.f
+#-------------------------------------------------------------------
+. ${LPATH_GNCEL}localidad/last/f35_genera_celda_localidades_last.f
+#-------------------------------------------------------------------
+. ${LPATH_GNCEL}localidad/pais/f55_genera_celda_localidades_pais.f
+#-------------------------------------------------------------------
+. ${LPATH_GNCEL}localidad/year/f56_genera_celda_localidades_temporada.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+. ${LPATH_GNCEL}recuerdo/full/f35_genera_celda_recuerdos.f
+#-------------------------------------------------------------------
+. ${LPATH_GNCEL}recuerdo/pais/f37_genera_celda_recuerdos_pais.f
+#-------------------------------------------------------------------
+. ${LPATH_GNCEL}recuerdo/year/f38_genera_celda_recuerdos_temporada.f
+#-------------------------------------------------------------------
+. ${LPATH_GNCEL}recuerdo/last/f36_genera_celda_recuerdos_last.f
+#-------------------------------------------------------------------
+
+
+#- - - - - - - - - - - - - M A T R I C E S - - - - - - - - - - - - -
+
+#--- --- FULL
+
+#-------------------------------------------------------------------
+. ${LPATH_GNMAT}localidad/full/f24_genera_matriz_localidades.f
+#-------------------------------------------------------------------
+. ${LPATH_GNMAT}localidad/last/f34_genera_matriz_localidades_last.f
+#-------------------------------------------------------------------
+. ${LPATH_GNMAT}localidad/pais/f44_genera_matriz_localidades_pais.f
+#-------------------------------------------------------------------
+. ${LPATH_GNMAT}localidad/year/f45_genera_matriz_localidades_temporada.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LPATH_GNMAT}recuerdo/full/f32_genera_matriz_recuerdos.f
+#-------------------------------------------------------------------
+. ${LPATH_GNMAT}recuerdo/last/f33_genera_matriz_recuerdos_last.f
+#-------------------------------------------------------------------
+. ${LPATH_GNMAT}recuerdo/pais/f36_genera_matriz_recuerdos_pais.f
+#-------------------------------------------------------------------
+. ${LPATH_GNMAT}recuerdo/year/f35_genera_matriz_recuerdos_temporada.f
+#-------------------------------------------------------------------
+
+
+#- - - - Generacion de cadenas - colecciones
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+###. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n1/a01_gn/cadena/f41_genera_cadena_servilletas.f
+#-------------------------------------------------------------------
+
+#- - - - - - - - - - - - - F I C H E R O S - - - - - - - - - - - - -
+
+
+#----- ---- Generacion de entidades
+
+#----- ---- -- Lugares
+
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/lugar/full/f46_genfluga_genera_fichero_lugares.f
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/lugar/pais/f37_genfluga_genera_fichero_lugares_pais.f
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/lugar/year/f36_genfluga_genera_fichero_lugares_temporada.f
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/lugar/last/f57_genfluga_genera_fichero_lugares_last.f
+#-------------------------------------------------------------------
+
+#----- ---- -- Ciudades
+
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/ciudad/full/f21_genfciud_genera_fichero_ciudades.f
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/ciudad/pais/f22_genfciud_genera_fichero_ciudades_pais.f
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/ciudad/year/f23_genfciud_genera_fichero_ciudades_temporada.f
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/ciudad/last/f24_genfciud_genera_fichero_ciudades_last.f
+#-------------------------------------------------------------------
+
+#----- ---- -- Paises
+
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/pais/full/f31_genfpais_genera_fichero_paises.f
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/pais/pais/f37_genfluga_genera_fichero_paises_pais.f
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/pais/year/f41_genfpais_genera_fichero_paises_temporada.f
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/pais/last/f51_genfpais_genera_fichero_paises_last.f
+#-------------------------------------------------------------------
+
+#----- ---- -- Recuerdos
+
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/recuerdo/full/f51_genfrecu_genera_fichero_recuerdos.f
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/recuerdo/pais/f53_genfrecu_genera_fichero_recuerdos_pais.f
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/recuerdo/year/f53_genfrecu_genera_fichero_recuerdos_temporada.f
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/recuerdo/year/f54_genf5recu_genera_fichero_cinco_recuerdos_temporada.f
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/recuerdo/last/f52_genfrecu_genera_fichero_recuerdos_last.f
+#-------------------------------------------------------------------
+
+
+#----- ---- Generacion de temporadas
+
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}temporada/f64_tgenpais_genera_paises.f
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}temporada/f65_tgenciudad_genera_ciudades.f
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}temporada/f66_tgenlugar_genera_lugares.f
+#-------------------------------------------------------------------
+
+
+#- - - - Duplicacion de tags en ficheros
+#-------------------------------------------------------------------
+
+LSCRIPT_FICHERO_PATH=${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n1/a01_gn/duplex/
+
+#----- ---- Generacion de entidades
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_FICHERO_PATH}/entidad/f54_duppais_genera_paises.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_FICHERO_PATH}/entidad/f55_dupciudad_genera_ciudades.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_FICHERO_PATH}/entidad/f56_duplugar_genera_lugares.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_FICHERO_PATH}/entidad/f57_dupevento_genera_evento.f
+#-------------------------------------------------------------------
+
+
+#---- Resto pendiente
+
+#-------------------------------------------------------------------
+###. ${LPATH_GNFIC}entidad/recuerdo/full/f53_gencinco_genera_fichero_recuerdos.f
+#-------------------------------------------------------------------
+. ${LPATH_GNFIC}entidad/evento/full/f54_genfevento_genera_fichero_eventos.f
+#-------------------------------------------------------------------
+
+
+#-- -- Auxiliares - contlevel
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n1/a00_aux/f01_contlevel_cont_niveles.f
+#-------------------------------------------------------------------
+
+
+
+#- - - - Mezclas con otros archivos
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n1/a01_gn/mezcla/f41_poner_eventos_cadena_fotos.f
+#-------------------------------------------------------------------
+
+
+#-- -- Uplevel
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n1/a02_up/f21_uplevel_sube_nivel_ficheros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n1/a02_up/f23_uplevel_path_salta_nivel_ficheros.f
+#-------------------------------------------------------------------
+
+#-- -- Mvlevel
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n1/a02_up/f31_mvlevel_move_nivel_ficheros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n1/a02_up/f33_mvlevel_path_salta_nivel_ficheros.f
+#-------------------------------------------------------------------
+
+
+#-- -- Dwlevel
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n1/a03_dw/f51_dwlevel_baja_y_sube_nivel_ficheros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n1/a03_dw/f53_dwlevel_path_baja_y_salta_nivel_ficheros.f
+#-------------------------------------------------------------------
+
+
+
+#-- -- Ctlevel
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n1/a04_ct/f41_ctlevel_cont_ficheros.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n1/a04_ct/f43_ctlevel_path_salta_nivel_ficheros.f
+#-------------------------------------------------------------------
+
+
+#--- Nivel 2
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n2/f31_uplevel_multi.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n2/f33_uplevel_salta.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n2/f41_movlevel_multi.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n2/f43_movlevel_salta.f
+#-------------------------------------------------------------------
+
+
+#--- Nivel 3
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_N4}s/fotos/n3/f32_uplevel_down_sube_nivel_n_ficheros.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N4 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N4}" != "" ] ; then
+echo "${LEVEL_NIVEL_04}/${LEVEL_NIVEL}----${CONCEPT_LEVEL_04}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

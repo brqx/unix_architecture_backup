@@ -1,0 +1,34 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Info Directorio Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="5.1" #  Version del Script actual
+FECHA_SCRIPT="Febrero 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_PRODUCTO_04="drupal"
+CONCEPT_MOLDE_04=""
+CONCEPT_ARQUETIPO_04=""
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#------------------------------------------------------------------- 
+clear
+#-------------------------------------------------------------------
+echo "-============================================================-"
+echo "Informacion directorio :`basename $PWD` ( ${CONCEPT_LEVEL_04} )  "
+echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+echo "${FECHA_SCRIPT} - Ver : ${VERSION_SCRIPT} - Nivel ${NIVEL_SCRIPT}  "
+echo "-============================================================-"
+echo "1.-drush                 (d)   : Funciones que automatizan drush para modulos y temas"
+echo "2.-lcore                 (c)   : Gestion de core "
+echo "3.-lpaq                  (p)   : Manejo de paquetes "
+echo "4.-shows                 (s)   : Muestra de la configuracion del site"
+echo "-============================================================-"
+
+
+#-------------------------------------------------------------------
+

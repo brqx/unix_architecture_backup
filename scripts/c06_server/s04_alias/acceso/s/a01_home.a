@@ -1,0 +1,35 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 1.1"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- gz - gzs - gzf
+#-------------------------------------------------------------------
+#- Variables Requeridas
+#-------------------------------------------------------------------
+#-- RECURSOS - RECSERVS - RECFOTOS
+#-------------------------------------------------------------------
+
+
+# Alias de acceso - Server
+#-====================================-
+
+#-- Acceso al site de recursos del servidor
+alias gz='cd ${RECURSOS}'
+
+#-- Acceso a recursos del servidor
+alias gzs='cd ${RECSERVS}'
+
+#-- Acceso a recursos fotograficos
+alias gzf='cd ${RECFOTOS}'
+

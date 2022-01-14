@@ -1,0 +1,22 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2016
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.0"          #  Version del Script actual
+FECHA_SCRIPT="Marzo 2016"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="special"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- History Agile
+#-------------------------------------------------------------------
+
+#- Adaptacion del Prompt de SH
+#-=========================================-
+
+alias h='history | cut -c8-'

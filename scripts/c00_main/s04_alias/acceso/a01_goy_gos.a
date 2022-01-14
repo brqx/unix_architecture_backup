@@ -1,0 +1,29 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.1"          #  Version del Script actual
+FECHA_SCRIPT="Noviembre 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- goy - gos
+#-------------------------------------------------------------------
+#+ Funciones Requeridas:
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+#Cambios agiles de ruta
+#-------------------------------------------------------------------
+alias goy='cd /root/scripts/arq/'
+alias gos='cd /brqx/arquitectura/StudioBrqx'
+
+
+

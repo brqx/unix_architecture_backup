@@ -1,0 +1,128 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.0"          #  Version del Script actual
+FECHA_SCRIPT="Noviembre 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03		# Variable control profundidad alcanzada
+LEVEL_NIVEL_03=03	# Variable control script
+CONCEPT_FORMATO_03="script"
+CONCEPT_MOLDE_03="funciones"
+CONCEPT_PRODUCTO_03="server"
+CONCEPT_ARQUETIPO_03="control"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_03="${CONCEPT_FORMATO_03} ${CONCEPT_MOLDE_03} ${CONCEPT_ARQUETIPO_03}"
+CONCEPT_LEVEL_03="${CONCEPT_LEVEL_03} ${CONCEPT_PRODUCTO_03} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_SERVER}s02_${CONCEPT_MOLDE_03}/${CONCEPT_ARQUETIPO_03}/
+
+#- Scripts generales - Uniservidor
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m01/f01_site_access_proxy.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m01/f02_site_access_no_proxy.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m01/f03_count_structure.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m01/f04_log_size.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m01/f05_telnet_access_proxy.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m01/f06_telnet_access_no_proxy.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m01/f07_ssh_access_no_proxy.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m01/f11_busca_log_proxy.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m01/f12_busca_log_no_proxy.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m01/f21_auth_access_proxy.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m01/f22_auth_access_no_proxy.f
+#-------------------------------------------------------------------
+
+
+#-- Nivel 2 - Multiples servidores
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m02/f22_check_servidores_proxy.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m02/f23_check_servidores_no_proxy.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m02/f32_check_sites_proxy.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m02/f33_check_sites_no_proxy.f
+#-------------------------------------------------------------------
+
+#-- Nivel 3 - Entorno completo
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m03/f51_check_entorno_proxy.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/m03/f52_check_entorno_no_proxy.f
+#-------------------------------------------------------------------
+
+
+#- Scripts particulares
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/m01/f10_anti_phishing.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/m01/f01_prod_control.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/m02/f21_busca_logs_entornos_proxy.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/m02/f22_busca_logs_entornos_no_proxy.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/m02/f31_lista_logs_entornos_proxy.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/m02/f32_lista_logs_entornos_no_proxy.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/m02/f33_lista_logs_arquitectura_proxy.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/m02/f34_lista_logs_arquitectura_no_proxy.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/m03/f41_show_logs_entornos_proxy.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/m03/f42_show_logs_entornos_no_proxy.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/m03/f43_show_logs_arquitectura_proxy.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/m03/f44_show_logs_arquitectura_no_proxy.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "${LEVEL_NIVEL_03} / ${LEVEL_NIVEL}	- Ejecutadas ${CONCEPT_LEVEL_03}"
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "${LEVEL_NIVEL_03} / ${LEVEL_NIVEL}	- Ejecutadas ${CONCEPT_LEVEL_03}"
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

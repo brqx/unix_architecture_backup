@@ -1,0 +1,44 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.3"          #  Version del Script actual
+FECHA_SCRIPT="Junio 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_MOLDE_04="alias"
+CONCEPT_ARQUETIPO_04="busqueda"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_04=${SD_MAIN}s04_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO_04}/
+#-==================================================================
+#+ Alias Comunes de las plataformas - Nivel 04
+#-==================================================================
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a01_ff.a
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a02_sudo_find_f_f2.a
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a03_fp_find_depth_superficial.a
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N4 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N4}" != "" ] ; then
+echo "${LEVEL_NIVEL_04}/${LEVEL_NIVEL}----${CONCEPT_LEVEL_04}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

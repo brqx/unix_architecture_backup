@@ -1,0 +1,37 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2009
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 1.0"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2010"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_CARACTER="especifico"
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="apps"
+CONCEPT_PRODUCTO="cpanel"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} ${CONCEPT_CARACTER}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- ab
+#-------------------------------------------------------------------
+#- Variables Requeridas
+#-------------------------------------------------------------------
+
+# Alias de acceso - Brqx Cpanel
+#-====================================-
+
+#-- Alias de acceso Apache Bench - Depende del servidor
+
+alias ab='/usr/local/apache/bin/ab'
+
+alias ab24='/usr/bin/ab'
+
+
+
+
+
+
+

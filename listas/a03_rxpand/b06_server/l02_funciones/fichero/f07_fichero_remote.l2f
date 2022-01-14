@@ -1,0 +1,141 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.2"          #  Version del Script actual
+FECHA_SCRIPT="Mayo 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_03=04	# Variable control script
+CONCEPT_FORMATO_04="lista"
+CONCEPT_MOLDE_04="funciones"
+CONCEPT_PRODUCTO_04="server"
+CONCEPT_ARQUETIPO_04="fichero"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_04=${SD_SERVER}s02_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO_04}/
+
+#-- Remote commands - General
+
+RLINKS_REMOTE=${LSCRIPT_PARTICULAR_PATH_04}f07_remote_sh/s01_rlinks/
+
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}g/f20_ssh_remote_find.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}g/f21_ssh_remote_mkdir.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}g/f22_ssh_remote_lndir.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}g/f23_ssh_remote_rmdir.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}g/f24_ssh_remote_unlink.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}g/f25_ssh_remote_mvdir.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}g/f26_ssh_remote_chmod.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}g/f27_ssh_remote_tarzx.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}g/f28_ssh_remote_chown.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}g/f29_ssh_remote_run.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}g/f30_ssh_remote_sudo_run.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}g/f31_ssh_remote_sudo_guion_y_run.f
+#-------------------------------------------------------------------
+
+
+#-- Remote commands - Specific ARQ
+
+
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n1/arq/f51_scp_path_arq_core7a.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n1/arq/f52_scp_path_arq_core7b.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n1/arq/f53_scp_path_arq_soa7a.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n1/arq/f54_scp_path_arq_soa7b.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n1/arq/f55_scp_path_arq_frontal6a.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n1/arq/f56_scp_path_arq_frontal6b.f
+#-------------------------------------------------------------------
+
+#-- Remote commands - Specific MAV
+
+
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n1/mav/f61_scp_path_mav_core7a.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n1/mav/f62_scp_path_mav_core7b.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n1/mav/f63_scp_path_mav_soa7a.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n1/mav/f64_scp_path_mav_soa7b.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n1/mav/f65_scp_path_mav_frontal6a.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n1/mav/f66_scp_path_mav_frontal6b.f
+#-------------------------------------------------------------------
+
+
+#-- Remote commands - Specific N2
+
+#- Arq
+
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/arq/f61_scp_path_arqglobal_core7a.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/arq/f62_scp_path_arqglobal_core7b.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/arq/f63_scp_path_arqglobal_soa7a.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/arq/f64_scp_path_arqglobal_soa7b.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/arq/f65_scp_path_arqglobal_frontal6a.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/arq/f66_scp_path_arqglobal_frontal6b.f
+#-------------------------------------------------------------------
+
+#- Mav
+
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/mav/f71_scp_path_mavglobal_core7a.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/mav/f72_scp_path_mavglobal_core7b.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/mav/f73_scp_path_mavglobal_soa7a.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/mav/f74_scp_path_mavglobal_soa7b.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/mav/f75_scp_path_mavglobal_frontal6a.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n2/mav/f76_scp_path_mavglobal_frontal6b.f
+#-------------------------------------------------------------------
+
+#-- Remote commands - Specific N3
+
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n3/f91_arqupd_update_arquitectura.f
+#-------------------------------------------------------------------
+. ${RLINKS_REMOTE}s/n3/f92_mavupd_update_arquitectura.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "${LEVEL_NIVEL_03} / ${LEVEL_NIVEL}	- Ejecutadas ${CONCEPT_LEVEL_03}"
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

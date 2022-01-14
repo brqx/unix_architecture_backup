@@ -1,0 +1,68 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 1.1"          #  Version del Script actual
+FECHA_SCRIPT="Marzo 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- bkg - xypdb - dbexpd - dbx - 
+#-------------------------------------------------------------------
+#-- batchdbc - batchimport - batchfulldb - listadb - existedb
+#-------------------------------------------------------------------
+#- Funciones Requeridas
+#-------------------------------------------------------------------
+#-- live_backup_site - dbs_syncdb
+#-------------------------------------------------------------------
+
+# Alias de acceso - Brqx Drupal
+#-====================================-
+
+#-- Alias de backup de un site - local
+#-- Este debe ir a nivel de servidor, no DB
+
+alias bkg='live_backup_site'
+
+#-- Alias backup database
+alias xypdb='dbs_syncdb'
+
+#-- Alias clear drupal cache tables
+alias dbcled='db_clear_drupal_cache'
+
+#-- Alias exportacion base de datos pasada 
+alias dbexpd='dbs_exportdb'
+
+#-- Alias de exportacion de todas las BBDD
+alias dbx='dbg_export_databases'
+
+#-- Alias de ejecuccion - Generacion de BBDD
+alias batchdbc='for i in *; do mysql -u root -e "create database $(echo $i | cut -d /'./' -f1)"  ; done '
+
+#- Alias de importacion de BBDD
+alias batchimport='for i in *; do mysql -u root $(echo $i | cut -d "." -f1 ) < $i  ; done'
+
+#- Alias Full Create and Import
+alias batchfulldb='batchdbc && batchimport'
+
+#- Alias de listado de BBDD
+alias listadb='for i in $( mysql -s -e  "show databases" ) ; do  echo "$i" ; done'
+
+#- Alias existedb - Comprueba si la BD existe
+alias existedb='listadb | grep '
+
+
+#- Alias mywc - cuenta conexiones en mysql
+
+alias mywc='mysql -Bse "show processlist" | wc -l '
+
+#- Alias myqu - lista querys
+
+alias myqu='mysql -Bse "show processlist" '
+

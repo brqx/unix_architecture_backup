@@ -1,0 +1,84 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.3"          #  Version del Script actual
+FECHA_SCRIPT="Julio 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="proceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- stfron113 - stfron114 - stcore200 - stcore201
+#-------------------------------------------------------------------
+#-- stsoa202  - stsoa203
+#-------------------------------------------------------------------
+#-- ltfron113 - ltfron114 - ltcore200 - ltcore201
+#-------------------------------------------------------------------
+#-- ltsoa202  - ltsoa203
+#-------------------------------------------------------------------
+#- Funciones Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+# Variables - Alias - Librerias
+#-====================================-
+
+#- Alias de parada agil remota de servidores V6 / V7
+alias stfron113="wstop_su_remote_cluster frontal6a"
+alias stfron114="wstop_su_remote_cluster frontal6b"
+
+alias stcore200="wstopsudo_remote_cluster core7a"  
+alias stcore201="wstopsudo_remote_cluster core7b"  
+
+alias stsoa202="wstopsudo_remote_standalone  soa7a"
+alias stsoa203="wstopsudo_remote_cluster soa7b"  
+
+alias stwsrr207="wstopsudo_remote_cluster wsrr"
+alias stsoa203="wstop_su_remote_standalone soa6"  
+
+#- Alias de parada agil local de servidores V6 / V7
+alias ltfron113="wstop_su_local_cluster frontal6a"
+alias ltfron114="wstop_su_local_cluster frontal6b"
+
+alias ltcore200="wstopsudo_local_cluster core7a"  
+alias ltcore201="wstopsudo_local_cluster core7b"  
+
+alias ltsoa202="wstopsudo_local_standalone  soa7a"
+alias ltsoa203="wstopsudo_local_cluster soa7b"  
+
+alias ltwsrr207="wstopsudo_local_cluster wsrr"
+alias ltsoa304="wstop_su_local_standalone soa6"  
+
+#-Formato remoto corto
+
+alias st113="stfron113"
+alias st114="stfron114"
+
+alias st200="stcore200"
+alias st201="stcore201"
+
+alias st202="stsoa202"
+alias st203="stsoa203"
+
+alias st207="stwsrr207"
+alias st304="stsoa304"
+
+#-Formato local corto
+
+alias slt113="sltfron113"
+alias slt114="sltfron114"
+
+alias slt200="sltcore200"
+alias slt201="sltcore201"
+
+alias slt202="sltsoa202"
+alias slt203="sltsoa203"
+
+alias slt207="sltwsrr207"
+alias slt304="sltsoa304"

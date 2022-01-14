@@ -1,0 +1,34 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 1.2"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- dbpass - dbdelu - dbcreu
+#-------------------------------------------------------------------
+#- Funciones Requeridas
+#-------------------------------------------------------------------
+#-- live_backup_site - dbs_syncdb
+#-------------------------------------------------------------------
+
+# Alias de acceso - Brqx Drupal
+#-====================================-
+
+#-- Alias de cambio de clave 
+alias dbpass='db_user_changepass'
+
+#-- Alias de borrado
+alias dbdelu='db_user_changepass'
+
+#-- Alias de creacion
+alias dbcreu='db_user_changepass'
+

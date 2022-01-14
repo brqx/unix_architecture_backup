@@ -1,0 +1,52 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="5.1" #  Version del Script actual
+FECHA_SCRIPT="Febrero 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04    # Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04 # Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_PRODUCTO_04="main"
+CONCEPT_MOLDE_04="informaciones"
+CONCEPT_ARQUETIPO_04="general"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- 
+#+ Funciones / Variables definidas:
+#-------------------------------------------------------------------
+#-- dameg - xameg
+#-------------------------------------------------------------------
+#+ Funciones / Variables Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- 
+##clear
+#
+# Debe informarnos de todas las funciones que hay en el sistema
+#
+#+ Funciones:
+
+dametodo()
+{
+
+# Tenemos la opcion de que nos de todo o solo variables, exportaciones, funciones
+
+
+echo "==================================================="
+echo "Funciones Disponibles - Nivel N"
+echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+echo "01.dameg [EXT] [FILTRO]  : Informa sore cualquier objeto "
+echo "02.damef [FILTRO]        : Informa sobre las funciones  "
+echo "03.damei [FILTRO]        : Informa sobre las funciones  "
+echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+echo "10.xameX                 : Acorta los listados "
+echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+echo "20.-damedame   : PENDIENTE"
+echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+
+}

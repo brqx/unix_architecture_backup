@@ -1,0 +1,57 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="5.1" #  Version del Script actual
+FECHA_SCRIPT="Febrero 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_PRODUCTO_04="main"
+CONCEPT_MOLDE_04="informaciones"
+CONCEPT_ARQUETIPO_04="general"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#------------------------------------------------------------------- 
+clear
+#-==================================================================
+#+ Alias definidos:
+# VAmos a adaptarlo a todos los productos
+#-------------------------------------------------------------------
+#--  - damefun
+#-==================================================================
+#- Vamos a definir la ruta
+#-------------------------------------------------------------------
+
+SCRIPT_PARTICULAR_PATH_04=${SD_MAIN}s01_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO_04}/
+
+#-------------------------------------------------------------------
+
+#+ Alias definidos:
+#-------------------------------------------------------------------
+
+alias damevar='dameg v'
+alias damefun='damef'
+alias dameali='dameg a'
+alias damemin='dameg ma'
+alias dameexp='dameg e'
+alias dameeje='dameg x'
+
+#- Alias DAMELOTODO ( cambiamos el orden para permitir filtrar por tipo
+#-------------------------------------------------------------------
+
+alias damedrupal='dame2g drupal'
+alias damemysql='dame2g mysql'
+alias dameoracle='dame2g oracle'
+alias damecpanel='dame2g cpanel'
+
+#- Alias DAME TIPO : VARIABLE
+#-------------------------------------------------------------------
+dfdrupal='damef drupal'
+dforacle='damef oracle'
+dfservidor='damef servidor'
+dfcpanel='damef cpanel'
+

@@ -1,0 +1,48 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.2"          #  Version del Script actual
+FECHA_SCRIPT="Febrero 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- cf - cl - rf - tz - mp
+#-------------------------------------------------------------------
+#- Variables Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+# Alias de borrado agil - Rutas Profiling
+#-====================================-
+
+#- Copia Recursiva sin confirmacion
+alias sucf='sudo cp -Rf '
+
+#- Copia Recursiva sin confirmacion respetando enlaces
+alias sucl='sudo cp -Lr '
+
+#- Borrado Recursivo sin confirmacion
+alias surf='sudo rm -Rf '
+
+#- Descompresion automatica de ficheros tar.gz
+alias sutz='sudo tar zxvf '
+
+#- Gestion de enlaces
+alias suln='sudo ln -s '
+
+
+#- Creaccion de rutas
+alias sump='sudo mkdir -p '
+
+
+#- Preparamos los sudos
+
+alias su_limpia_carpeta='for i in $(find $PWD -type f) ; do sudo rm -f $i ; done'

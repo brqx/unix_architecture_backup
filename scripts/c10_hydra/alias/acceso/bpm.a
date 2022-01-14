@@ -1,0 +1,45 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Variables Entornos Unix - Brqz - I+D
+# BRQX NG - Rct - 2007
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 1.2"          #  Version del Script actual
+FECHA_SCRIPT="Agosto 2007"
+#-==================================================================
+
+#- Websphere - BPM
+#-=================-
+#Filtro BPM Hora y Minuto 
+
+#-NOTA: Los logs de este producto usan horas de 1 o dos dmgitos, por tanto, lo que hacemos es
+#       filtrar el primer digito
+
+alias rminbpm='tail -f $WPS_LOGS | grep `date "+%H:%M" | cut -c2-`'
+alias rdiezmbpm='tail -f $WPS_LOGS  | grep `date "+%H:%M"| cut -c2-4`'
+alias rhorabpm='tail -f $WPS_LOGS  | grep `date "+%H:" | cut -c2-`'
+
+#-Filtros por columnas - Seccionamos la salida en razon de la informacion que nos interese.
+
+alias rcolbpm='tail -f $WPS_LOGS  | cut -d " " -f11-'
+
+
+alias rbpm='wpstail | cut -d " " -f2,15-'
+alias bbpm='tail -f $WPS_LOGS  | cut -d " " -f2,12-13,16-'
+
+#- Alias especificos de filtro brqx ( Filtro por Palabra )
+
+alias rbpmtail='tail -f $WPS_LOGS | grep brqx' # | tr -s " " | cut -d " " -f7-'
+alias rbpmtail2='tail -f $WPS_LOGS | grep brqx | tr -s " "  | cut -d \t -f3-'
+
+#- ENCOLADORES MQ SERIES
+#-=======================-
+
+#Filtro ENCOLADOR Hora y Minuto
+alias rminencolador='tail -f $MQ_LOGS  | grep `date "+%H:%M"`'
+
+#Filtro ENCOLADOR cada 10 Minutos
+alias rdiezmencolador='tail -f $MQ_LOGS  | grep `date "+%H:%M" | cut -c1-4`'
+
+#Filtro ENCOLADOR Hora
+alias rhoraencolador='tail -f $MQ_LOGS  | grep `date "+%H:"`'
+

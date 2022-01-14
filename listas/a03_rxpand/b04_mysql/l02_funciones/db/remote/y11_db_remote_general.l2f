@@ -1,0 +1,79 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.3"          #  Version del Script actual
+FECHA_SCRIPT="Noviembre 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=05		# Variable control profundidad alcanzada
+LEVEL_NIVEL_05=05	# Variable control script
+CONCEPT_FORMATO_05="lista"
+CONCEPT_MOLDE_05="funciones"
+CONCEPT_PRODUCTO_05="mysql"
+CONCEPT_ARQUETIPO_05="database"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_05="${CONCEPT_FORMATO_05} ${CONCEPT_MOLDE_05} ${CONCEPT_ARQUETIPO_05}"
+CONCEPT_LEVEL_05="${CONCEPT_LEVEL_05} ${CONCEPT_PRODUCTO_05} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_05=${SD_MYSQL}s02_${CONCEPT_MOLDE_05}/${CONCEPT_ARQUETIPO_05}/g/remote/
+
+# S I M P L E 
+
+SPPATH_RSN1=${LSCRIPT_PARTICULAR_PATH_05}simple/n1/
+
+#-------------------------------------------------------------------
+. ${SPPATH_RSN1}f41_dbr_createdatabase.f
+#-------------------------------------------------------------------
+. ${SPPATH_RSN1}f42_dbr_deletedatabase.f
+#-------------------------------------------------------------------
+. ${SPPATH_RSN1}f45_dbr_listadatabases.f
+#-------------------------------------------------------------------
+. ${SPPATH_RSN1}f46_dbr_listatablasdatabase.f
+#-------------------------------------------------------------------
+. ${SPPATH_RSN1}f48_dbr_cuentatablasdatabase.f
+#-------------------------------------------------------------------
+. ${SPPATH_RSN1}f49_dbr_cuentadatabases.f
+#-------------------------------------------------------------------
+. ${SPPATH_RSN1}f50_dbr_cuentaregistrostabla.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+. ${SPPATH_RSN1}f61_dbr_exportdatabase.f
+#-------------------------------------------------------------------
+. ${SPPATH_RSN1}f62_dbr_restoredatabase.f
+#-------------------------------------------------------------------
+. ${SPPATH_RSN1}f63_dbr_copydatabase.f
+#-------------------------------------------------------------------
+
+#-Funcion general para importaciones - igual va en un sitio mas general
+#-------------------------------------------------------------------
+. ${SPPATH_RSN1}f70_dbr_impmysql.f
+#-------------------------------------------------------------------
+
+SPPATH_RSN2=${LSCRIPT_PARTICULAR_PATH_05}simple/n2/
+
+#-- Copia segura solo copia si no existe primero
+#-------------------------------------------------------------------
+. ${SPPATH_RSN2}f73_dbrs_copydatabase_seguro.f
+#-------------------------------------------------------------------
+
+#-- Fuerza la copia aunque exista - borra y copia
+#-------------------------------------------------------------------
+. ${SPPATH_RSN2}f74_dbrf_copydatabase_force.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "${LEVEL_NIVEL_03} / ${LEVEL_NIVEL}	- Ejecutadas ${CONCEPT_LEVEL_03}"
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

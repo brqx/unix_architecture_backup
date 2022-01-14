@@ -1,0 +1,30 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.0"          #  Version del Script actual
+FECHA_SCRIPT="Marzo 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-Esta parte la dejamos pendiente
+#-------------------------------------------------------------------
+
+#+ Alias definidos utiles para procesos basados en scripts
+#-------------------------------------------------------------------
+alias pjars="${C_RCT}scripts/procesos/testjars.x"
+#-------------------------------------------------------------------
+
+#- Alias de chequeo de jars para comprobar si estan corruptos
+#-------------------------------------------------------------------
+alias testjars='for i in $( f jar ) ; do jar -tf $i &> /dev/null; if [ "$?" = "0" ] ; then  echo "$i OK"; else echo "$i ERROR"; fi; done '
+#-------------------------------------------------------------------
+alias testjerror='testjars | grep ERROR'
+
+

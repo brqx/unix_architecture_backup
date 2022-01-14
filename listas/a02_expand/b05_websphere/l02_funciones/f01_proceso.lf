@@ -1,0 +1,106 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.0"          #  Version del Script actual
+FECHA_SCRIPT="Febrero 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03		# Variable control profundidad alcanzada
+LEVEL_NIVEL_03=03	# Variable control script
+CONCEPT_FORMATO_03="lista"
+CONCEPT_MOLDE_03="funciones"
+CONCEPT_ARQUETIPO_03="proceso"
+CONCEPT_PRODUCTO_03=""
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_03="${CONCEPT_FORMATO_03} ${CONCEPT_MOLDE_03}  ${CONCEPT_ARQUETIPO_03}"
+CONCEPT_LEVEL_03="${CONCEPT_LEVEL_03} ${CONCEPT_PRODUCTO_03} "
+#-==================================================================
+#+ Funciones Especificas producto 05 : IBM WEBSPHERE - SA - Nivel 03
+#-==================================================================
+
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+#- RUTAS DE ACCESO GEN - PRODUCTO - N3
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+
+#-------------------------------------------------------------------
+LSCRIPT_PARTICULAR_PATH_03=${SD_WEBSPHERE}s02_${CONCEPT_MOLDE_03}/
+LSCRIPT_PARTICULAR_PATH_03=${LSCRIPT_PARTICULAR_PATH_03}${CONCEPT_ARQUETIPO_03}/
+#-------------------------------------------------------------------
+
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+#- LANZAMIENTO DE PRODUCTOS - N3
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+#- Funciones Proceso WPS
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+#-- Nivel 0 - consultar particulares de Websphere que no muestran la salida
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/n0/f01_quitar_proceso_was.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/n0/f04_listar_apps_was.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/n0/f05_get_librerias_app.f
+#-------------------------------------------------------------------
+
+
+#-- Nivel 1 - consultar particulares de Websphere
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/n1/f01_tipo_perfil.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/n1/f02_ver_perfiles.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/n1/f03_ver_wsdl.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/n1/f04_fix_wsdl.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/n1/f06_ver_librerias_app.f
+#-------------------------------------------------------------------
+
+#- Funciones SUDO
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/n1/f22_sudo_ver_perfiles.f
+#-------------------------------------------------------------------
+
+
+#-- Nivel 2 - listados generales de Websphere
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/n2/f10_listar_wsdl_servicios.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/n2/f11_listar_librerias_servicios.f
+#-------------------------------------------------------------------
+
+
+
+#- Organizacion funcional - Servidor
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}celda/f11_ver_variables_celda.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}celda/f12_ver_librerias_celda.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}celda/f13_ver_alias_celda.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}celda/f14_ver_oracle_jdbc_providers.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}celda/f15_ver_oracle_jdbc.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N3 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N3}" != "" ] ; then
+echo "${LEVEL_NIVEL_03}/${LEVEL_NIVEL}---${CONCEPT_LEVEL_03}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================
