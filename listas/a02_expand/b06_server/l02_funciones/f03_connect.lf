@@ -1,0 +1,56 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2016
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.1"          #  Version del Script actual
+FECHA_SCRIPT="Marzo 2016"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03		# Variable control profundidad alcanzada
+LEVEL_NIVEL_03=03	# Variable control script
+CONCEPT_FORMATO_03="script"
+CONCEPT_MOLDE_03="funciones"
+CONCEPT_PRODUCTO_03="server"
+CONCEPT_ARQUETIPO_03="connect"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_03="${CONCEPT_FORMATO_03} ${CONCEPT_MOLDE_03} ${CONCEPT_ARQUETIPO_03}"
+CONCEPT_LEVEL_03="${CONCEPT_LEVEL_03} ${CONCEPT_PRODUCTO_03} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_SERVER}s02_${CONCEPT_MOLDE_03}/${CONCEPT_ARQUETIPO_03}/
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}f01_ssh.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}f02_scp.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}f03_sshget_get_ssh_variable.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}f04_sshgethome_get_ssh_variable_home.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}f05_ssh_get_last_folder.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}f06_ssh_go_last_folder.f
+#-------------------------------------------------------------------
+
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "${LEVEL_NIVEL_03} / ${LEVEL_NIVEL}	- Ejecutadas ${CONCEPT_LEVEL_03}"
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+VERSION_LSCRIPT_03=
+FECHA_LSCRIPT_03=
+#-------------------------------------------------------------------
+LEVEL_NIVEL_03=
+CONCEPT_FORMATO_03=
+CONCEPT_MOLDE_03=
+CONCEPT_ARQUETIPO_03=
+CONCEPT_LEVEL_03=
+#-------------------------------------------------------------------
+

@@ -1,0 +1,60 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2010
+#-------------------------------------------------------------------
+VERSION_LSCRIPT_03="V 5.11"          #  Version del Script actual
+FECHA_LSCRIPT_03="Febrero 2010"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03
+LEVEL_NIVEL_03=03
+CONCEPT_MOLDE_03="funciones"
+CONCEPT_ARQUETIPO_03="servidores"
+CONCEPT_LEVEL_03="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} ${CONCEPT_CARACTER}"
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_CPANEL}s02_${CONCEPT_MOLDE_03}/${CONCEPT_ARQUETIPO_03}/
+
+#-Funciones generales N2
+
+#-------------------------------------------------------------------
+##. ${LSCRIPT_PARTICULAR_PATH_03}n2/f01_full_start_server.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n2/f02_full_stop_server.f
+#-------------------------------------------------------------------
+##. ${LSCRIPT_PARTICULAR_PATH_03}n2/f03_full_restart_server.f
+#-------------------------------------------------------------------
+
+#-Funciones generales N1
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n1/f11_clean_db_logs_limpieza_bbdd.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n1/f12_full_stop_services_parada_servicios.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n1/f13_check_server_status_stop_comprobacion_parada.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n1/f14_clean_system_logs_vaciado_logs_sistema.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}n1/f15_send_status_server_email_envio_correo_sistema.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "${LEVEL_NIVEL_03} / ${LEVEL_NIVEL}	- Ejecutadas ${CONCEPT_LEVEL_03}"
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+VERSION_LSCRIPT_03=
+FECHA_LSCRIPT_03=
+#-------------------------------------------------------------------
+LEVEL_NIVEL_03=
+CONCEPT_FORMATO_03=
+CONCEPT_MOLDE_03=
+CONCEPT_ARQUETIPO_03=
+CONCEPT_LEVEL_03=
+#-------------------------------------------------------------------

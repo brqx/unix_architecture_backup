@@ -1,0 +1,44 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2010
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.0"          #  Version del Script actual
+FECHA_SCRIPT="Noviembre 2010"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO=""
+CONCEPT_PRODUCTO="websphere"
+CONCEPT_LEVEL="Script ${CONCEPT_MOLDE} ${CONCEPT_ARQUETIPO}"
+CONCEPT_LEVEL="${CONCEPT_LEVEL} ${CONCEPT_PRODUCTO} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- gosoa - gofron - gocore
+#-------------------------------------------------------------------
+#- Variables Requeridas
+#-------------------------------------------------------------------
+#-- WPS_LOGS_SOA - WPS_LOGS_CORE - WPS_LOGS_FRONTAL
+#-------------------------------------------------------------------
+#-- WPS_LOGS_APLICACIONES
+#-------------------------------------------------------------------
+
+#-- Alias de acceso a proyectos
+#-====================================-
+
+#-------------------------------------------------------------------
+#- Process Server
+#-------------------------------------------------------------------
+
+#- Ir al home de Websphere SOA - Process Server
+alias gosoa='cd ${WPS_LOGS_SOA}'
+
+#- Ir al home de Websphere CORE - WAS
+alias gocore='cd ${WPS_LOGS_CORE}'
+
+#- Ir al home de Websphere FRONTAL - WAS
+alias gofron='cd ${WPS_LOGS_FRONTAL}'
+
+#- Ir al home de Websphere FRONTAL - WAS
+alias goapps='cd ${WPS_LOGS_APLICACIONES}'

@@ -1,0 +1,44 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2016
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.1"          #  Version del Script actual
+FECHA_SCRIPT="Junio 2016"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="listado"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- lm - lr - lf
+#-------------------------------------------------------------------
+#-Super alias agile - List - Folders Links
+
+alias l='ls -la | grep -v "^total" | tr -s " " | cut -d " " -f1,9- | sort | grep -v "\.$" | cut -d " " -f2-'
+
+#-Alias de Listados - cambio por funcion
+alias lsl='ls -la'
+alias ll='lg'
+
+alias lm='ls -la |more'
+
+#-Listado ordenado por fecha de modificacion lart
+alias lr='ls -latr'
+alias lart='ls -lart'
+
+#Creamos alias corto de ficheros
+alias lf='ll | tr -s " " | cut -d" " -f9-'
+
+#Alias para listado agil de cadenas
+#-Listado solo de ficheros
+alias cadls='ls -la | grep -v  "^[d|l]" | grep -v "\." | cut -d " " -f12 | tr "\n" " "'
+alias cadlf=cadls
+#-Listado solo de enlaces
+alias cadll='ls -la | grep "^l" | cut -d " " -f12 | tr "\n" " "'
+#-Listado solo de directorios
+alias cadld='ls -la | grep  "^d" | grep -v "\." | cut -d " " -f12 | tr "\n" " "'
+
+

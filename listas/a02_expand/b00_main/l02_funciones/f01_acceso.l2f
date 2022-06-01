@@ -1,0 +1,163 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2022
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 8.2"          #  Version del Script actual
+FECHA_SCRIPT="Febrero 2022"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_MOLDE_04="funciones"
+CONCEPT_ARQUETIPO_04="acceso"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+#+ Funciones Comunes de ACCESO 
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_04=${SD_MAIN}s02_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO_04}/
+
+#- Accesos genericos - gend - gene - genc
+
+
+#-- Entrada Directa - por Inicial
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f01_gend/f01_gend_generico_cdd.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f01_gend/f21_gend_generico_cdddash.f
+#-------------------------------------------------------------------
+
+#-- Entrada directa - por Expresion regular
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f01_gend/f02_gene_generico_ce.f
+#-------------------------------------------------------------------
+#-- Entrada al padre - vamos a la carpeta padre
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f01_gend/f03_genc_generico_ccd.f
+#-------------------------------------------------------------------
+#-- Entrada exacta - por nombre del Archivo
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f01_gend/f04_gena_generico_cddw.f
+#-------------------------------------------------------------------
+#-- Entrada intercambio - cambio en la ruta de un valor por otro
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f01_gend/f05_genh_generico_ch.f
+#-------------------------------------------------------------------
+#-- Entrada recursiva - por Expresion regular de forma multiple - recursion
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f01_gend/f06_genr_generico_cr_ce_recursivo.f
+#-------------------------------------------------------------------
+#-- Retorno multi nivel
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f01_gend/f10_retcd_retorno_generico_cd.f
+#-------------------------------------------------------------------
+
+#-- Funcion para entrar en carpetas con dollar
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f01_gend/f07_gdol_generico_cdol.f
+#-------------------------------------------------------------------
+
+#-Funciones super usuario - sudo - no valen pues no pueden hacer cd
+
+
+#- Accesos directos - sin considerar la ruta inicial - listado normal
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f02_cd/f21_cdd_direct_inicial.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f02_cd/f51_cddash_direct_folder.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f02_cd/f52_cdddash_direct_folder.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f02_cd/f22_ce_cde_expresion_regular.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f02_cd/f23_ccd_dirname_padre.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f02_cd/f24_cddw_fichero.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f02_cd/f25_ch_cambio_ruta.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f02_cd/f26_cr_ce_recursivo.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f02_cd/f30_cdret_retorno_multi_nivel.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f02_cd/f31_csret_start_multi_nivel.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f02_cd/f40_chret_retorno_historico.f
+#-------------------------------------------------------------------
+
+
+#- Accesos cuenta espacio - spa
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f03_spa/f31_spad_cdd_inicial.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f03_spa/f32_spae_expresion_regular.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f03_spa/f33_spac_dirname.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f03_spa/f34_spaw_fichero.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f03_spa/f35_spah_cambio_ruta.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f03_spa/f36_spar_spae_recursivo.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f03_spa/f40_sparet_retorno.f
+#-------------------------------------------------------------------
+
+#- Accesos cuenta estructura - wcs
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f04_wcs/f41_wscd_inicial.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f04_wcs/f42_wcse_expresion_regular.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f04_wcs/f43_wscc_dirname.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f04_wcs/f44_wscw_fichero.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f04_wcs/f45_wcsh_cambio_ruta.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f04_wcs/f46_wscr_wsce_recursivo.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f04_wcs/f50_wcsret_retorno.f
+#-------------------------------------------------------------------
+
+
+#- Accesos no directos - partiendo de una ruta SCRITPS
+#-- Vamos a ver las funciones que tienen sentido
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}scripts/f12_scd_dirname.f
+#-------------------------------------------------------------------
+
+#- Accesos no directos - partiendo de una ruta LISTAS
+#- Y funciones de listado mas agiles
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}zilists/f12_ll_grep.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}zilists/f13_wl_grep_count.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}zilists/f22_lcd_dirname.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N4 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N4}" != "" ] ; then
+echo "${LEVEL_NIVEL_04}/${LEVEL_NIVEL}----${CONCEPT_LEVEL_04}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

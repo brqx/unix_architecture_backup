@@ -1,0 +1,48 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.2"          #  Version del Script actual
+FECHA_SCRIPT="Febrero 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- limpia_carpeta - borra_carpeta
+#-------------------------------------------------------------------
+#-- cambia_guiones_carpetas - cambia_guiones_ficheros - quita_espacios
+#-------------------------------------------------------------------
+#- Variables Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+# Alias de borrado agil - Rutas Profiling
+#-====================================-
+
+#- Cambia los espacios por guiones bajos en las carpetas
+alias cambia_guiones_carpetas="find -name '* *' -type d | rename 's/ /_/g' "
+
+#- Cambia los espacios por guiones bajos en los ficheros
+alias cambia_guiones_ficheros="find -name '* *' -type f | rename 's/ /_/g' "
+
+#- Cambia los espacios por guiones bajos
+alias quita_espacios="cambia_guiones_carpetas && cambia_guiones_ficheros"
+
+#- Vacia de ficheros una estructura
+alias limpia_carpeta='for i in $(find $PWD -type f) ; do rm -f $i ; done'
+
+alias borra_carpeta='limpia_carpeta'
+alias vacia_carpeta='limpia_carpeta'
+
+#- Vacial links incorrectos de una ruta
+
+alias remove_links='find -L . -name . -o -type d -prune -o -type l -exec rm {} +'
+
+alias borra_links='remove_links'
+

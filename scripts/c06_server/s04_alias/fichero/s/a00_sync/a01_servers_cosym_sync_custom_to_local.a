@@ -1,0 +1,49 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.3"          #  Version del Script actual
+FECHA_SCRIPT="Julio 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="proceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- sfx_fron113 - sfx_fron114 - sfx_core200 - sfx_core201
+#-------------------------------------------------------------------
+#-- sfx_soa202  - sfx_soa203
+#-------------------------------------------------------------------
+#- Funciones Requeridas
+#-------------------------------------------------------------------
+#-- sync_custom_to_local
+#-------------------------------------------------------------------
+
+# Variables - Alias - Librerias
+#-====================================-
+
+#- Alias de sincronismo agil de servidores "Sync From"
+
+alias sfx_fron113="sync_custom_to_local frontal6a"
+alias sfx_fron114="sync_custom_to_local frontal6b"
+
+alias sfx_core200="sync_custom_to_local core7a"  
+alias sfx_core201="sync_custom_to_local core7b"  
+
+alias sfx_soa202="sync_custom_to_local soa7a"
+alias sfx_soa203="sync_custom_to_local soa7b"  
+
+#-Formato corto
+
+alias sfx113="sx_fron113"
+alias sfx114="sx_fron114"
+
+alias sfx200="sx_core200"
+alias sfx201="sx_core201"
+
+alias sfx202="sx_soa202"
+alias sfx203="sx_soa203"
+

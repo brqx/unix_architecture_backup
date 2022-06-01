@@ -1,0 +1,114 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.2"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_MOLDE_04="minialias"
+CONCEPT_ARQUETIPO_04="acceso"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_04=${SD_MAIN}s05_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO_04}/
+
+#-==================================================================
+#+ Alias Comunes de las plataformas - Nivel 04
+#-==================================================================
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a01_arq/a01_home.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a01_arq/a02_arquitectura.ma
+#-------------------------------------------------------------------
+
+#- Moldes y Arquetipos
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a02_cq/a21_cq_molde.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a02_cq/a22_cqi_molde.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a02_cq/a23_cq2_arquetipo.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a02_cq/a24_cqi2_arquitipo.ma
+#-------------------------------------------------------------------
+
+#- Retorno N niveles
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a03_cdd/a31_cdret_vuelta_niveles.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a03_cdd/a32_cdup_llup_retorno.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a03_cdd/a33_cdret_vuelta_niveles.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a03_cdd/a51_csret_niveles_inicio.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a03_cdd/a34_chret_vuelta_historico.ma
+#-------------------------------------------------------------------
+
+
+#- Acceso por inicial - cdd
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a03_cdd/a40_cdd_acceso_inicial_full.ma
+#-------------------------------------------------------------------
+
+
+#- Acceso por letra contenida cde - expresion regular -
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a04_cde/a50_cde_full.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a04_cde/a51_cde2_num.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a04_cde/a52_cde3_num.ma
+#-------------------------------------------------------------------
+
+#- Movimiento con gestion de espacio ocupado
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a05_cspa/a51_spa_retorno.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a05_cspa/a52_spad_inicial.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a05_cspa/a53_spae_full.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a05_cspa/a54_spae2_num.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a05_cspa/a55_spae3_num.ma
+#-------------------------------------------------------------------
+
+
+
+#- Movimiento con informacion de directorios internos
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a06_cwcs/a61_wcs_retorno.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a06_cwcs/a62_wcsd_inicial.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a06_cwcs/a63_wcse_full.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a06_cwcs/a64_wcse2_num.ma
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}a06_cwcs/a65_wcse3_num.ma
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N4 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N4}" != "" ] ; then
+echo "${LEVEL_NIVEL_02}/${LEVEL_NIVEL}----${CONCEPT_LEVEL_04}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

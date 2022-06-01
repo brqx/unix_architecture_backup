@@ -1,0 +1,67 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2016
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.0"          #  Version del Script actual
+FECHA_SCRIPT="Abril 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- gong
+#-------------------------------------------------------------------
+#- Funcinoes Requeridas
+#-------------------------------------------------------------------
+#-- wsgo
+#-------------------------------------------------------------------
+
+#-- Alias de acceso a proyectos
+#-====================================-
+
+#- Alias para ir a la ruta donde pillamos los archivos subidos por ftp
+
+alias gosita='cd ${BRQX_OSITA}www'
+alias gopelona='cd ${BRQX_PELONA}www'
+
+alias gong='cd ${BRQX_NG}www'
+
+alias goza='wsgo za'
+
+alias gozb='wsgo zb'
+alias gozc='wsgo zc'
+alias gozd='wsgo zd'
+alias goze='wsgo ze'
+alias gozf='wsgo zf'
+alias gozg='wsgo zg'
+alias gozh='wsgo zh'
+alias gozi='wsgo zi'
+alias gozj='wsgo zj'
+alias gozk='wsgo zk'
+alias gozl='wsgo zl'
+alias gozm='wsgo zm'
+alias gozn='wsgo zn'
+alias gozo='wsgo zo'
+
+alias gozp='wsgo zp'
+alias gozq='wsgo zq'
+alias gozr='wsgo zr'
+alias gozs='wsgo zs'
+
+alias gozt='wsgo zt'
+alias gozu='wsgo zu'
+alias gozv='wsgo zv'
+alias gozw='wsgo zw'
+
+alias gozx='wsgo zx'
+alias gozy='wsgo zy'
+alias gozz='wsgo zz'
+
+#- Serv
+#-------------------------------------------------
+
+

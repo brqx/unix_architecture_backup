@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Alias Entornos Unix - Brqx - Brqx Org
+# Brqx Org - Rct - 2007
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 2.0"          #  Version del Script actual
+FECHA_SCRIPT="Septiembre 2007"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- minuteros - dminuteros - horarios
+#-------------------------------------------------------------------
+
+alias minuteros='alias | grep min'
+alias dminuteros='alias | grep diez'
+alias horarios='alias | grep hora'
+
+
+
+

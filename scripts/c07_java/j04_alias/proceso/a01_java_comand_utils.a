@@ -1,0 +1,45 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.4"          #  Version del Script actual
+FECHA_SCRIPT="Noviembre 2010"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="proceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- ljava
+#-------------------------------------------------------------------
+#- Alias/Funciones/Variables Requeridas
+#-------------------------------------------------------------------
+#-- p
+#-------------------------------------------------------------------
+
+# Alias de Ejecuciones - Brqx Java
+#-====================================-
+
+#-- 
+alias ljava='p java | grep -v "grep" | tr -s " " | cut -d " " -f8- | cut -c1-80'
+alias pidjava='p java | grep -v "grep" | tr -s " " | cut -d " " -f2 | tr "\n" " "'
+
+
+alias wjava='while true; do p java | grep -v "grep" | tr -s " " | cut -d " " -f8- | cut -c1-80 ; sleep 5; clear; done'
+
+#Alias basados en gps - JAVA y PROCESOS
+#-------------------------------------------------------------------
+#-- Funcion PS especifica de Solaris
+
+alias gps='/usr/ucb/ps'
+alias verjavas='gps -axww | grep java'
+
+
+#Alias eliminacion procesos - JAVA y PROCESOS
+#-------------------------------------------------------------------
+
+alias matajava='kill -9 $(pidjava)'
+

@@ -1,0 +1,36 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.1"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="fichero"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- testziz - checkspace_clean - checklogs - lista_carpetas
+#-------------------------------------------------------------------
+#- Variables / Funciones Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+# Alias de listados de espacio ocupado
+#-=================================================================-
+
+#-Hay que intentar informar de los alias
+
+alias lista_carpetas='find $PWD -maxdepth 1 -mindepth 1  -type d'
+
+#-Checkspace que no utiliza funciones pero no va con espacios
+alias checkspace_clean='for i in $( find $PWD -maxdepth 1 -mindepth 1  -type d  ) ; do du -h "$i" | tail -1; done'
+alias testziz='for i in  $(find $PWD -maxdepth 1 -mindepth 1  -type d); do echo "$i : $(du -h $i | tail -1)"; done'
+
+alias checklogs='find . -type f -name error_log | xargs du -h'
+
+#-------------------------------------------------------------------

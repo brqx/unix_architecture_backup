@@ -1,0 +1,31 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2010
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.0"          #  Version del Script actual
+FECHA_SCRIPT="Noviembre 2010"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_PRODUCTO="websphere"
+CONCEPT_ARQUETIPO="busqueda"
+CONCEPT_LEVEL="Script ${CONCEPT_MOLDE} ${CONCEPT_ARQUETIPO}"
+CONCEPT_LEVEL="${CONCEPT_LEVEL} ${CONCEPT_PRODUCTO} ${CONCEPT_CARACTER}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- recbpm
+#-------------------------------------------------------------------
+
+#Find busca recursos definidos en las instancias WPS - WBM
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+#- Se parametriza con la cadena a buscar
+#-------------------------------------------------------------------
+alias recbpm='find . -type f -name resources.xml | xargs grep -l '
+
+
+
+
+
+

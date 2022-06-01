@@ -1,0 +1,82 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2010
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.0"          #  Version del Script actual
+FECHA_SCRIPT="Noviembre 2010"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO=""
+CONCEPT_PRODUCTO="websphere"
+CONCEPT_LEVEL="Script ${CONCEPT_MOLDE} ${CONCEPT_ARQUETIPO}"
+CONCEPT_LEVEL="${CONCEPT_LEVEL} ${CONCEPT_PRODUCTO}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- gowas - gonodo - godmgr
+#-------------------------------------------------------------------
+#-- gowps - gr - gopf - gopm - gowbm - gowbmrun - gowbmpf - gowbmpm
+#-------------------------------------------------------------------
+#- Variables Requeridas
+#-------------------------------------------------------------------
+#-- WPS_HOME - WPS_RUN - WPS_PF - WPS_PM
+#-------------------------------------------------------------------
+#-- WBM_HOME - WBM_RUN - WBM_PF - WBM_PM
+#-------------------------------------------------------------------
+
+#-- Alias de acceso a proyectos
+#-====================================-
+
+#-------------------------------------------------------------------
+#- Websphere Application Server - Generic & Cell - Cluster
+#-------------------------------------------------------------------
+
+#- Ir al home de Websphere
+alias gowas='cd ${WAS_HOME}bin/'
+
+#- Ir al home de Nodo Principal - Perfil por defecto
+alias gonodo='cd ${WPS_PD}bin/'
+
+#- Ir al home del Dmgr - Manager o Perfil por defecto en su ausencia
+alias godmgr='cd ${WPS_DM}bin/'
+
+
+#-------------------------------------------------------------------
+#- Process Server
+#-------------------------------------------------------------------
+
+#- Ir al home de Websphere
+alias gowps='cd ${WPS_HOME}'
+
+#- Acceso al BIN
+alias gr='cd ${WPS_RUN}'
+
+#- Gestion de Perfiles existentes
+alias gopf='cd ${WPS_PF}'
+
+#- Generacion de perfiles
+alias gopm='cd ${WPS_PM}'
+
+#-------------------------------------------------------------------
+#- Business Monitor
+#-------------------------------------------------------------------
+
+#- Ir al home del Monitor
+alias gowbm='cd ${WBM_HOME}'
+
+#- Acceso al BIN
+alias gowbmrun='cd ${WBM_RUN}'
+
+#- Gestion de Perfiles existentes
+alias gowbmpf='cd ${WBM_PF}'
+
+#- Generacion de perfiles
+alias gowbmpm='cd ${WBM_PM}'
+
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+

@@ -1,0 +1,25 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Info Directorio Entornos Unix - Brqx Site - I+D
+# Brqx Org - Rct - 2013
+#-------------------------------------------------------------------
+VERSION_SCRIPT="13.0.2" #  Version del Script actual
+FECHA_SCRIPT="Julio 2013"
+NIVEL_SCRIPT=1 
+#------------------------------------------------------------------- 
+clear
+#-------------------------------------------------------------------
+echo "-============================================================-"
+echo "Informacion directorio :`basename $PWD` "
+echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+echo "${FECHA_SCRIPT} - Ver : ${VERSION_SCRIPT} - Nivel ${NIVEL_SCRIPT}  "
+echo "-============================================================-"
+echo "1.-scripts           : Scripts generales de proceso con Unix"
+echo "2.-sadjust           : Ajustes que se actualizan por separado. Especificos entorno"
+echo "2.-listas            : Listas de scripts"
+echo "3.-libs              : Librerias externas - perl - php"
+echo "3.-scrons            : Scripts especificos de servidor enfocados en cron"
+
+echo "-============================================================-"
+ 
+#-------------------------------------------------------------------

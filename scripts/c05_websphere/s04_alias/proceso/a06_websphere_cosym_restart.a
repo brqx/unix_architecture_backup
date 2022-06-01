@@ -1,0 +1,87 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.3"          #  Version del Script actual
+FECHA_SCRIPT="Julio 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="proceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- rsfron113 - rsfron114 - rscore200 - rscore201
+#-------------------------------------------------------------------
+#-- rssoa202  - rssoa203
+#-------------------------------------------------------------------
+#-- lsfron113 - lsfron114 - lscore200 - lscore201
+#-------------------------------------------------------------------
+#-- lssoa202  - lssoa203
+#-------------------------------------------------------------------
+#- Funciones Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+# Variables - Alias - Librerias
+#-====================================-
+
+#- Alias de reinicio agil remoto de servidores V6/7
+
+alias rsfron113="wrestart_su_remote_cluster frontal6a"
+alias rsfron114="wrestart_su_remote_cluster frontal6b"
+
+alias rscore200="wrestartsudo_remote_cluster core7a"  
+alias rscore201="wrestartsudo_remote_cluster core7b"  
+
+alias rssoa202="wrestartsudo_remote_standalone  soa7a"
+alias rssoa203="wrestartsudo_remote_cluster soa7b"  
+
+alias rswsrr207="wrestartsudo_remote_cluster  wsrr"
+alias rssoa304="wrestart_su_remote_standalone soa6"  
+
+#- Alias de reinicio agil local de servidores V6/7
+
+alias lsfron113="wrestart_su_local_cluster frontal6a"
+alias lsfron114="wrestart_su_local_cluster frontal6b"
+
+alias lscore200="wrestartsudo_local_cluster core7a"  
+alias lscore201="wrestartsudo_local_cluster core7b"  
+
+alias lssoa202="wrestartsudo_local_standalone soa7a"
+alias lssoa203="wrestartsudo_local_cluster soa7b"  
+
+alias lssoa207="wrestartsudo_local_cluster wsrr"
+alias lssoa304="wrestart_su_local_standalone soa6"  
+
+
+#-Formato corto remoto
+
+alias rs113="rsfron113"
+alias rs114="rsfron114"
+
+alias rs200="rscore200"
+alias rs201="rscore201"
+
+alias rs202="rssoa202"
+alias rs203="rssoa203"
+
+alias rs304="rssoa305"
+alias rs205="rswsrr205"
+
+#-Formato corto local
+
+alias ls113="lsfron113"
+alias ls114="lsfron114"
+
+alias ls200="lscore200"
+alias ls201="lscore201"
+
+alias ls202="lssoa202"
+alias ls203="lssoa203"
+
+alias ls304="lssoa305"
+alias ls205="lswsrr205"

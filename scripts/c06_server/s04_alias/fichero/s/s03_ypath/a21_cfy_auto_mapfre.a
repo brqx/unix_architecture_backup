@@ -1,0 +1,51 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="2.2" #  Version del Script actual
+FECHA_SCRIPT="Junio 2011"
+STATUS_SCRIPT="all checked"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04    # Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04 # Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_PRODUCTO_04="main"
+CONCEPT_MOLDE_04="alias"
+CONCEPT_ARQUETIPO_04="fichero"
+CONCEPT_VARIANTE_04=""
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- cfy_server_ver
+#-------------------------------------------------------------------
+#- Variables/Funciones/Alias Requeridas
+#-------------------------------------------------------------------
+#-- cf_to_server_path (cfy)
+#-------------------------------------------------------------------
+
+# Alias de listados de tipos de backup
+#-====================================-
+
+#- Hay que preparar autocp para los servidores
+
+alias cfy_soa_6='cfy ibm soa6 22' 
+
+alias cfy_soa_7a='cfy ricabel soa7a 22' 
+
+alias cfy_soa_7b='cfy ricabel soa7b 22' 
+
+alias cfy_core_7a='cfy ricabel core7a 22' 
+
+alias cfy_core_7b='cfy ricabel core7b 22' 
+
+alias cfy_core='cfy ibm core 22' 
+
+alias cfy_frontal='cfy ibm frontal 22' 
+
+
+
+

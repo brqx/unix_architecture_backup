@@ -1,0 +1,49 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2013
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.2"          #  Version del Script actual
+FECHA_SCRIPT="Febrero 2013"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03		# Variable control profundidad alcanzada
+LEVEL_NIVEL_03=03	# Variable control script
+CONCEPT_FORMATO_03="script"
+CONCEPT_MOLDE_03="funciones"
+CONCEPT_PRODUCTO_03="server"
+CONCEPT_ARQUETIPO_03="servicio"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_03="${CONCEPT_FORMATO_03} ${CONCEPT_MOLDE_03} ${CONCEPT_ARQUETIPO_03}"
+CONCEPT_LEVEL_03="${CONCEPT_LEVEL_03} ${CONCEPT_PRODUCTO_03} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_SERVER}s02_${CONCEPT_MOLDE_03}/${CONCEPT_ARQUETIPO_03}/
+
+#- General ARQ
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/f10_check_any_service_arq.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/f14_check_service_arq.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/f15_start_service_arq.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/f16_stop_service_arq.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+if [ "${N2}" != "" ] ; then
+echo "${LEVEL_NIVEL_02}/${LEVEL_NIVEL}--${CONCEPT_LEVEL_02}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================
+

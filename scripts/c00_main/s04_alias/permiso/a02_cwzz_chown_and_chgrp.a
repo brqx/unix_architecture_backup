@@ -1,0 +1,48 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.0"          #  Version del Script actual
+FECHA_SCRIPT="Octubre 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="permiso"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- cww - cwi - cwr - cwo
+#-------------------------------------------------------------------
+
+# Alias de acceso - Rutas Profiling
+#-====================================-
+
+#- Ruta Scripts
+alias cwza='chown -R za * && chgrp -R nobody *'
+alias cwzb='chown -R zb * && chgrp -R nobody *'
+alias cwzc='chown -R zc * && chgrp -R nobody *'
+alias cwzd='chown -R zd * && chgrp -R nobody *'
+alias cwze='chown -R ze * && chgrp -R nobody *'
+alias cwzf='chown -R zf * && chgrp -R nobody *'
+alias cwzg='chown -R zg * && chgrp -R nobody *'
+alias cwzh='chown -R zh * && chgrp -R nobody *'
+alias cwzi='chown -R zi * && chgrp -R nobody *'
+alias cwzj='chown -R zj * && chgrp -R nobody *'
+alias cwzk='chown -R zk * && chgrp -R nobody *'
+alias cwzl='chown -R zl * && chgrp -R nobody *'
+alias cwzm='chown -R zm * && chgrp -R nobody *'
+alias cwzn='chown -R zn * && chgrp -R nobody *'
+alias cwzo='chown -R zo * && chgrp -R nobody *'
+alias cwzp='chown -R zp * && chgrp -R nobody *'
+alias cwzq='chown -R zq * && chgrp -R nobody *'
+alias cwzr='chown -R zr * && chgrp -R nobody *'
+alias cwzs='chown -R zs * && chgrp -R nobody *'
+alias cwzt='chown -R zt * && chgrp -R nobody *'
+alias cwzu='chown -R zu * && chgrp -R nobody *'
+alias cwzv='chown -R zv * && chgrp -R nobody *'
+alias cwzw='chown -R zw * && chgrp -R nobody *'
+alias cwzx='chown -R zx * && chgrp -R nobody *'
+alias cwzy='chown -R zy * && chgrp -R nobody *'
+alias cwzz='chown -R zz * && chgrp -R nobody *'

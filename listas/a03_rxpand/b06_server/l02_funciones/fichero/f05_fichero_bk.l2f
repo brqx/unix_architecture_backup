@@ -1,0 +1,153 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.2"          #  Version del Script actual
+FECHA_SCRIPT="Mayo 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03		# Variable control profundidad alcanzada
+LEVEL_NIVEL_03=03	# Variable control script
+CONCEPT_FORMATO_03="script"
+CONCEPT_MOLDE_03="funciones"
+CONCEPT_PRODUCTO_03="server"
+CONCEPT_ARQUETIPO_03="fichero"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_03="${CONCEPT_FORMATO_03} ${CONCEPT_MOLDE_03} ${CONCEPT_ARQUETIPO_03}"
+CONCEPT_LEVEL_03="${CONCEPT_LEVEL_03} ${CONCEPT_PRODUCTO_03} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_SERVER}s02_${CONCEPT_MOLDE_03}/${CONCEPT_ARQUETIPO_03}/
+
+##-- Nuevo enfoque - Separamos SCP y SYNC
+
+
+#-- BK - Vamos a diversificarla - va a terminar en un sitio especifico
+#-  Tenemos tres tipos de funciones a este nivel : adds - dead - live
+
+BK_GEN=${LSCRIPT_PARTICULAR_PATH_03}f05_bk/
+
+#--- Obtencion de datos
+
+#---- GET - adds -
+
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/adds/f01_gps_get_parametros_servidor.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/adds/f02_gnf_get_nombre_fichero_export.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/adds/f03_gen_path_site.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/adds/f04_gpb_get_path_for_backup.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/adds/f05_gns_get_nombre_servidor.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/adds/f06_get_path_site.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/adds/f07_get_dead_backup_db_data.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/adds/f08_get_dead_backup_fs_data.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/adds/f09_get_server_path_site.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/adds/f10_gnsl_get_nombre_servidor_local.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/adds/f14_get_path_for_live_backup.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/adds/f17_get_live_backup_db_data.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/adds/f18_get_live_backup_fs_data.f
+#-------------------------------------------------------------------
+
+
+#---- GET - dead -
+
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/dead/f03_gbsi_get_backup_server_info.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/dead/f04_gbsd_get_backup_site_data.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/dead/f05_gdbd_get_dead_backup_data.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/dead/f07_tps_test_path_site.f
+#-------------------------------------------------------------------
+
+#---- GET - live -
+
+#-------------------------------------------------------------------
+. ${BK_GEN}g/get/live/f06_lbk_get_live_backup_data.f
+#-------------------------------------------------------------------
+
+
+#--- Comprobacion de datos - tres tipos
+
+#---- PRINT - adds -
+
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/adds/f11_psp_print_server_params.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/adds/f12_pnf_print_nombre_fichero_export.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/adds/f13_pps_print_gen_path_site.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/adds/f14_ppb_print_path_for_backup.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/adds/f15_pns_print_nombre_servidor.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/adds/f16_pps_print_path_site.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/adds/f17_print_dead_backup_db_data.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/adds/f18_print_dead_backup_fs_data.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/adds/f19_psps_print_server_path_site.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/adds/f20_pnsl_print_nombre_servidor_local.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/adds/f24_print_path_for_live_backup.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/adds/f27_print_live_backup_db_data.f
+#-------------------------------------------------------------------
+
+
+#---- PRINT - dead -
+
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/dead/f13_pbsi_print_backup_server_info.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/dead/f14_pbsd_print_backup_site_data.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/dead/f15_pdbd_print_dead_backup_data.f
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/dead/f17_tps_print_test_path_site.f
+#-------------------------------------------------------------------
+
+
+#---- PRINT - live -
+
+#-------------------------------------------------------------------
+. ${BK_GEN}g/print/live/f16_plb_print_live_backup_data.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${BK_GEN}s/f10_bk_site_to_server.f
+#-------------------------------------------------------------------
+. ${BK_GEN}s/f11_lb_site_to_server.f
+#-------------------------------------------------------------------
+. ${BK_GEN}s/f12_lbs_site_to_server_seguro.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "${LEVEL_NIVEL_03} / ${LEVEL_NIVEL}	- Ejecutadas ${CONCEPT_LEVEL_03}"
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

@@ -1,0 +1,37 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Info Directorio Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="5.1" #  Version del Script actual
+FECHA_SCRIPT="Febrero 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_PRODUCTO_04="websphere"
+CONCEPT_MOLDE_04=""
+CONCEPT_ARQUETIPO_04=""
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#------------------------------------------------------------------- 
+clear
+#-------------------------------------------------------------------
+echo "-============================================================-"
+echo "Informacion directorio :`basename $PWD` ( ${CONCEPT_LEVEL_04} )  "
+echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+echo "${FECHA_SCRIPT} - Ver : ${VERSION_SCRIPT} - Nivel ${NIVEL_SCRIPT}  "
+echo "-============================================================-"
+echo "1.-s01_variables         (v)   : Variables establecidas       "
+echo "2.-s02_funciones         (f)   : Funciones generadas          "
+echo "3.-s03_scripts           (x)   : Scripts creados              "
+echo "4.-s04_alias             (a)   : Alias asignados              "
+echo "5.-s05_minialias        (ma)   : Mini alias asociados         "
+echo "6.-s06_exportaciones     (e)   : Exportaciones realizadas     "
+echo "7.-s07_ejecuciones       (x)   : Ejecuciones codificadas      "
+echo "8.-s08_informaciones   (nfo)   : Traceados e informaciones    "
+echo "-============================================================-"
+
+#-------------------------------------------------------------------
+

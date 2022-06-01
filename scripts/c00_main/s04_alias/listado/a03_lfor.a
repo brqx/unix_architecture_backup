@@ -1,0 +1,23 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2009
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.0"          #  Version del Script actual
+FECHA_SCRIPT="Junio 2009"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="listado"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- lfor lforn
+#-------------------------------------------------------------------
+
+#Listado sencillo sin indicadores de link
+
+alias lfor='for uu in *; do echo $uu; done'
+alias lfor2='for uv in *; do echo $uv; done'
+alias lfor3='for uy in *; do echo $uy; done'

@@ -1,0 +1,30 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.1"          #  Version del Script actual
+FECHA_SCRIPT="Agosto 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="fichero"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- bk_dir_to_home - bk_dir_to_opt - bk_dir_to_etc - bk_dir_to_root
+#-------------------------------------------------------------------
+#- Variables/Funciones Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+# Alias de listados de tipos de backup
+#-====================================-
+
+alias bk_dir_to_home='bkcpg_dir_to_server home'
+alias bk_dir_to_opt='bkcpg_dir_to_server opt'
+alias bk_dir_to_etc='bkcpg_dir_to_server etc'
+alias bk_dir_to_root='bkcpg_dir_to_server root'
+

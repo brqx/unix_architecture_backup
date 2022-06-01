@@ -1,0 +1,47 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2010
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.3"          #  Version del Script actual
+FECHA_SCRIPT="Noviembre 2010"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="proceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- ibm - pibm - reinicio_wps_NN
+#-------------------------------------------------------------------
+#- Funciones Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+# Alias de Ejecuciones - Brqx Drupal
+#-====================================-
+
+#-- Alias de arranque del productos de IBM - Se configuran por servidor
+alias ibm="$/startServer.sh server1"
+
+#-- Alias generales de arranque
+
+alias startpwsad="./startServer.sh server1 "
+alias startsoa="./startServer.sh server1 "
+
+#-- Alias generales de reinicio
+
+alias stopwsad="./stopServer.sh server1 -username adm-wsad -password adm-wsad"
+alias stopsoa="./stopServer.sh server1 -username adm-soa -password adm-soa"
+
+#-- Alias especificos de reinicio - Basados en perfiles
+
+alias reinicio_wps_01="${RUTA_PERFIL_01}/stopServer.sh server1 -username app-wsad -password DESAwsad && ${RUTA_PERFIL_01}/startServer.sh server1" 
+alias reinicio_wps_02="${RUTA_PERFIL_02}/stopServer.sh server1 -username adm-soa -password adm-soa && ${RUTA_PERFIL_01}/startServer.sh server1" 
+alias reinicio_wps_03="${RUTA_PERFIL_03}/stopServer.sh server1 -username adm-soa -password adm-soa && ${RUTA_PERFIL_01}/startServer.sh server1" 
+alias reinicio_wps_04="${RUTA_PERFIL_04}/stopServer.sh server1 -username adm-soa -password adm-soa && ${RUTA_PERFIL_01}/startServer.sh server1" 
+
+
+

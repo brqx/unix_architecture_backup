@@ -1,0 +1,180 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+"""
+===========================================================
+@author: Ricardo Cabello
+@version: 0.0.3
+@pythonver: 3.3
+-----------------------------------------------------------
++ Clases definidas : 
+--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+- ParseMsg   : Clase de mensajeria para el parseo
+-----------------------------------------------------------
+-+ Clases heredadas : 
+--=----=----=----=----=----=----=----=----=----=----=----=-
+- getsetGen  : Clase generica de get y set
+-----------------------------------------------------------
+-+ Clases utilizadas : 
+--=----=----=----=----=----=----=----=----=----=----=----=-
+- Ninguna
+--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
++ Librerias Primeur requeridas
+--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+- Ninguna
+-----------------------------------------------------------
++ Librerias Sistema requeridas
+-----------------------------------------------------------
+- Ninguna
+===========================================================
++ Process Status  : [130624]
+--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+#- Quality        : [0] [1] [2] [3] [4] [_]
+-----------------------------------------------------------
+#- Comments       : [0] [1] [2] [3] [_] [5]
+-----------------------------------------------------------
+#- Info           : [0] [1] [2] [3] [_] [5]
+-----------------------------------------------------------
+#- Just           : [0] [1] [2] [3] [4] [_]
+===========================================================
+"""
+
+#- Importacion de clases
+
+from oo_getsetgen import getsetGen
+
+
+class ParseMsg(getsetGen):
+
+    #-Variable estatica para indicar el nombre de la clase
+    __cls                                   = "ParseMsg"
+    __mth                                   = ""    
+    __log_level                             = 0
+    __log_class_level                       = 0
+
+    __log_show                              = "screen"
+    __log_file                              = ""    # Log file por defecto
+    __log_file_alt                          = ""    # Log file alterno
+
+
+    #-Atributos publicos principales
+    msg_parse_cadena                        = "Cadena a parsear"
+
+    #-Atributos publicos secundarios
+    msg_parse_fecha                         = "Fecha del sistema"
+    msg_parse_fecha_hora                    = "Fecha y hora del sistema"
+    msg_parse_mascara_fecha                 = "Mascara de fecha"
+    msg_parse_source_filename               = "Nombre origen"
+    msg_parse_destination_filename          = "Nombre destino"
+    msg_parse_source_filename_no_ext        = "No extension en nombre origen"
+    msg_parse_destination_filename_no_ext   = "No extension en nombre destino"
+    msg_parse_description                   = "Descripcion"
+
+    msg_parse_qmname                        = "Gestor de Colas"
+    msg_parse_queue                         = "Cola"
+    msg_parse_numint                        = "Numint"
+    msg_parse_correl_id                     = "Correl Id"
+    msg_parse_sender                        = "Sender"
+    msg_parse_directory                     = "Directorio destino"
+
+    #------------------------------------------------------
+    #---------------------- CONSTRUCTOR -------------------
+    #------------------------------------------------------
+    def __init__(self                                   , 
+                 log_level              =   0           ,
+                 log_class_level        =   0           ,
+                 log_show               = "screen"      ,
+                 log_file               =   ""          ,
+                 log_size               =   1000000     ):
+        """ Constructor de mensajes para el parseo
+        """
+
+        mth = "init"
+        #- Establecimiento nivel de log
+        self.__log_level = log_level
+
+        self.LogInitConstructor(log_level           , 
+                                log_class_level     , 
+                                log_show            )
+
+        log_class_level = log_class_level + 1        
+
+        self.__log_class_level = log_class_level
+
+        #-Estableciendo fichero de log
+        self.__log_show     =   log_show
+
+        self.__log_file     =   log_file
+        
+
+        getsetGen.__init__( self                , 
+                            log_level           ,
+                            log_class_level     ,
+                            log_show            ,
+                            log_file            ,
+                            log_size            )
+
+
+        if log_level > log_class_level:
+            self.sInfoConstructor(self.__cls)
+
+            if log_level > 80:
+                self.__Log(self.msg         ,
+                           self.bline       ,
+                           mth              ,
+                           "simple_simple"  )
+
+        self.LogEndConstructor()
+
+
+
+    #-Clase de log alternada
+    def __LogAlt(self                           ,
+              texto         =   ""              ,
+              valor         =   ""              ,
+              mth           =   "init"          ,
+              dec           =   "normal"        ):
+        """ Log de la clase
+        """        
+        if mth == "":
+            mth = self.__mth
+
+        cls = self.__cls
+
+        log_level       = self.__log_level
+        log_class_level = self.__log_class_level
+        log_show        = self.__log_show
+        log_file_alt    = self.__log_file_alt
+
+           
+        self.log(texto              , 
+                 valor              ,
+                 cls                ,
+                 mth                ,        
+                 dec                ,
+                 log_level          ,
+                 log_class_level    ,
+                 log_show           ,
+                 log_file_alt       )        
+
+
+    #-Clase de log de traza
+    def __Log(self                          ,
+              texto                         ,
+              valor         =   ""          ,
+              mth           =   "init"      ,
+              dec           =   "normal"    ):
+        """ Log de la clase para traza
+        """        
+
+        self.__log_file_alt  = self.__log_file
+
+        self.__LogAlt(texto                 ,
+                      valor                 ,
+                      mth                   ,
+                      dec                   )
+
+    
+#--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+#              I N I C I O   P R O G R A M A
+#--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+

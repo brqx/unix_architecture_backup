@@ -1,0 +1,42 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.0"          #  Version del Script actual
+FECHA_SCRIPT="Diciembre 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03		# Variable control profundidad alcanzada
+LEVEL_NIVEL_03=03	# Variable control script
+CONCEPT_PRODUCTO_03="parser"
+CONCEPT_MOLDE_03="funciones"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_03="${CONCEPT_FORMATO_03} ${CONCEPT_MOLDE_03} ${CONCEPT_ARQUETIPO_03}"
+CONCEPT_LEVEL_03="${CONCEPT_LEVEL_03} ${CONCEPT_PRODUCTO_03} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_DRUPAL}s02_${CONCEPT_MOLDE_03}/${CONCEPT_PRODUCTO_03}/
+
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+#- Funciones Drupal - Solutions
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+. ${LSCRIPT_PARTICULAR_PATH_03}f21_ps_parseo_backup_servidores.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}f22_ps_parseo_backup_bbdd.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}f23_ps_parseo_backup_files.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N3 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N3}" != "" ] ; then
+echo "${LEVEL_NIVEL_03}/${LEVEL_NIVEL}---${CONCEPT_LEVEL_03}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

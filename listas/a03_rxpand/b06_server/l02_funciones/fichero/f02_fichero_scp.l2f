@@ -1,0 +1,109 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.2"          #  Version del Script actual
+FECHA_SCRIPT="Mayo 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=05		# Variable control profundidad alcanzada
+LEVEL_NIVEL_05=05	# Variable control script
+CONCEPT_FORMATO_05="lista"
+CONCEPT_MOLDE_05="funciones"
+CONCEPT_PRODUCTO_05="server"
+CONCEPT_ARQUETIPO_05="fichero"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_05="${CONCEPT_FORMATO_05} ${CONCEPT_MOLDE_05} ${CONCEPT_ARQUETIPO_05}"
+CONCEPT_LEVEL_05="${CONCEPT_LEVEL_05} ${CONCEPT_PRODUCTO_05} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_05=${SD_SERVER}s02_${CONCEPT_MOLDE_05}/${CONCEPT_ARQUETIPO_05}/
+
+##-- Nuevo enfoque - Separamos SCP y SYNC
+
+#--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+#-- INICIO SERVIDOR - esto igual debe ir a a ota lista
+#--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+
+#-------------------------------------------------------------------
+#-- =- -= =- -= =- -= SCP - COPY TO // FROM SYSTEMS =- -= =- -= =- -
+#-------------------------------------------------------------------
+#-- SSYNC : Same Path (respeta el path definido) - tipo sync
+#-- SHOME : Same Home (respeta el home definido
+#-- YPATH : Copia a una ruta especifica
+#-------------------------------------------------------------------
+
+#-- SCP - SPATH - Sync
+
+SCP_SYNC=${LSCRIPT_PARTICULAR_PATH_05}f02_scp/s01_ssync/
+
+#-------------------------------------------------------------------
+. ${SCP_SYNC}g/f10_scp_sync_to_server.f
+#-------------------------------------------------------------------
+. ${SCP_SYNC}g/f11_scp_sync_from_server.f
+#-------------------------------------------------------------------
+
+. ${SCP_SYNC}g/f12_scpw_current_folder.f
+
+
+#-- SCP all servers
+
+#-------------------------------------------------------------------
+. ${SCP_SYNC}s/f12_scp_sync_to_all_servers.f
+#-------------------------------------------------------------------
+
+#-- SCP - Shome
+
+SCP_HOME=${LSCRIPT_PARTICULAR_PATH_05}f02_scp/s02_shome/
+
+#-------------------------------------------------------------------
+. ${SCP_HOME}g/f30_scp_path_to_server_home.f
+#-------------------------------------------------------------------
+. ${SCP_HOME}g/f31_scp_path_from_server_home.f
+#-------------------------------------------------------------------
+
+#-- SCP all servers
+
+#-------------------------------------------------------------------
+. ${SCP_HOME}s/f32_scp_path_to_all_servers_home.f
+#-------------------------------------------------------------------
+
+
+#-- SCP - ypath - Copy
+
+YP_REMOTE=${LSCRIPT_PARTICULAR_PATH_05}f02_scp/s03_ypath/
+
+#-------------------------------------------------------------------
+. ${YP_REMOTE}g/f40_scp_path_to_server.f
+#-------------------------------------------------------------------
+. ${YP_REMOTE}g/f41_scp_path_from_server.f
+#-------------------------------------------------------------------
+
+#-- specific -- arquitectura - SCP all servers
+
+#-------------------------------------------------------------------
+. ${YP_REMOTE}s/f20_scp_path_arqserver.f
+#-------------------------------------------------------------------
+. ${YP_REMOTE}s/f42_scp_path_to_all_servers.f
+#-------------------------------------------------------------------
+
+#- Agile scp - brqx architecture
+
+SCP_HOME=${LSCRIPT_PARTICULAR_PATH_05}f02_scp/s04_utils/
+
+#-------------------------------------------------------------------
+. ${SCP_HOME}f01_pn_scp_brqx.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "${LEVEL_NIVEL_03} / ${LEVEL_NIVEL}	- Ejecutadas ${CONCEPT_LEVEL_03}"
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

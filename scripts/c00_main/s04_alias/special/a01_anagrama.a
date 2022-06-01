@@ -1,0 +1,52 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2009
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.0"          #  Version del Script actual
+FECHA_SCRIPT="Junio 2009"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="special"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- ANAGRAMA
+#-------------------------------------------------------------------
+
+#- Adaptacion del Prompt de SH
+#-=========================================-
+
+hostname=`hostname`
+
+#- Alias entorno Solaris - Hp-Ux - Cygwin
+PS1='$hostname:$PWD>'
+
+#- Alias shell restringido - Hostings
+#PS1="\u@\w>"
+
+OLD_PS1=$PS1
+
+#- Zona de Alias ANAGRAMA
+#-=========================================-
+
+#Alias Gestion Rutas - Insignia ( comun all platforms )
+
+alias ${INSIGNIA}='PS1="${INSIGNIA}>"'
+alias no${INSIGNIA}='PS1=${OLD_PS1}'
+
+#Alias Gestion Rutas - Anagrama ( usuario )
+
+alias ${ANAGRAMA}='PS1="${ANAGRAMA}>"'
+alias no${ANAGRAMA}='PS1=${OLD_PS1}'
+
+#Alias Gestion Rutas - Anagrama ( plataforma )
+
+alias ${PLAT}='PS1="${PLAT}>"'
+alias no${PLAT}='PS1=${OLD_PS1}'
+
+alias brqz='brqz_enable'
+alias nobrqz='brqz_disable'
+

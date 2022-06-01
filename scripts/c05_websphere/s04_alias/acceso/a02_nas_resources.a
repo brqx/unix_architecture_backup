@@ -1,0 +1,61 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.0"          #  Version del Script actual
+FECHA_SCRIPT="Junio 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO=""
+CONCEPT_PRODUCTO="websphere"
+CONCEPT_LEVEL="Script ${CONCEPT_MOLDE} ${CONCEPT_ARQUETIPO}"
+CONCEPT_LEVEL="${CONCEPT_LEVEL} ${CONCEPT_PRODUCTO} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- gonas - gdesa
+#-------------------------------------------------------------------
+#- Variables Requeridas
+#-------------------------------------------------------------------
+#-- NAS - NASDESA - BIBLIOTECAS_LOCALES
+#-------------------------------------------------------------------
+
+#-- Alias de acceso a proyectos
+#-====================================-
+
+#-------------------------------------------------------------------
+#- Acceso NAS definidos
+#-------------------------------------------------------------------
+
+#- Ir al NAS de Arquitectura
+alias gonas='cd ${NAS}'
+
+#- Ir al NAS de Desarrollo
+alias gdesa='cd ${NASDESA}'
+
+#-------------------------------------------------------------------
+#- Acceso Rutas Arquitectura
+#-------------------------------------------------------------------
+
+#- Ir a las librerias locales del WAS
+alias golib='cd ${BIBLIOTECAS_LOCALES}'
+alias goarq='cd ${BIBLIOTECAS_ARQUITECTURA}'
+alias gov2='cd ${BIBLIOTECAS_ARQUITECTURA}/v2'
+alias gomav='cd ${BIBLIOTECAS_MAVEN}'
+alias goart='cd ${ARTEFACTOS_MAVEN}'
+
+
+
+#- Ir a la zona de descarga de librerias - go descarga gd
+
+alias gdlib='cd ${LIBRERIAS_MAVEN}'
+alias gdart='cd ${ARTEFACTOS_MAVEN}'
+alias gdmav='gdlib'
+
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+

@@ -1,0 +1,57 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2022
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.2"          #  Version del Script actual
+FECHA_SCRIPT="Noviembre 2022"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- goy - gos - c_
+#-------------------------------------------------------------------
+#+ Funciones Requeridas:
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+#Cambios agiles de ruta
+#-------------------------------------------------------------------
+alias goy='cd /root/scripts/arq/'
+alias gos='cd /brqx/arquitectura/StudioBrqx'
+
+#Alias especial 2022 para las carpetas que comienza por A
+alias c_="cdd_"
+
+alias c_a="c_ a"
+alias c_b="c_ b"
+alias c_c="c_ c"
+alias c_d="c_ d"
+alias c_e="c_ e"
+alias c_f="c_ f"
+alias c_g="c_ g"
+alias c_h="c_ h"
+alias c_i="c_ i"
+alias c_j="c_ j"
+alias c_k="c_ k"
+alias c_l="c_ l"
+alias c_m="c_ m"
+alias c_n="c_ n"
+alias c_o="c_ o"
+alias c_p="c_ p"
+alias c_q="c_ q"
+alias c_r="c_ r"
+alias c_s="c_ s"
+alias c_t="c_ t"
+alias c_v="c_ v"
+alias c_w="c_ w"
+alias c_x="c_ x"
+alias c_y="c_ y"
+alias c_z="c_ z"
+
+

@@ -1,0 +1,413 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+"""
+===========================================================
+@author: Ricardo Cabello
+@version: 0.0.3
+-----------------------------------------------------------
+-+ Clases utilizadas : 
+--=----=----=----=----=----=----=----=----=----=----=----=-
+- FileList      : Clase de spazio para listado de atributos
+-----------------------------------------------------------
+- FileAcq       : Clase de spazio para acq
+-----------------------------------------------------------
+- PostProceso   : Clase de PostProceso
+-----------------------------------------------------------
+- Log           : Clase de gestion de logs
+-----------------------------------------------------------
++ Librerias Primeur requeridas
+--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+- pm_string
+-----------------------------------------------------------
++ Librerias Sistema requeridas
+-----------------------------------------------------------
+- os 
+-----------------------------------------------------------
+- sys
+===========================================================
++ Process Status  : [130509]
+--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+#- Quality        : [0] [1] [2] [4] [_] [5]
+-----------------------------------------------------------
+#- Comments       : [0] [1] [2] [3] [_] [5]
+-----------------------------------------------------------
+#- Info           : [0] [1] [2] [_] [4] [5]
+-----------------------------------------------------------
+#- Just           : [0] [1] [2] [_] [4] [5]
+===========================================================
+"""
+
+#- Importacion de clases utilizadas
+
+from oo_fileacq import FileAcq
+from oo_filelist import FileList
+
+from oo_postproceso import PostProceso
+
+from oo_log import Log
+
+from oo_rules_sff_est   import RulesSffEst
+
+#- Importacion de librerias de primeur
+
+import pm_string
+
+#- Importacion de librerias del sistema
+
+import os, sys
+
+
+
+sp              = ""
+sp_fullcomando  = ""
+sp_info         = ""
+
+#-Variable que nos permitira imprimir en pantalla o en fichero de log
+LOG_SHOW="screen"
+
+try:
+    sp          = os.environ['BASEPYTHON']
+    pypath      = os.environ['PYTHONPATH']
+    spazio_path = os.environ['SPAZIO']
+    
+
+    #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+    #              I N I C I O   P R O G R A M A
+    #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+
+    #-- Clase de log
+    log         =   Log()
+
+
+    log.spazio  =   spazio_path
+
+##; TempPath = <Path for Spazio Temporary Files>
+
+    log.cls="SCRIPT"
+    log.mth="receive"
+
+    log.log("Carga librerias correctas",log.bline)
+    log.log(log.lines,log.lines)
+    log.log("SPAZIO:" ,log.bline )
+    log.log( spazio_path , log.bline) 
+    log.log("PYTHONPATH:" ,log.bline )
+    log.log( 
+        pm_string.str_args(sys.path,len(sys.path)) , log.bline)
+
+
+    #-Al ser una referencia circular no puedo usarlo en una clase
+    # interna
+
+    #-Establecimiento del directorio temporal de spazio
+    #--==--==--==--==--==--==--==--==--==--==--==--==--==--==
+
+    clave = "TempPath"
+    spazio_ini  =   log.spazio + log.slash + "spazio.ini"
+
+    rulsff = RulesSffEst(clave, spazio_ini)    
+    
+    comentario = ";"
+    ruta_temporal = rulsff.getKeyValue(clave, spazio_ini,
+                                          comentario)
+
+    if ruta_temporal != "":
+        log.tmp = ruta_temporal
+        
+    log.log("Ruta temporal"     , ruta_temporal)                    
+
+    #--==--==--==--==--==--==--==--==--==--==--==--==--==--==
+
+
+    #-Establecimiento del directorio configuracion de spazio
+    #--==--==--==--==--==--==--==--==--==--==--==--==--==--==
+
+    clave = "CfgPath"
+
+    rulsff = RulesSffEst(clave, spazio_ini)    
+
+    comentario = ";"
+    ruta_config = rulsff.getKeyValue(clave, spazio_ini,
+                                        comentario)
+    if ruta_config != "":
+        log.cfg = ruta_config
+    else:
+        log.cfg = log.spazio + log.slash + "cfg"
+        
+    log.log("Ruta configuracion"     , log.cfg)
+
+    #--==--==--==--==--==--==--==--==--==--==--==--==--==--==
+
+    
+    numero_argumentos = len(sys.argv)
+    
+    # Script de python y sus parametros    
+    sp_fullcomando  =   pm_string.str_args(sys.argv, numero_argumentos)  
+
+
+    log.log("Comando lanzado", sp_fullcomando)
+   
+    #- Generamos el Log de historico
+##    pm_logpmt.log_his(sp_fullcomando , "primeur", "66", LOG_SHOW)
+
+
+
+    ## print numero_argumentos - 9 con usuario y clave
+    if numero_argumentos == 7:
+            
+        sp_info = "Inicio Algoritmo.Argumentos correctos." 
+
+        log.log(sp_info , str(numero_argumentos))        
+
+        ##?GRNAME? ?EVNAME? ?SESS_ID? ?QMANAGER? ?QUEUE? ?INT_NUM?
+       
+        sp_grname   =   sys.argv[1]     # EvGr1
+        sp_evname   =   sys.argv[2]     # EvGr1Ev1       
+        sp_sess_id  =   sys.argv[3]     # 2A000000
+        sp_qmanager =   sys.argv[4]     # fuduntu
+        sp_queue    =   sys.argv[5]     # EVENTQUEUE
+        sp_numint   =   sys.argv[6]     # 0005000000000016
+##      sp_user     =   sys.argv[7]     # Usuario
+##      sp_pass     =   sys.argv[8]     # Clave
+   
+
+        #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+        #   A. INICIO OBTENCION METADATOS
+        #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+
+        qm      = sp_qmanager
+        q       = sp_queue
+        n       = sp_numint
+##        u = sp_user
+##        p = sp_pass
+
+        #-Ajuste multi sistema
+        nod     = log.pmt_ind + "oNOD"      
+        csv     = log.pmt_ind + "o CSV"    
+        banner  = log.pmt_ind + "oNOBanner"
+
+        ls      = "screen"          #-Salida por pantalla
+        ll      = 20                #-Nivel de log
+
+        log.log("Antes llamada FileList"    ,   log.bline       )
+        log.log(log.lines                   ,   log.lines       )
+        log.log("QManager"                  ,   qm              )
+        log.log("Queue"                     ,   q               )
+        log.log("Num Int"                   ,   n               )
+        log.log("Nod"                       ,   nod             )
+        log.log("Csv"                       ,   csv             )
+        log.log("Banner"                    ,   banner          )
+##        log.log("Usuario",banner)
+##        log.log("Clave",banner)
+
+        log.log(log.lines                   ,   log.lines       )
+
+        #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+        #   B. FILE LIST
+        #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+
+
+        oflist = FileList(qm, q, n, nod, csv, banner, ls, ll)        
+
+        syscall_lis     =   oflist.getRunStr()
+
+        syscode_lis     =   oflist.getSysCode()
+        str_syscode_lis =   str(syscode_lis)
+
+        sysstr_lis      =   oflist.getSysOutStr()
+
+
+
+        log.log(log.dlines                  ,   log.dlines      )            
+        log.log("Llamada FileList"          ,   log.bline       ) 
+        log.log(syscall_lis                 ,   log.bline       )
+        log.log(log.lines                   ,   log.lines       )
+
+
+
+        log.log(log.dlines                  ,   log.dlines      )            
+        log.log("Resultado Filelist"        ,   str_syscode_lis )
+        log.log(log.lines                   ,   log.lines       )
+
+        log.log("Salida FileList"           ,   log.lines       )
+        log.log(log.dlines                  ,   log.dlines      )
+        log.log(sysstr_lis                  ,   log.bline       )
+        log.log(log.endlines                ,   log.endlines    )    
+
+            
+        if syscode_lis == 90:        
+
+            #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+            #   C. FILE ACQ
+            #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+
+            reglas  = log.spazio + log.slash +  \
+                  "rules" + log.slash + "receive.dat"
+                     
+
+            qm = sp_qmanager
+            q = sp_queue
+            n = sp_numint
+            ci = oflist.getCorrelId()
+
+            se = oflist.getSender()
+
+            sf = oflist.getSourceFileName()
+            df = oflist.getDestinationFileName()
+            rt = oflist.getDirectory()
+            de = oflist.getDescription()
+            ls = "screen"
+            ll = 20 #int(sys.argv[1])
+
+
+            correlation_id_posible = ci
+            
+            reglas2  = log.cfg + log.slash + \
+            correlation_id_posible + "_acq.rul"
+                      
+            log.log("Posible nombre Reglas" ,reglas2          )
+
+
+##            if log_level > log_class_level:
+
+            log.log("Antes llamada FileAcq"     ,   log.bline   )
+            log.log(log.lines                   ,   log.lines   )
+            log.log("QManager"                  ,   qm          )
+            log.log("Queue"                     ,   q           )
+            log.log("Num Int"                   ,   n           )
+            log.log("Correlation Id"            ,   ci          )
+            log.log("Emisor"                    ,   se          )
+            log.log(log.ascline                 ,   log.ascline )
+            log.log("Source FileName"           ,   sf          )
+            log.log(log.ascline                 ,   log.ascline )
+            log.log("Destination Filname"       ,   df          )
+            log.log("Directory"                 ,   rt          )
+            log.log("Description"               ,   de          )
+            log.log(log.lines                   ,   log.lines   )
+
+
+            ofacq = \
+            FileAcq(qm, q, n , df, sf , ci , se, rt, ls, reglas2, ll)
+          
+            syscall_acq     =   ofacq.getRunStr()
+
+            syscode_acq     =   ofacq.getSysCode()
+            str_syscode_acq =   str(syscode_acq)
+
+            sysstr_acq      =   ofacq.getSysOutStr()
+
+            log.log(log.dlines                  ,   log.dlines      )            
+            log.log("Llamada Acq"               ,   log.bline       ) 
+            log.log(syscall_acq                 ,   log.bline       )
+            log.log(log.lines                   ,   log.lines       )
+            
+
+            log.log(log.dlines                  ,   log.dlines      )            
+            log.log("Resultado Acq"             ,   str_syscode_acq ) 
+            log.log(log.lines                   ,   log.lines       )
+
+            log.log("Salida ACQ"                ,   log.lines       )
+            log.log(log.dlines                  ,   log.dlines      )
+            log.log(sysstr_acq                  ,   log.bline       )
+            log.log(log.endlines                ,   log.endlines    )    
+
+            if syscode_acq == 0:        
+
+                #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+                #   D. POST PROCESO
+                #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+    
+    
+                df              = ofacq.getDestinationFileName()
+                d               = ofacq.getDirectory()
+                post_process    = ofacq.getPostProcess()
+                post_args       = ofacq.getPostProcessArgs()
+                comp            = ofacq.getCompress()
+                trg             = ofacq.getTrigger()
+    
+##                oPost = PostProceso(df, d, post_process ,comp, trg)           
+    
+##                oPost.setPostArgs(post_args)           
+##                oPost.processPost()
+
+    
+            else:    
+
+                log.log("Error llamada FileAcq" , log.bline)
+                log.log(sysstr_acq)
+
+    
+            #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+            #   E. FIN RECEPCION DEL ARCHIVO
+            #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+    
+        else:
+            #-Al ser un error recuperamos con get_valor
+    
+            log.log("Error llamada Filelist" , log.bline)
+            log.log(sysstr_lis)
+
+        #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+        #   A. FIN OBTENCION METADATOS
+        #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+
+            
+    else:
+        sp_info = "Final Algoritmo.Argumentos no correctos." 
+
+        log.log(sp_info , str(numero_argumentos))        
+
+
+    #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+    #              F I N A L   P R O G R A M A
+    #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+
+#- Formato excepciones 2.5 en adelante
+except SyntaxError as e:
+
+## Ajuste excepciones 2.4
+##    except SyntaxError:
+##    ht, e = sys.exc_info()[:2]
+    print "Error de sintaxis. Lineas no respetadas" \
+            + e.message    + e.args
+    pass
+
+except ImportError as e:
+    print "Error al importar " + e.message + e.args   
+    pass
+
+except ValueError as e:
+    print "Error de tipo - parsear un numerico  " + \
+            e.message    + str(e.args)
+    pass
+
+
+except AttributeError as e:
+    print "Error al pasar un atributo " + e.message + str(e.args)
+    pass
+
+except IndentationError as e:
+    print "Error al tabular el codigo" + e.message + str(e.args)   
+    pass
+
+except IndexError as e:
+    print "Error al acceder a una posicion que no existe en lista" \
+        + e.message    + str(e.args)
+    pass
+
+        
+except NameError:
+    print "Error de tipo de datos. Acceder como string a una lista, por ejemplo"    
+    pass
+
+except TypeError:
+    print "Error de tipo de datos"
+    pass
+
+except Exception:
+    exc_type, exc_obj, exc_tb = sys.exc_info()
+    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+    print "Descubriendo excepciones"
+    print(exc_type, fname, exc_tb.tb_lineno)
+
+    LOG_SHOW=""
+    pass

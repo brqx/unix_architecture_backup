@@ -1,0 +1,72 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2016
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.1"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2016"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_MOLDE_04="alias"
+CONCEPT_ARQUETIPO_04="fichero"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_04=${SD_MAIN}s04_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO_04}/
+
+#-==================================================================
+#+ Alias Comunes de las plataformas - Nivel 04
+#-==================================================================
+
+#- Generales
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}g/utils/a01_cf_rf.a
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}g/utils/a02_ziz_space.a
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}g/utils/a03_check_space.a
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}g/utils/a04_check_light_space.a
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}g/utils/a05_resize_images.a
+
+
+#- Gestion de espacios y guiones
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}g/utils/a11_limpiadores.a
+#-------------------------------------------------------------------
+
+#- Insertamos ordenes sudo
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}g/sudo/a03_sudo_utils.a
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}g/sudo/a11_sudo_cf_rf.a
+#-------------------------------------------------------------------
+
+#- Especificos
+
+#- Gestion de fotos
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}s/fotos/a20_fh_foto_change.a
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N4 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N4}" != "" ] ; then
+echo "${LEVEL_NIVEL_02}/${LEVEL_NIVEL}----${CONCEPT_LEVEL_04}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

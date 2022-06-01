@@ -1,0 +1,210 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.1"          #  Version del Script actual
+FECHA_SCRIPT="Diciembre 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03		# Variable control profundidad alcanzada
+LEVEL_NIVEL_03=03	# Variable control script
+CONCEPT_FORMATO_03="lista"
+CONCEPT_MOLDE_03="funciones"
+#-- Esto hay que revisarlo
+CONCEPT_ARQUETIPO_03="ejecuccion"
+CONCEPT_PRODUCTO_03=""
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_03="${CONCEPT_FORMATO_03} ${CONCEPT_MOLDE_03}  ${CONCEPT_ARQUETIPO_03}"
+CONCEPT_LEVEL_03="${CONCEPT_LEVEL_03} ${CONCEPT_PRODUCTO_03} "
+#-==================================================================
+#+ Funciones Especificas producto 05 : IBM WEBSPHERE - SA - Nivel 03
+#-==================================================================
+
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+#- RUTAS DE ACCESO GEN - PRODUCTO - N3
+#--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+
+#-------------------------------------------------------------------
+LSCRIPT_PARTICULAR_PATH_03=${SD_WEBSPHERE}s02_${CONCEPT_MOLDE_03}/
+LSCRIPT_PARTICULAR_PATH_03=${LSCRIPT_PARTICULAR_PATH_03}${CONCEPT_ARQUETIPO_03}/
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e01_aux/f01_was_load_parameters.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e01_aux/f02_was_load_parameters_cluster_twonodes.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e01_aux/f03_was_load_parameters_soa_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e01_aux/f11_was_load_parameters_stop.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e01_aux/f12_was_load_parameters_stop_cluster_twonodes.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e01_aux/f13_was_load_parameters_stop_soa_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e01_aux/f21_was_load_parameters_wsrun.f
+#-------------------------------------------------------------------
+
+#-Todo esto es remoto
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/remote/f10_su_was_run_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/remote/f11_su_was_run_standalone.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/remote/f12_su_was_stop_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/remote/f13_su_was_stop_standalone.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/remote/f14_su_was_restart_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/remote/f15_su_was_restart_standalone.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/remote/f20_sudo_was_run_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/remote/f21_sudo_was_run_standalone.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/remote/f22_sudo_was_run_soa_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/remote/f23_sudo_was_run_cluster_twonodes.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/remote/f30_sudo_was_stop_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/remote/f31_sudo_was_stop_standalone.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/remote/f32_sudo_was_stop_soa_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/remote/f33_sudo_was_stop_cluster_twonodes.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/remote/f40_sudo_was_restart_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/remote/f41_sudo_was_restart_standalone.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/remote/f42_sudo_was_restart_soa_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/remote/f43_sudo_was_restart_cluster_twonodes.f
+#-------------------------------------------------------------------
+
+#-Todo esto es local - sin tener que indicar password - con privilegios
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/local/f50_su_was_run_local_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/local/f51_su_was_run_local_standalone.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/local/f52_su_was_run_local_soa_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/local/f53_su_was_run_local_cluster_twonodes.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/local/f60_su_was_stop_local_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/local/f61_su_was_stop_local_standalone.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/local/f62_su_was_stop_local_soa_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/local/f63_su_was_stop_local_cluster_twonodes.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/local/f70_su_was_restart_local_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/local/f71_su_was_restart_local_standalone.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/local/f72_su_was_restart_local_soa_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e02_su/local/f73_su_was_restart_local_cluster_twonodes.f
+#-------------------------------------------------------------------
+
+#-- Esta parte es haciendo sudo
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/local/f70_sudo_was_run_local_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/local/f71_sudo_was_run_local_standalone.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/local/f72_sudo_was_run_local_soa_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/local/f73_sudo_was_run_local_cluster_twonodes.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/local/f80_sudo_was_stop_local_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/local/f81_sudo_was_stop_local_standalone.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/local/f82_sudo_was_stop_local_soa_cluster.f
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/local/f83_sudo_was_stop_local_cluster_twonodes.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/local/f90_sudo_was_restart_local_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/local/f91_sudo_was_restart_local_standalone.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/local/f92_sudo_was_restart_local_soa_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e03_sudo/local/f93_sudo_was_restart_local_cluster_twonodes.f
+#-------------------------------------------------------------------
+
+#-Todo esto es local - indicando password - con privilegios
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e04_su_pass/local/f50_su_pass_was_run_local_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e04_su_pass/local/f51_su_pass_was_run_local_standalone.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e04_su_pass/local/f52_su_pass_was_run_local_soa_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e04_su_pass/local/f53_su_pass_was_run_local_cluster_twonodes.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e04_su_pass/local/f60_su_pass_was_stop_local_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e04_su_pass/local/f61_su_pass_was_stop_local_standalone.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e04_su_pass/local/f62_su_pass_was_stop_local_soa_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e04_su_pass/local/f63_su_pass_was_stop_local_cluster_twonodes.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e04_su_pass/local/f70_su_pass_was_restart_local_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e04_su_pass/local/f71_su_pass_was_restart_local_standalone.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e04_su_pass/local/f72_su_pass_was_restart_local_soa_cluster.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}g/e04_su_pass/local/f73_su_pass_was_restart_local_cluster_twonodes.f
+#-------------------------------------------------------------------
+
+
+#-Especificos Cosym / Arquitectura
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/f01_cosym_seq_restart_servers.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/f02_cosym_parallel_restart_servers.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/f03_cosym_seq_start_servers.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/f10_was_local_restart.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/f11_was_local_start.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/f12_was_local_stop.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/f20_wasudo_local_restart.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/f21_wasudo_local_start.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_03}s/f22_wasudo_local_stop.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N3 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N3}" != "" ] ; then
+echo "${LEVEL_NIVEL_03}/${LEVEL_NIVEL}---${CONCEPT_LEVEL_03}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

@@ -1,0 +1,54 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="2.2" #  Version del Script actual
+FECHA_SCRIPT="Junio 2011"
+STATUS_SCRIPT="all checked"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04    # Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04 # Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_PRODUCTO_04="main"
+CONCEPT_MOLDE_04="alias"
+CONCEPT_ARQUETIPO_04="fichero"
+CONCEPT_VARIANTE_04=""
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+#- Variables/Funciones/Alias Requeridas
+#-------------------------------------------------------------------
+#-- cf_to_server (cfs)
+#-------------------------------------------------------------------
+#- Hay que preparar autocp para los servidores 
+#-------------------------------------------------------------------
+#- Esto igual no tiene mucho sentido, ya que en los servidores siempre se respetara la ruta
+#  pero por si acaso lo implementamos
+#-------------------------------------------------------------------
+
+alias cfs_ovh_mbrqx='cfs root mbrqx.com 22' 
+
+#- Servidor pendiente
+alias cfs_ovh_pbrqx_7a='cfs root pbrqx.com 22' 
+
+#- Servidor que va a desaparecer
+alias cfs_hetzner_ibrqx='cfs root ibrqx.com 22' 
+
+alias cfs_hetzner_nbrqx='cfs root nbrqx.com 22' 
+
+#- Servidor que va a desaparecer
+alias cfs_unixy_ebrqx='cfs root fbrqx.com 65533' 
+
+alias cfs_unixy_fbrqx='cfs root fbrqx.com 65533' 
+
+alias cfs_unixy_gbrqx='cfs root gbrqx.com 65533' 
+
+#- Futuro servidor 48 cores
+alias cfs_unixy_hbrqx='cfs root hbrqx.com 65533' 
+

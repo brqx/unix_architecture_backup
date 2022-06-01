@@ -1,0 +1,54 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.3"          #  Version del Script actual
+FECHA_SCRIPT="Abril 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_MOLDE_04="funciones"
+CONCEPT_ARQUETIPO_04="proceso"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04}  ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+#+ Funciones Comunes de ACCESO 
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_04=${SD_MAIN}s02_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO_04}/
+
+#- Nivel 1 - Simples
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n1/f01_p.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n1/f02_ps_ux.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n1/f03_ps_axfwww.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n1/f04_p4_ps_mem.f
+#-------------------------------------------------------------------
+
+#- Nivel 2 - Compuestas
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n2/f01_ps4_controla_procesos.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N4 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N4}" != "" ] ; then
+echo "${LEVEL_NIVEL_04}/${LEVEL_NIVEL}----${CONCEPT_LEVEL_04}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

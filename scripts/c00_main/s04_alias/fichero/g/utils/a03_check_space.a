@@ -1,0 +1,48 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.2"          #  Version del Script actual
+FECHA_SCRIPT="Junio 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="fichero"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- checkspace - duu - checkmegas - checkgigas
+#-------------------------------------------------------------------
+#-- dame_espacio - dame_megas - dame_gigas - 
+#-------------------------------------------------------------------
+#- Variables / Funciones Requeridas
+#-------------------------------------------------------------------
+#-- codir - dcode
+#-------------------------------------------------------------------
+
+# Alias de listados de espacio ocupado
+#-====================================-
+
+alias duu='du -h | tail -1 | tr  "\t" " " | cut -d " " -f1'
+
+#-Nuevo alias checkspace que admite carpetas con espacios
+alias checkdir='codir; for i in ${SALIDA_codir}; do dcode "$i" ; echo "${SALIDA_DCODE}" ;done'
+
+#-Nuevo alias checkspace que admite carpetas con espacios
+alias checkspace='codir; for i in ${SALIDA_codir}; do dcode "$i" ;  du -h "${SALIDA_DCODE}" | tail -1; done'
+
+#-------------------------------------------------------------------
+
+#-Se ha actualizado el alias checkspace - cambia tabuladores - dobla espacios y filtra
+
+alias checkmegas='checkspace | tr "\t" " " | sed "s/ /  /g"  | grep "M  "'
+alias checkgigas='checkspace | tr "\t" " " | sed "s/ /  /g"  | grep "G  "'
+
+#-Alias de espacio ocupado
+alias dame_megas='checkmegas'
+alias dame_gigas='checkgigas'
+alias dame_espacio='checkspace'
+
+

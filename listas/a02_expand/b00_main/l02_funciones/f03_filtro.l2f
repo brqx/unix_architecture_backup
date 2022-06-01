@@ -1,0 +1,193 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 8.2"          #  Version del Script actual
+FECHA_SCRIPT="Octubre 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_MOLDE_04="funciones"
+CONCEPT_ARQUETIPO_04="filtro"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+#+ Funciones Comunes de ACCESO 
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_04=${SD_MAIN}s02_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO_04}/
+
+
+#-- S P E C I A L
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n04_special/f01_aplicased.f
+#-------------------------------------------------------------------
+
+#-- F I N D - files -- links and folders
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n01_find/files/jerar/f02_f.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n01_find/files/jerar/f04_f2.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n01_find/files/jerar/f08_f3.f
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n01_find/files/jerar/f09_fn.f
+#------------------------------------------------------------------
+
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n01_find/files/jerar/f06_ftime.f
+#------------------------------------------------------------------
+
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n01_find/files/level/f11_flevel_busqueda_por_nivel.f
+#------------------------------------------------------------------
+
+
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n01_find/links/f03_fd_find_directories.f
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n01_find/links/f05_fd2_find_directories.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n01_find/links/f13_fdl_find_links.f
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n01_find/links/f15_fl2_find_links.f
+#------------------------------------------------------------------
+
+
+#-- G R E P
+
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n02_grep/case/f07_g_based_exec_files.f
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n02_grep/case/f08_gq_based_exed_content.f
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n02_grep/case/f09_gvim_based_edition.f
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n02_grep/case/f10_gx_based_xargs_files.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n02_grep/case/f15_gf_date.f
+#-------------------------------------------------------------------
+
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n02_grep/nocase/f17_gi_based_exec_files.f
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n02_grep/nocase/f18_gqi_based_exec_content.f
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n02_grep/nocase/f19_givim_based_edition.f
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n02_grep/nocase/f20_gix_based_xargs_files.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n02_grep/nocase/f25_gif_date.f
+#-------------------------------------------------------------------
+
+
+#-- F I N D    A N D    G R E P
+
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n05_mix_find_grep/f11_x2.f
+#------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n05_mix_find_grep/f12_x3.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n05_mix_find_grep/f13_x4.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n05_mix_find_grep/f14_x5.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}/n05_mix_find_grep/f15_x6.f
+#-------------------------------------------------------------------
+
+
+#-- T R A C E
+
+#--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+#-- Nivel global - objetos definidos en el sistema
+#--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+
+#-- Nivel 1
+
+#-- - Funciones
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel1/funciones/f01_damef_dame_ruta_y_funcion.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel1/funciones/f11_damer_dame_ruta_funcion.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel1/funciones/f21_xamef_dame_solo_funcion.f
+#-------------------------------------------------------------------
+
+#-- - Referencias
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel1/referencias/f02_damrf_referencias_y_contenido_funcion.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel1/referencias/f12_damrr_referencias_funcion.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel1/referencias/f22_xamrr_contenido_referencia_funcion.f
+#-------------------------------------------------------------------
+
+#-- - Objetos
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel1/objetos/f03_dameo_dame_referencias_y_ruta_objeto.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel1/objetos/f13_xameo_dame_referencias_objeto.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel1/objetos/f23_xamer_dame_rutas_referencias_objeto.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel1/f04_damei_informacion_descripciones.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel1/f05_finfo_informacion_objetos.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel1/f11_dphpf_dame_funcion_php.f
+#-------------------------------------------------------------------
+
+
+#-- Nivel 2
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel2/f16_damela_xamela_lista_funcion.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel2/f17_damell_xamell_lista_lista.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel2/f18_damejer_jerarquia_listas_funcion.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel2/f27_damell_xamell_php_lista.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a02_globales/nivel2/f28_damejqp_jerarquia_listas_funciones_php.f
+#-------------------------------------------------------------------
+
+
+#--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+#-- Nivel relativo a la ruta actual
+#--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a01_relativas/nivel2/f05_dame2g_general.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}n03_trace/a01_relativas/nivel2/f05_dame2g_general.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N4 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N4}" != "" ] ; then
+echo "${LEVEL_NIVEL_04}/${LEVEL_NIVEL}----${CONCEPT_LEVEL_04}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

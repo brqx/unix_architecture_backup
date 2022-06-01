@@ -1,0 +1,22 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2009
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.0"          #  Version del Script actual
+FECHA_SCRIPT="Junio 2009"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=03
+CONCEPT_CARACTER="especifico"
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="acceso"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} ${CONCEPT_CARACTER}"
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_03=${SD_CPANEL}s04_${CONCEPT_MOLDE}/${CONCEPT_ARQUETIPO}/
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "$LEVEL_NIVEL	-	Ejecutadas $CONCEPT_LEVEL"
+#-------------------------------------------------------------------

@@ -1,0 +1,51 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2010
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.1"          #  Version del Script actual
+FECHA_SCRIPT="Agosto 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04		# Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04	# Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_MOLDE_04="funciones"
+CONCEPT_ARQUETIPO_04="listado"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+#+ Funciones Comunes de ACCESO 
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_04=${SD_MAIN}s02_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO_04}/
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}d01_general/f01_lf.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}d01_general/f05_listatag_filtrado_funciones_meta_tags.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}d01_general/f06_funjemplo_lista_ejemplos_funciones.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}d02_archivo/f11_listafuna_lista_funciones_archivo.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}d02_archivo/f12_listafune_lista_ejemplos_archivo.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}d03_carpeta/f03_listafun_lista_funciones_carpeta.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N4 - parametrizado
+#-------------------------------------------------------------------
+if [ "${N4}" != "" ] ; then
+echo "${LEVEL_NIVEL_04}/${LEVEL_NIVEL}----${CONCEPT_LEVEL_04}"
+fi
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

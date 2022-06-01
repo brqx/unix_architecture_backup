@@ -1,0 +1,55 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2013
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.2"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2013"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="fichero"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- sumv - such - suchm - sutz - sutc - sumk - suvi
+#-------------------------------------------------------------------
+#-- sucronl - sucrone
+#-------------------------------------------------------------------
+#- Variables/Funciones Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+# Alias de operaciones tipicas en sistemas sudo
+#-=================================================================-
+
+alias sumv='sudo mv '
+alias such='sudo chown -R '
+alias suchm='sudo chmod -R '
+alias sutz='sudo tar zxvf ' 
+alias sutc='sudo tar zcvf ' 
+alias sumk='sudo mkdir ' 
+
+# Alias de modificacion de archivos sudo
+#-=================================================================-
+alias suvi='sudo vim '
+
+# Alias listado y modificacion de crontab
+#-=================================================================-
+
+alias sucronl='sudo crontab -l'
+alias sucrone='sudo crontab -e'
+
+
+# Alias operaciones remotas
+#-=================================================================-
+
+alias suscp='sudo scp -r '
+
+
+# Mini alias - no debe estar aqui
+#-=================================================================-
+
+alias sulc='su_limpia_carpeta'

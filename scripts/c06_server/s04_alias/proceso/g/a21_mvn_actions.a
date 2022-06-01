@@ -1,0 +1,32 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.1"          #  Version del Script actual
+FECHA_SCRIPT="Agosto 2011"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="proceso"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- mvufull
+#-------------------------------------------------------------------
+#- Variables/Funciones Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+# Alias de listados de tipos de backup
+#-====================================-
+
+#- Descarga especifica Nexus
+alias mvupd='mvn_upd_library'
+alias mvget='mvn_get_library'
+
+#- Descarga global Nexus
+alias mvufull='mvn_ufull_library'
+alias mvgfull='mvn_gfull_library'

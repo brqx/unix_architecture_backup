@@ -1,0 +1,30 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2010
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.3"          #  Version del Script actual
+FECHA_SCRIPT="Noviembre 2010"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_CARACTER="especifico"
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="config"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO} ${CONCEPT_CARACTER}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- vserve
+#-------------------------------------------------------------------
+#+ Informacion
+#-------------------------------------------------------------------
+#-- Debe ejecutarse desde el raiz del profile en cuestion
+#-------------------------------------------------------------------
+
+# Alias de Ejecuciones - Brqx Drupal
+#-====================================-
+
+#-- Devuelve la configuracion del servidor : Fichero ServerIndex.xml
+#-------------------------------------------------------------------
+alias vserver="cat ${PWD}/config/templates/servertypes/APPLICATION_SERVER/serverindex.xml"
+

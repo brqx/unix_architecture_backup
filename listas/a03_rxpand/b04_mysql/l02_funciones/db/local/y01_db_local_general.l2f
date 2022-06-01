@@ -1,0 +1,98 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2012
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 7.3"          #  Version del Script actual
+FECHA_SCRIPT="Noviembre 2012"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=05		# Variable control profundidad alcanzada
+LEVEL_NIVEL_05=05	# Variable control script
+CONCEPT_FORMATO_05="lista"
+CONCEPT_MOLDE_05="funciones"
+CONCEPT_PRODUCTO_05="mysql"
+CONCEPT_ARQUETIPO_05="database"
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_05="${CONCEPT_FORMATO_05} ${CONCEPT_MOLDE_05} ${CONCEPT_ARQUETIPO_05}"
+CONCEPT_LEVEL_05="${CONCEPT_LEVEL_05} ${CONCEPT_PRODUCTO_05} "
+#-==================================================================
+
+LSCRIPT_PARTICULAR_PATH_05=${SD_MYSQL}s02_${CONCEPT_MOLDE_05}/${CONCEPT_ARQUETIPO_05}/g/local/
+
+# S I M P L E 
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y01_auxi/f10_check_db_name.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y01_auxi/f11_db_exist_database.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y02_change/f01_db_create.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y02_change/f02_db_delete.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y02_change/f23_db_copy.f
+#-------------------------------------------------------------------
+
+
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y03_list/f05_db_list.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y03_list/f06_db_listatablasdatabase.f
+#-------------------------------------------------------------------
+
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y05_count/f08_db_cuentatablasdatabase.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y05_count/f09_db_cuentadatabases.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y05_count/f10_db_cuentaregistrostabla.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y06_backup/f21_db_exportdatabase.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y06_backup/f24_db_exportz_database_gzip.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y06_backup/f22_db_restoredatabase.f
+#-------------------------------------------------------------------
+
+
+#- Funcion general de importacion 
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y06_backup/f30_db_impmysql.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y06_backup/f31_db_impmygz.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y04_search/f42_db_search_database.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y04_search/f43_db_search_and_replace_database.f
+#-------------------------------------------------------------------
+
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y07_cache/f44_db_cache_clear_database.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y07_cache/f45_db_cache_clear_and_search_and_replace_database.f
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y06_backup/f63_db_copy_to_server.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y06_backup/f73_db_copy_to_server_seguro.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_05}simple/y06_backup/f74_db_copy_to_server_force.f
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+#+ Sistema de trazado N2 - desactivado
+#-------------------------------------------------------------------
+#N2# echo "${LEVEL_NIVEL_03} / ${LEVEL_NIVEL}	- Ejecutadas ${CONCEPT_LEVEL_03}"
+#-------------------------------------------------------------------
+
+#-==================================================================
+#+ Vaciado de Variables
+#-------------------------------------------------------------------
+limpia_variables;
+#-==================================================================

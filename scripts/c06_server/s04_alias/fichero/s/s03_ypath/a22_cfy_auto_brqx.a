@@ -1,0 +1,54 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2011
+#-------------------------------------------------------------------
+VERSION_SCRIPT="2.2" #  Version del Script actual
+FECHA_SCRIPT="Junio 2011"
+STATUS_SCRIPT="all checked"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04    # Variable control profundidad alcanzada
+LEVEL_NIVEL_04=04 # Variable control script
+CONCEPT_FORMATO_04="script"
+CONCEPT_PRODUCTO_04="main"
+CONCEPT_MOLDE_04="alias"
+CONCEPT_ARQUETIPO_04="fichero"
+CONCEPT_VARIANTE_04=""
+#-------------------------------------------------------------------
+CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
+CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+#- Variables/Funciones/Alias Requeridas
+#-------------------------------------------------------------------
+#-- cf_to_server (cfs)
+#-------------------------------------------------------------------
+#- Hay que preparar autocp para los servidores 
+#-------------------------------------------------------------------
+#- Esto igual no tiene mucho sentido, ya que en los servidores siempre se respetara la ruta
+#  pero por si acaso lo implementamos
+#-------------------------------------------------------------------
+
+alias cfy_ovh_mbrqx='cfy root mbrqx.com 22' 
+
+#- Servidor pendiente
+alias cfy_ovh_pbrqx_7a='cfy root pbrqx.com 22' 
+
+#- Servidor que va a desaparecer
+alias cfy_hetzner_ibrqx='cfy root ibrqx.com 22' 
+
+alias cfy_hetzner_nbrqx='cfy root nbrqx.com 22' 
+
+#- Servidor que va a desaparecer
+alias cfy_unixy_ebrqx='cfy root fbrqx.com 65533' 
+
+alias cfy_unixy_fbrqx='cfy root fbrqx.com 65533' 
+
+alias cfy_unixy_gbrqx='cfy root gbrqx.com 65533' 
+
+#- Futuro servidor 48 cores
+alias cfy_unixy_hbrqx='cfy root hbrqx.com 65533' 
+

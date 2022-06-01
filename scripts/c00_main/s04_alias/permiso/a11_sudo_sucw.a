@@ -1,0 +1,32 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2010
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 6.0"          #  Version del Script actual
+FECHA_SCRIPT="Noviembre 2010"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="permiso"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- cww cwi
+#-------------------------------------------------------------------
+
+# Alias de acceso - Rutas Profiling
+#-====================================-
+
+#- Ruta Scripts
+alias sucw='sudo chown -R '
+
+#- Alias IBM - Mapfre - Ricabel
+alias surc='sudo chown -R ricabel:users *'
+
+#- Alias IBM - Mapfre - Root
+alias suro='sudo chown -R root:root *'
+
+
+

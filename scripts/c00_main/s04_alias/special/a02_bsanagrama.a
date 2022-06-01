@@ -1,0 +1,34 @@
+#!/usr/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2009
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 5.0"          #  Version del Script actual
+FECHA_SCRIPT="Junio 2009"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="special"
+CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- ANAGRAMA
+#-------------------------------------------------------------------
+
+#- Zona de Alias ANAGRAMA
+#-=========================================-
+
+#Alias Gestion Rutas - Insignia ( comun all platforms )
+
+alias bs${INSIGNIA}='$hostname@:[`basename ${PWD}`]>'
+
+#Alias Gestion Rutas - Anagrama ( usuario )
+
+##alias bs${ANAGRAMA}='$hostname@:[`basename ${PWD}`]>'
+
+#Alias Gestion Rutas - Anagrama ( plataforma )
+
+##alias bs${PP}='$hostname@:[`basename ${PWD}`]>'
+
+
