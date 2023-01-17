@@ -19,7 +19,7 @@ CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO}"
 export AA EE II ANAGRAMA ENTORNO INSIGNIA
 export PLATAFORMA PLAT PP PPB OLD_PS1 PS1
 export FECHA  TEMPORADA VERSION_PROFILE FECHA_PROFILE SERVIDOR
-export RAIZ RCT L_RCT S_RCT 
+export RAIZ RCT L_RCT S_RCT L_RCZ S_RCZ
 #-------------------------------------------------------------------
 #-LISTAS
 #-------------------------------------------------------------------

@@ -1,10 +1,10 @@
 #!/usr/bin/bash
 #-------------------------------------------------------------------
 # Funciones Entornos Unix - Brqx Site - Brqx Org
-# Brqx Org - Rct - 2009
+# Brqx Org - Rct - 2022
 #-------------------------------------------------------------------
-VERSION_SCRIPT="V 5.0"          #  Version del Script actual
-FECHA_SCRIPT="Junio 2009"
+VERSION_SCRIPT="V 5.1"          #  Version del Script actual
+FECHA_SCRIPT="Junio 2022"
 #-------------------------------------------------------------------
 LEVEL_NIVEL=04
 CONCEPT_MOLDE="alias"
@@ -21,29 +21,32 @@ CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
 
 hostname=`hostname`
 
-#- Alias entorno Solaris - Hp-Ux - Cygwin
-PS1='$hostname:$PWD>'
+#- Alias entorno Solaris - Hp-Ux - Cygwin - MacOS
+PS1='\[$yellow\]$hostname:\[$green\]$PWD>\[$(textreset)\] '
 
 #- Alias shell restringido - Hostings
 #PS1="\u@\w>"
 
-OLD_PS1=$PS1
+OLD_PS1="$PS1"
 
 #- Zona de Alias ANAGRAMA
 #-=========================================-
 
 #Alias Gestion Rutas - Insignia ( comun all platforms )
 
-alias ${INSIGNIA}='PS1="${INSIGNIA}>"'
+alias ${INSIGNIA}='PS1="\[${yellow}\]${INSIGNIA}>\[$(textreset)\]"'
 alias no${INSIGNIA}='PS1=${OLD_PS1}'
 
 #Alias Gestion Rutas - Anagrama ( usuario )
 
-alias ${ANAGRAMA}='PS1="${ANAGRAMA}>"'
+alias ${ANAGRAMA}='PS1="${ANAGRAMA}> "'
 alias no${ANAGRAMA}='PS1=${OLD_PS1}'
 
 #Alias Gestion Rutas - Anagrama ( plataforma )
 
-alias ${PLAT}='PS1="${PLAT}>"'
+alias ${PLAT}='PS1="${PLAT}>" '
 alias no${PLAT}='PS1=${OLD_PS1}'
+
+alias brqz='brqz_enable'
+alias nobrqz='brqz_disable'
 

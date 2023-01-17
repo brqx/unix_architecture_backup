@@ -1,10 +1,10 @@
 #!/bin/bash
 #-------------------------------------------------------------------
-# Funciones Entornos Unix - Brqx Site - Brqx Org - MACOS
-# Brqx Org - Rct - 2022
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2019
 #-------------------------------------------------------------------
 VERSION_SCRIPT="V 5.1"          #  Version del Script actual
-FECHA_SCRIPT="Junio 2022"
+FECHA_SCRIPT="Junio 2019"
 #-------------------------------------------------------------------
 LEVEL_NIVEL=04
 CONCEPT_MOLDE="ejecuciones"
@@ -16,13 +16,6 @@ CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO}"
 #-- editor - retroceso - clear
 #-------------------------------------------------------------------
 
-# Run Shell for MACOS (force to be bash)
-
-## chsh -s /bin/bash
-## Changing shell for macminii7.
-
-#
-
 #- Definicion del editor
 #-=================================-
 
@@ -32,16 +25,19 @@ set -o emacs
 #- Establecemos caracter de borrado
 #-=================================-
 
-# En Mac esto no va
-# stty erase ^?
+stty erase ^?
 
 #- Limpiamos la pantalla
 #-=================================-
-## clear
+##clear
 
-#- Insertamos en el path la ruta de XWindows ( Solo para linux)
+#- Insertamos en el path la ruta de XWindows
 #-=================================-
+
+PATH=$PATH:/usr/share/terminfo/x
 
 #- Preparamos el entorno de Ruby On Rails
 
 PATH=$PATH:/opt/ruby/rbenv/bin
+
+

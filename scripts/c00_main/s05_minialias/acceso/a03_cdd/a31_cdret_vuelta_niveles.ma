@@ -1,10 +1,10 @@
 #!/bin/bash
 #-------------------------------------------------------------------
 # Funciones Entornos Unix - Brqx Site - Brqx Org
-# Brqx Org - Rct - 2011
+# Brqx Org - Rct - 2022
 #-------------------------------------------------------------------
-VERSION_SCRIPT="V 5.0"          #  Version del Script actual
-FECHA_SCRIPT="Febrero 2011"
+VERSION_SCRIPT="V 5.1"          #  Version del Script actual
+FECHA_SCRIPT="Febrero 2022"
 #-------------------------------------------------------------------
 LEVEL_NIVEL=04
 CONCEPT_MOLDE="alias"
@@ -13,7 +13,7 @@ CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
 #-==================================================================
 #+ Alias definidos (vueltas dobles , triples y cuatriples ):
 #-------------------------------------------------------------------
-#-- cd1 , cd2 , cd3 , cd4
+#-- cd1 , cd2 , cd3 , cd4, cd
 #-------------------------------------------------------------------
 #-- cd5 , cd6 , cd7 , cd8
 #-------------------------------------------------------------------
@@ -26,9 +26,15 @@ CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
 #--  cd4 -- -- cdret 4
 #-==================================================================
 
+# Habilitamos alias cd para que ejecute brqz
+# No puede ser una funcion pero si un alias
+
+# Si habilitamos esto se vuelve descontrolado
+#alias cd="cd_"
+
 # El problema es que no vuelves al mismo sitio .. para ello debe ser una funcion
 
-alias cd1='cd ..'
+alias cd1='cdone'
 alias cd2='cdret 2'
 alias cd3='cdret 3'
 alias cd4='cdret 4'

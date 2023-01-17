@@ -20,7 +20,5 @@ CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO}"
 
 echo "=============================================================="
 
-#- Igual hay que adaptarlo segun que version de df tengamos
 
 freemem 
-

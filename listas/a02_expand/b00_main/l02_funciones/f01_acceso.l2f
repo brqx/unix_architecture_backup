@@ -1,10 +1,10 @@
 #!/bin/bash
 #-------------------------------------------------------------------
 # Funciones Entornos Unix - Brqx Site - Brqx Org
-# Brqx Org - Rct - 2019
+# Brqx Org - Rct - 2022
 #-------------------------------------------------------------------
-VERSION_SCRIPT="V 8.1"          #  Version del Script actual
-FECHA_SCRIPT="Febrero 2019"
+VERSION_SCRIPT="V 8.2"          #  Version del Script actual
+FECHA_SCRIPT="Febrero 2022"
 #-------------------------------------------------------------------
 LEVEL_NIVEL=04		# Variable control profundidad alcanzada
 LEVEL_NIVEL_04=04	# Variable control script
@@ -27,6 +27,9 @@ LSCRIPT_PARTICULAR_PATH_04=${SD_MAIN}s02_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO
 #-------------------------------------------------------------------
 . ${LSCRIPT_PARTICULAR_PATH_04}direct/f01_gend/f01_gend_generico_cdd.f
 #-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f01_gend/f21_gend_generico_cdddash.f
+#-------------------------------------------------------------------
+
 #-- Entrada directa - por Expresion regular
 #-------------------------------------------------------------------
 . ${LSCRIPT_PARTICULAR_PATH_04}direct/f01_gend/f02_gene_generico_ce.f
@@ -64,6 +67,12 @@ LSCRIPT_PARTICULAR_PATH_04=${SD_MAIN}s02_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO
 
 #-------------------------------------------------------------------
 . ${LSCRIPT_PARTICULAR_PATH_04}direct/f02_cd/f21_cdd_direct_inicial.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f02_cd/f51_cddash_direct_folder.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}direct/f02_cd/f52_cdddash_direct_folder.f
+#-------------------------------------------------------------------
+
 #-------------------------------------------------------------------
 . ${LSCRIPT_PARTICULAR_PATH_04}direct/f02_cd/f22_ce_cde_expresion_regular.f
 #-------------------------------------------------------------------

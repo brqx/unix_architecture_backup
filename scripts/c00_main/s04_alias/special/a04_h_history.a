@@ -20,3 +20,5 @@ CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
 #-=========================================-
 
 alias h='history | cut -c8-'
+
+alias h8='h'

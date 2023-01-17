@@ -75,6 +75,9 @@ ll
 fi
 
 OLDPWD=${RUTA_ACTUAL_cddw}
+# Ajuste de formato del prompt
+check_short_paths
+
 #-------------------------------------------------------------------
 #- Fin de la funcion
 #-------------------------------------------------------------------

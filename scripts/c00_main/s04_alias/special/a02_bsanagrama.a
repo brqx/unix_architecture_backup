@@ -21,7 +21,7 @@ CONCEPT_LEVEL="Lista de $CONCEPT_MOLDE Comunes"
 
 #Alias Gestion Rutas - Insignia ( comun all platforms )
 
-alias bs${INSIGNIA}='$hostname@:[`basename ${PWD}`]>'
+alias bs${INSIGNIA}='$hostname@:[`basename ${PWD}`]> '
 
 #Alias Gestion Rutas - Anagrama ( usuario )
 

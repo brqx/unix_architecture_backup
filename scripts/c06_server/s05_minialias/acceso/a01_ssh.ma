@@ -61,13 +61,13 @@ alias x145='rsync -avz -e "ssh -oPort=22" ${PWD}/ ric@192.168.1.145:$PWD/'
 
 #New aliases for lenovo connection
 
-alias rix='rsync -avz -e "ssh -oPort=60022" ${PWD}/ ric@lenovo64:$PWD/'
+alias rix='rsync -avz --exclude=.git -e "ssh -oPort=60022" ${PWD}/ ric@lenovo64:$PWD/'
 alias rox='rsync -avz -e "ssh -oPort=60022" ${PWD}/ root@lenovo64:$PWD/'
 
 #New aliases for revo connection
 
-alias vix='rsync -avz -e "ssh -oPort=60022" ${PWD}/ ric@revo:$PWD/'
-alias vox='rsync -avz -e "ssh -oPort=60022" ${PWD}/ root@revo:$PWD/'
+alias vix='rsync -avz --exclude=.git -e "ssh -oPort=60022" ${PWD}/ ric@revo:$PWD/'
+alias vox='rsync -avz --exclude=.git -e "ssh -oPort=60022" ${PWD}/ root@revo:$PWD/'
 
 
 #New aliases for asus connection
@@ -77,13 +77,13 @@ alias aox='rsync -avz -e "ssh -oPort=60022" ${PWD}/ root@asus32:$PWD/'
 
 #Special aliases for mac mini
 
-alias mix='rsync -avz -e "ssh -oPort=22" ${PWD}/ macminii7@maci7:$PWD'
-alias mox='rsync -avz -e "ssh -oPort=22" ${PWD}/ root@maci7:$PWD'
+#alias mix='rsync -avz -e "ssh -oPort=22" ${PWD}/ macminii7@maci7:Library$PWD'
+alias mix='rsync -avz -e "ssh -oPort=22" ${PWD}/ macminii7@maci7:$PWD/'
 
-#Special aliases for mac mini salon
+alias mox='rsync -avz -e "ssh -oPort=22" ${PWD}/ root@maci7:Library$PWD'
 
-alias six='rsync -avz -e "ssh -oPort=22" ${PWD}/ ric@macmini_salon:$PWD'
-alias sox='rsync -avz -e "ssh -oPort=22" ${PWD}/ root@macmini_salon:$PWD'
+alias fix='rsync -avz -e "ssh -oPort=22" macminii7@maci7:$PWD/ ${PWD}/'
+
 
 
 alias xto_farm='rsync -avz --omit-dir-times -e "ssh -oPort=60022" ${PWD}/ ric@farmacia:$PWD/'

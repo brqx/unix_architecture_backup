@@ -72,6 +72,8 @@ OLDPWD=${RUTA_ACTUAL}
 
 
 ll
+# Ajuste de formato del prompt
+check_short_paths
 
 
 fi

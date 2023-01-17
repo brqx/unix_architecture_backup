@@ -15,7 +15,7 @@ CONCEPT_ARQUETIPO_04="terminal"
 #-------------------------------------------------------------------
 CONCEPT_LEVEL_04="${CONCEPT_FORMATO_04} ${CONCEPT_MOLDE_04} ${CONCEPT_ARQUETIPO_04}"
 CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
-#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- 
 #+ Ejecuciones:
 #-------------------------------------------------------------------
 #-- Se debe cambiar a una funcion que te de el espacio de una ruta
@@ -29,4 +29,18 @@ echo "=============================================================="
 
 echo "Espacio en ruta local    : $(df -h . | tail -1 | tr -s ' ' | cut -d ' ' -f4-5 )"
 
-echo "Espacio en temporal      : $(df -h /tmp/ | tail -1 | tr -s ' ' | cut -d ' ' -f4-5 )"
+
+if [ "${SYSTEM_OS}" == "linux" ] ; then
+
+echo "Espacio en raiz servidor : $(df -h . | tail -1 | tr -s ' ' | cut -d ' ' -f4-5 )"
+
+echo "Espacio en opt           : $(df -h /opt/ | tail -1 | tr -s ' ' | cut -d ' ' -f4-5 )"
+
+echo "Espacio en shm           : $(df -h /dev/shm/ | tail -1 | tr -s ' ' | cut -d ' ' -f4-5 )"
+
+echo "Espacio en temporal      : $(df -h /var/tmp/ | tail -1 | tr -s ' ' | cut -d ' ' -f4-5 )"
+
+echo "Espacio en var log       : $(df -h /var/log/ | tail -1 | tr -s ' ' | cut -d ' ' -f4-5 )"
+
+fi
+

@@ -48,15 +48,18 @@ alias sx='ssh -oPort=60022 root@xbrqx.com'
 alias sy='ssh -oPort=60022 root@ybrqx.com'
 alias sz='ssh -oPort=60022 root@zbrqx.com'
 
+alias sa_ric='ssh -oPort=60022 ric@abrqx.com'
+alias sd_ric='ssh -oPort=60022 ric@dbrqx.com'
+alias st_ric='ssh -oPort=60022 ric@tbrqx.com'
+
+
+
+
+
 alias sfarm='ssh -oPort=60022 ric@farmacia'
 alias rfarm='ssh -oPort=60022 root@farmacia'
 
 
-alias s029='ssh -oPort=60022 ric@192.168.1.29'
-alias s137='ssh -oPort=60022 ric@192.168.1.137'
-alias s139='ssh -oPort=60022 ric@192.168.1.139'
-alias s142='ssh -oPort=60022 ric@192.168.1.142'
-alias s145='ssh -oPort=60022 ric@192.168.1.145'
 
 #New aliases for lenovo connection
 alias ris='ssh -oPort=60022 ric@lenovo64'

@@ -1,0 +1,31 @@
+#!/bin/bash
+#-------------------------------------------------------------------
+# Funciones Entornos Unix - Brqx Site - Brqx Org
+# Brqx Org - Rct - 2022
+#-------------------------------------------------------------------
+VERSION_SCRIPT="V 1.1"          #  Version del Script actual
+FECHA_SCRIPT="Enero 2022"
+#-------------------------------------------------------------------
+LEVEL_NIVEL=04
+CONCEPT_MOLDE="alias"
+CONCEPT_ARQUETIPO="conexion"
+CONCEPT_LEVEL="Lista $CONCEPT_MOLDE ${CONCEPT_ARQUETIPO}"
+#-==================================================================
+#+ Alias definidos:
+#-------------------------------------------------------------------
+#-- sshp - sshr
+#-------------------------------------------------------------------
+#- Variables Requeridas
+#-------------------------------------------------------------------
+#-- 
+#-------------------------------------------------------------------
+
+
+# Alias de acceso - Server
+#-====================================-
+
+#-- Acceso con puerto seguro
+alias sshp='ssh -oPort=60022 '
+
+#-- Acceso con puerto seguro con usuario ric - no funciona como alias - igual tiene que ser funcion
+alias sshr='ssh -oPort=60022 ric@ '

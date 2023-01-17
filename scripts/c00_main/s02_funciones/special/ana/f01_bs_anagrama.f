@@ -1,11 +1,11 @@
 #!/bin/bash
 #-------------------------------------------------------------------
 # Funciones Entornos Unix - Brqx Site - Brqx Org
-# Brqx Org - Rct - 2012
+# Brqx Org - Rct - 2022
 #-------------------------------------------------------------------
-VERSION_SCRIPT="2.3" #  Version del Script actual
-FECHA_SCRIPT="Enero 2012"
-STATUS_SCRIPT="all checked"
+VERSION_SCRIPT="2.5" #  Version del Script actual
+FECHA_SCRIPT="Julio 2022"
+STATUS_SCRIPT="pending"
 #-------------------------------------------------------------------
 LEVEL_NIVEL=04    # Variable control profundidad alcanzada
 LEVEL_NIVEL_04=04 # Variable control script
@@ -60,10 +60,13 @@ else
 
 #- Depende de la version de unix hay que ajustar el prompt
 ## PS1='\u@:[`basename ${PWD}`]>'	;
-echo '$hostname@:[`basename ${PWD}`]>'	;
+echo '\[$yellow\]$hostname@:\[$green\][`basename ${PWD}`]>\[${textreset}\]'	;
 
 fi
 }
+
+#-------------------------------------------------------------------
+
 
 #-------------------------------------------------------------------
 #+ Sistema de trazado N4 - desactivado

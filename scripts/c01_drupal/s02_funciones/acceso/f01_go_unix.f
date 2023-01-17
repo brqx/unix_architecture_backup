@@ -19,7 +19,7 @@ CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- 
 #+ Funciones / Variables definidas:
 #-------------------------------------------------------------------
-#-- go
+#-- ggo
 #-------------------------------------------------------------------
 #+ Funciones / Variables Requeridas
 #-------------------------------------------------------------------
@@ -39,16 +39,17 @@ CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
 #-------------------------------------------------------------------
 #+ Ejemplo : 
 #-------------------------------------------------------------------
-#E go unix   -- Entra en /home/unix/www/
+#E ggo unix   -- Entra en /home/unix/www/
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- 
 
 #-==================================================================
 
 ## - Se encarga de ir al portal correspondiente considerando la ruta actual
-go()
+# Cambiamos esta funciona para poder usar GO de google
+ggo()
 {
-IS_go="Accede a una ruta del proyecto unix en cuestion"
-INFO_SCRIPT=${IS_go}
+IS_ggo="Accede a una ruta del proyecto unix en cuestion"
+INFO_SCRIPT=${IS_ggo}
 
 PROYECTO=$1
 
@@ -58,7 +59,7 @@ fi
 
 if [ "${PROYECTO}" == "-?" ] ;  then
 
-e_pmi go "proyecto"
+e_pmi ggo "proyecto"
 
 else
 

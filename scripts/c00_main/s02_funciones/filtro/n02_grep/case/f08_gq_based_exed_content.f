@@ -1,10 +1,10 @@
 #!/bin/bash
 #-------------------------------------------------------------------
 # Funciones Entornos Unix - Brqx Site - Brqx Org
-# Brqx Org - Rct - 2011
+# Brqx Org - Rct - 2022
 #-------------------------------------------------------------------
-VERSION_SCRIPT="2.2" #  Version del Script actual
-FECHA_SCRIPT="Junio 2011"
+VERSION_SCRIPT="2.4" #  Version del Script actual
+FECHA_SCRIPT="Marzo 2022"
 STATUS_SCRIPT="all checked"
 #-------------------------------------------------------------------
 LEVEL_NIVEL=04    # Variable control profundidad alcanzada
@@ -20,7 +20,7 @@ CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- 
 #+ Funciones / Variables definidas:
 #-------------------------------------------------------------------
-#-- gq
+#-- gq - gqg
 #-------------------------------------------------------------------
 #+ Funciones / Variables Requeridas
 #-------------------------------------------------------------------
@@ -62,6 +62,47 @@ echo "Error en gq ${CONTENIDO}"
 fi
 
 }
+
+# A power variant for Linux
+#-------------------------------------------------------------------
+
+gqg()
+{
+IS_gq="Busca cadenas dentro de los archivos. Obtiene contenido. Basada en gq"
+INFO_SCRIPT=${IS_gq}
+
+CONTENIDO=$1 
+FILTRO=$2
+FILTRO2=$3
+
+if [ "${CONTENIDO}" != "" ] ;  then
+
+    if [ "${FILTRO2}" != "" ] ;  then
+
+    gq "${CONTENIDO} ${CONTENIDO}" | grep ${FILTRO} | ${FILTRO2}
+
+    else
+
+        if [ "${FILTRO}" != "" ] ;  then
+
+        gq "${CONTENIDO} ${CONTENIDO}" | grep ${FILTRO} 
+
+        else
+#        echo "Lanzando Gf"
+        gq "${CONTENIDO} ${CONTENIDO}"         
+#        find . -type f -exec grep ${CONTENIDO} ${CONTENIDO} {} \;  2> /dev/null
+
+        fi
+    fi
+else
+echo "Error en gq ${CONTENIDO}"
+##e_pmt g "cadena"
+
+fi
+
+}
+
+
 
 
 #-------------------------------------------------------------------

@@ -4,7 +4,7 @@
 # Brqx Org - Rct - 2010
 #-------------------------------------------------------------------
 VERSION_SCRIPT="V 6.1"          #  Version del Script actual
-FECHA_SCRIPT="Octubre 2010"
+FECHA_SCRIPT="Octubre 2022"
 #-------------------------------------------------------------------
 LEVEL_NIVEL=03		# Variable control profundidad alcanzada
 LEVEL_NIVEL_03=03	# Variable control script
@@ -31,6 +31,8 @@ LSCRIPT_PROD_PATH_03=${LD_PD_00}l07_${CONCEPT_MOLDE_03}/
 #-- Variablesde Accesos  - Posicion 01
 #--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
+#-------------------------------------------------------------------
+. ${LSCRIPT_PROD_PATH_03}x00_systems.lx
 #-------------------------------------------------------------------
 . ${LSCRIPT_PROD_PATH_03}x01_languages.lx
 #-------------------------------------------------------------------

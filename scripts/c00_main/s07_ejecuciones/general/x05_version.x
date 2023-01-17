@@ -1,4 +1,4 @@
-#!/opt/local/bin/bash
+#!/bin/bash
 #-------------------------------------------------------------------
 # Funciones Entornos Unix - Brqx Site - Brqx Org
 # Brqx Org - Rct - 2011
@@ -29,24 +29,17 @@ echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
 
 echo "Version de Java actual   : ${VERSION_JAVA}    -  $( which java   )"
 
-# echo "AC --> ${SHELL}"
-
 if [ "${EXISTE_PHP}" == "0" ]  ; then
 echo "Version de Php actual    : ${VERSION_PHP}     -  $( which php    )"
 fi
-
-# echo "AA"
 
 if [ "${EXISTE_PERL}" == "0" ]  ; then
 echo "Version de Perl actual   : ${VERSION_PERL}    -  $( which perl   )"
 fi
 
-if [ "${EXISTE_PYTHON}" == "0" ]  ; then
-echo "Version de Python actual : ${VERSION_PYTHON}  -  $( which python )"
+if [ "${EXISTE_RUBY}" == "0" ]  ; then
+echo "Version de Ruby actual   : ${VERSION_RUBY}    -  $( which ruby   )"
 fi
 
-if [ "${EXISTE_JYTHON}" == "0" ]  ; then
-echo "Version de Jython actual : ${VERSION_JYTHON}  -  $( which jython )"
-fi
 
 echo "=============================================================="

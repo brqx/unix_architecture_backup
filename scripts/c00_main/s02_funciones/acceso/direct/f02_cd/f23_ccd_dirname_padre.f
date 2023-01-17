@@ -76,6 +76,10 @@ e_pmi ccd "Ruta Incorrecta : ${EXPR_PASADA}"
 fi
 
 OLDPWD=${RUTA_ACTUAL_GENC}
+
+# Ajuste de formato del prompt
+check_short_paths
+
 #-------------------------------------------------------------------
 #- Fin de la funcion
 #-------------------------------------------------------------------

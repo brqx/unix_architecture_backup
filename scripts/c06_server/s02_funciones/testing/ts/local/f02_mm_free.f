@@ -1,11 +1,11 @@
 #!/bin/bash
 #-------------------------------------------------------------------
-# Funciones Entornos Unix - Brqx Site - Brqx Org - Unix - Linux - MacOS
-# Brqx Org - Rct - 2022
-# Adapted to MACOS
+# Funciones Entornos Unix - Brqx Site - Brqx Org - Linux - MacOS
+# Brqx Org - Rct - 2010
+# Adapted to Linux - Ubuntu
 #-------------------------------------------------------------------
-VERSION_SCRIPT="V 2.3"          #  Version del Script actual
-FECHA_SCRIPT="Enero 2022"
+VERSION_SCRIPT="V 2.2"          #  Version del Script actual
+FECHA_SCRIPT="Marzo 2022"
 #-------------------------------------------------------------------
 LEVEL_NIVEL=05
 CONCEPT_PRODUCTO_05="server"
@@ -33,19 +33,30 @@ CONCEPT_LEVEL_05="Lista ${CONCEPT_MOLDE_05} ${CONCEPT_ARQUETIPO_05}"
 # freemem ibrqx 22
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
+
 freemem()
 {
 
-dame_freemem
+case ${SYSTEM_OS} in
+linux)
+dame_freemem_linux
+;;
+mac)
+dame_freemem_mac
+;;
+*)
+dame_freemem_linux
+esac 
+
 
 mm_fisica_total=$(echo $linea_memoria | cut -d " " -f1)
 mm_fisica_usada=$(echo $linea_memoria | cut -d " " -f2)
 mm_fisica_libre=$(echo $linea_memoria | cut -d " " -f3)
 
-
 mm_swap_total=$(  echo $linea_swap    | cut -d " " -f1)
 mm_swap_usada=$(  echo $linea_swap    | cut -d " " -f2)
 mm_swap_libre=$(  echo $linea_swap    | cut -d " " -f3)
+
 
 echo "Memoria Fisica Total/Libre : ${mm_fisica_total} / ${mm_fisica_libre}"
 echo "Memoria Swap Total/Libre   : ${mm_swap_total} / ${mm_swap_libre}"
@@ -63,6 +74,7 @@ mm_fisica_libre=$(echo $linea_memoria | cut -d " " -f3)
 
 mm_swap_total=$(  echo $linea_swap    | cut -d " " -f1)
 mm_swap_libre=$(  echo $linea_swap    | cut -d " " -f3)
+
 
 RETURN_LINEA_FREEMEM="${mm_fisica_total} / ${mm_fisica_libre} :: ${mm_swap_total} / ${mm_swap_libre}"
 
@@ -83,7 +95,7 @@ if [ "$ARCHIVO" == "" ] ;  then
 ARCHIVO=archivo
 fi
 
-dame_freemem
+dame_freemem_linux
 
 mm_fisica_total=$(echo $linea_memoria | cut -d " " -f1)
 mm_fisica_usada=$(echo $linea_memoria | cut -d " " -f2)
@@ -101,41 +113,37 @@ echo "${HORA_ACTUAL}:${mm_swap_total}:${mm_swap_libre}"     >> ${RUTA_OUT}/${ARC
 }
 
 #-------------------------------------------------------------------
-# MACOS Ver
-dame_freemem()
+
+dame_freemem_linux()
 {
-#  top -l 1 -s 0 | grep PhysMem
-#  PhysMem: 15G used (2016M wired), 628M unused.
-# vm_stat | grep free
-# Pages free:                               40341.
 
-# vm_stat | perl -ne '/page size of (\d+)/ and $size=$1; /Pages\s+([^:]+)[^\d]+(\d+)/ and printf("%-16s % 16.2f Mi\n", "$1:", $2 * $size / 1048576);'
-# free:                      198.10 Mi
-# active:                   6879.68 Mi
+TMP_FILE=${TMPDIR}/tmp_brqx_tmp_file_operations
 
-# 40446 * 4 / 1k = Mb
-# MEM=$(vm_stat | grep free | tr -s " " | cut -d " " -f3 | cut -d "." -f1)
+free -m > ${TMP_FILE}
 
-# Swapfiles are dynamically created as needed, until either the disk is full, or the kernel runs out of page table space.
-# I do not think you can change the page table space limits in the Mac OS X kernel.  I have not seen anything in all the years I've been using OS X.
+linea_memoria=$( cat ${TMP_FILE} | grep Mem  | tr -s " " | cut -d " " -f2-4 )
 
-# EN MAC no se puede escribir en /tmp ... hay que usar el directorio especifico
+# El problema es que cut ordena
+TMP_SWAP=$(cat ${TMP_FILE} | grep Swap | tr -s " ")
 
-TMP_FILE=${TMPDIR}tmp_brqx_tmp_file_operations
-# Ejemplo : /var/folders/5d/c295pcdd0nlcdz_1szj5b29r0000gn/T/
+linea_swap="$( echo ${TMP_SWAP} | cut -d ' ' -f2-4 )"
 
-linea_memoria=$( top -l 1 -s 0 | grep PhysMem | tr -d "(" | tr -d ")" | cut -d " " -f2,4,6 )
-# Used - Wired - Inused
-# 15G 1854M 539M
+}
 
-vm_stat | perl -ne '/page size of (\d+)/ and $size=$1; /Pages\s+([^:]+)[^\d]+(\d+)/ and printf("%-16s % 16.2f Mi\n", "$1:", $2 * $size / 1048576);' > ${TMP_FILE}
+dame_freemem_mac()
+{
 
-linea_swap=$( cat ${TMP_FILE} | egrep "free|active" | tr -s " " | cut -d " " -f2 | tr "\n" " ")
-# Free - Active - Inactive
-# 284.50 6911.33 6636.88
+TMP_FILE=${TMPDIR}/tmp_brqx_tmp_file_operations
 
-#-Return solo vale para campos numericos
-#return ${linea_memoria};
+top -l 1 -s 0 | grep PhysMem  > ${TMP_FILE}
+
+linea_memoria=$( cat ${TMP_FILE} | cut -d " " -f 2,3,6 )
+
+# En MAC no hay swap
+sysctl vm.swapusage | tr -s " " > ${TMP_FILE}
+# vm.swapusage: total = 13312,00M  used = 12895,25M  free = 416,75M  (encrypted)
+
+linea_swap="$( cat ${TMP_FILE} | cut -d ' ' -f 4,5,7 )"
 
 }
 

@@ -1,7 +1,7 @@
-#!/usr/bin/bash
+#!/bin/bash
 #-------------------------------------------------------------------
-# Funciones Entornos Unix - Brqx Site - Brqx Org
-# Brqx Org - Rct - 2010
+# Funciones Entornos Unix - Brqx Site - Brqx Org - Linux - MacOS
+# Brqx Org - Rct - 2022
 #-------------------------------------------------------------------
 VERSION_SCRIPT="V 6.1"          #  Version del Script actual
 FECHA_SCRIPT="Octubre 2010"
@@ -33,6 +33,8 @@ LSCRIPT_PROD_PATH_03=${LD_PD_06}l04_${CONCEPT_MOLDE_03}/
 
 #-------------------------------------------------------------------
 . ${LSCRIPT_PROD_PATH_03}a01_acceso.la
+#-------------------------------------------------------------------
+. ${LSCRIPT_PROD_PATH_03}a01_conexion.la
 #-------------------------------------------------------------------
 . ${LSCRIPT_PROD_PATH_03}a02_control.la
 #-------------------------------------------------------------------

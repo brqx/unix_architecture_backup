@@ -1,10 +1,10 @@
 #!/bin/bash
 #-------------------------------------------------------------------
 # Funciones Entornos Unix - Brqx Site - Brqx Org
-# Brqx Org - Rct - 2012
+# Brqx Org - Rct - 2022
 #-------------------------------------------------------------------
-VERSION_SCRIPT="V 6.2"          #  Version del Script actual
-FECHA_SCRIPT="Febrero 2012"
+VERSION_SCRIPT="V 6.3"          #  Version del Script actual
+FECHA_SCRIPT="Febrero 2022"
 #-------------------------------------------------------------------
 LEVEL_NIVEL=04
 CONCEPT_MOLDE="minialias"
@@ -32,15 +32,17 @@ alias gg='cd ${RCT}'
 
 #- Ruta Scripts - Go Scripts
 alias gs='cd ${S_RCT}'
+alias gsz='cd ${S_RCZ}'
 
 #- Ruta Scripts - Go Sadjust
 alias ga='cd ${A_RCT}'
 
 #- Ruta Listas  - Go Listas
 alias gl='cd ${L_RCT}'
+alias glz='cd ${L_RCZ}'
 
 #- Acceso arquitectura Web - Se separara a otro fichero
-#- Oendiente de establecer una variable donde se indique la arquitectura
+#- Pendiente de establecer una variable donde se indique la arquitectura
 
 alias gw='cd ${ARQWEB}'
 

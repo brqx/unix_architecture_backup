@@ -78,6 +78,8 @@ cd ${RUTA}
 fi
 
 ll
+# Ajuste de formato del prompt
+check_short_paths
 
 fi
 }

@@ -76,6 +76,9 @@ ll
 fi
 
 OLDPWD=${RUTA_ACTUAL_GEND}
+
+# Ajuste de formato del prompt
+check_short_paths
 #-------------------------------------------------------------------
 #- Fin de la funcion
 #-------------------------------------------------------------------

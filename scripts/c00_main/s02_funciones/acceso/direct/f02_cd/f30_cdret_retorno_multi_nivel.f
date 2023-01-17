@@ -1,10 +1,10 @@
 #!/bin/bash
 #-------------------------------------------------------------------
 # Funciones Entornos Unix - Brqx Site - Brqx Org
-# Brqx Org - Rct - 2012
+# Brqx Org - Rct - 2022
 #-------------------------------------------------------------------
-VERSION_SCRIPT="2.3" #  Version del Script actual
-FECHA_SCRIPT="Enero 2012"
+VERSION_SCRIPT="2.5" #  Version del Script actual
+FECHA_SCRIPT="Julio 2022"
 STATUS_SCRIPT="all_checked"
 #-------------------------------------------------------------------
 LEVEL_NIVEL=04    # Variable control profundidad alcanzada
@@ -19,7 +19,7 @@ CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- 
 #+ Funciones / Variables definidas:
 #-------------------------------------------------------------------
-#-- cdret
+#-- cdret - cdone - cd
 #-------------------------------------------------------------------
 #+ Funciones / Variables Requeridas
 #-------------------------------------------------------------------
@@ -41,10 +41,50 @@ CONCEPT_LEVEL_04="${CONCEPT_LEVEL_04} ${CONCEPT_PRODUCTO_04} "
 #-------------------------------------------------------------------
 #E cdret 5	-- Retrocede 5 niveles
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- 
- 
+
+# Ajustando cd al formato short paths and colors
+#cd_special()
+cd()
+{
+VER="0.0.0.2"
+FEC="2022-Aug"
+IS_cd_special="cd_special"
+
+INFO="$*"
+
+if [ "$1" == "-?" ] ; then 
+echo "==--==--==--==--==--==--==--==--==--==--==--==--==--==--=="
+echo "Funcion intelignete CD que usa comando en arquitectura Brqx [$VER] [$FEC] "
+echo "=========================================================="
+echo "Format  : tfz | tf_alias_info               "
+echo "==--==--==--==--==--==--==--==--==--==--==--==--==--==--=="
+
+else
+
+# echo "Ejecutando CD ${INFO}"
+
+if [ "${INFO}" == ".." ] ; then
+#echo " Es un comando de retorno"
+command cd ..
+else
+#echo " No Es un comando de retorno"
+
+command cd $INFO
+
+# Ajuste de formato del prompt
+
+fi
+
+check_short_paths
+
+fi
+}
+
+#-------------------------------------------------------------------
+
 cdret()
 {
-IS_cdret="Vuelve N niveles pero guarda como retorno la ruta inicial"
+IS_cdret="A-Vuelve N niveles pero guarda como retorno la ruta inicial"
 INFO_SCRIPT=${IS_cdret}
 
 NIVELES=$1
@@ -71,6 +111,35 @@ ll
 
 #-Esta parte queda aplazada - hay que mejorar la presentacion de informacion
 ##e_pmi3 cdret "Ruta anterior:" "${OLDPWD}" "Puede volver con (cd -)"
+
+# Ajuste de formato del prompt
+check_short_paths
+
+fi
+}
+
+#-------------------------------------------------------------------
+
+cdone()
+{
+IS_cdone="Vuelve 1 nivel. Es el cd.. pero para habilitar b-rqz"
+INFO_SCRIPT=${IS_cdone}
+
+NIVELES=$1
+
+if [ "${NIVELES}" = "-?" ] ;  then
+e_pmp cdret "Niveles de vuelta"
+
+else
+
+#- Es la ruta a la que vamos a regresar si ejecutamos "cd -"
+#- Variable OLDPWD
+
+cd ..
+
+check_short_paths
+
+ll
 
 fi
 }

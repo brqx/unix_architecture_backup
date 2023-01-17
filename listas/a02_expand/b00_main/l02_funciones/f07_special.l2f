@@ -1,10 +1,10 @@
 #!/bin/bash
 #-------------------------------------------------------------------
 # Funciones Entornos Unix - Brqx Site - Brqx Org
-# Brqx Org - Rct - 2012
+# Brqx Org - Rct - 2022
 #-------------------------------------------------------------------
 VERSION_SCRIPT="V 6.1"          #  Version del Script actual
-FECHA_SCRIPT="Marzo 2012"
+FECHA_SCRIPT="Julio 2022"
 #-------------------------------------------------------------------
 LEVEL_NIVEL=04		# Variable control profundidad alcanzada
 LEVEL_NIVEL_04=04	# Variable control script
@@ -68,6 +68,24 @@ LSCRIPT_PARTICULAR_PATH_04=${SD_MAIN}s02_${CONCEPT_MOLDE_04}/${CONCEPT_ARQUETIPO
 #-------------------------------------------------------------------
 . ${LSCRIPT_PARTICULAR_PATH_04}cod/f42_sucodir_sudo_codifica_listado_carpetas.f
 #-------------------------------------------------------------------
+
+#- Git y Brqz
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}git/f21_git.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}git/f22_brqz.f
+#-------------------------------------------------------------------
+
+
+#- Colors
+
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}color/f20_colors_set.f
+#-------------------------------------------------------------------
+. ${LSCRIPT_PARTICULAR_PATH_04}color/f30_colors_put.f
+#-------------------------------------------------------------------
+
 
 #-------------------------------------------------------------------
 #+ Sistema de trazado N4 - parametrizado
